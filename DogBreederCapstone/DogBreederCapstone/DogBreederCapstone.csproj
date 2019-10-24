@@ -187,11 +187,29 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910241304320_coattypes.cs" />
+    <Compile Include="Migrations\201910241304320_coattypes.Designer.cs">
+      <DependentUpon>201910241304320_coattypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910241332351_sizes.cs" />
+    <Compile Include="Migrations\201910241332351_sizes.Designer.cs">
+      <DependentUpon>201910241332351_sizes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910241335127_sizeupdate.cs" />
+    <Compile Include="Migrations\201910241335127_sizeupdate.Designer.cs">
+      <DependentUpon>201910241335127_sizeupdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910241357495_litters.cs" />
+    <Compile Include="Migrations\201910241357495_litters.Designer.cs">
+      <DependentUpon>201910241357495_litters.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Coat.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Litter.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Size.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -254,6 +272,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -267,6 +286,20 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201910241304320_coattypes.resx">
+      <DependentUpon>201910241304320_coattypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910241332351_sizes.resx">
+      <DependentUpon>201910241332351_sizes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910241335127_sizeupdate.resx">
+      <DependentUpon>201910241335127_sizeupdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910241357495_litters.resx">
+      <DependentUpon>201910241357495_litters.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

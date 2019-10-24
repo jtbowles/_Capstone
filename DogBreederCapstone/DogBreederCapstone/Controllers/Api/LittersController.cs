@@ -18,10 +18,11 @@ namespace DogBreederCapstone.Controllers.Api
         }
 
         // GET api/litters
-        //public IEnumerable<Litter> Get()
-        //{
-        //    return context.Litters.ToList();
-        //}
+        public IEnumerable<Litter> Get()
+        {
+            var littersFromDb = context.Litters.Include("Size").Include("Coat").ToList();
+            return littersFromDb;
+        }
 
         // GET api/litters/5
         public string Get(int id)

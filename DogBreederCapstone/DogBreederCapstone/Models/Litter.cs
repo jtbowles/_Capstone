@@ -10,6 +10,26 @@ namespace DogBreederCapstone.Models
     {
         [Key]
         public int Id { get; set; }
+        
+        [Required]
+        [Display(Name ="Litter Name")]
         public string Name { get; set; }
+
+        [DataType(DataType.Date)]
+        [Display(Name = "Due")]
+        public DateTime DueDate { get; set; }
+
+        [DataType(DataType.Date)]
+        [Display(Name = "Send Home")]
+        public DateTime SendHomeDate { get; set; }
+
+        [Display(Name = "Coat")]
+        public Coat Coat { get; set; }
+        public int CoatId { get; set; }
+
+        [Display(Name = "Size")]
+        public Size Size { get; set; }
+        public int SizeId { get; set; }
+
     }
 }

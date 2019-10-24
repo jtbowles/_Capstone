@@ -20,6 +20,8 @@ namespace DogBreederCapstone.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        DbSet<Litter> Litters { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

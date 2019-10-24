@@ -2,6 +2,7 @@
 using DogBreederCapstone.Dtos;
 using DogBreederCapstone.Models;
 using System;
+using System.Data.Entity;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -22,9 +23,13 @@ namespace DogBreederCapstone.Controllers.Api
         // GET api/litters
         public IHttpActionResult GetLitters()
         {
-            //var littersFromDb = context.Litters.Include("Size").Include("Coat").ToList();
-            //return littersFromDb;
-            return Ok(context.Litters.ToList().Select(Mapper.Map<Litter, LitterDto>));
+            var littersFromDb = context.Litters
+                .Include(l => l.Coat)
+                .Include(l => l.Size)
+                .ToList()
+                .Select(Mapper.Map<Litter, LitterDto>);
+
+            return Ok(littersFromDb);
         }
 
         // GET api/litters/5

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<DogBreederCapstone.Models.Litter>
+﻿@*@model IEnumerable<DogBreederCapstone.Models.Litter>*@
 
 @{
     ViewBag.Title = "Litters";
@@ -7,16 +7,16 @@
 
 <h2>Litters</h2>
 
-@if (!Model.Any())
+@*@if (!Model.Any())
 {
     <h3>We don't have any litters yet.</h3>
 }
 else
-{
+{*@
     <table id="litters" class="table table-bordered table-hover">
         <thead>
             <tr>
-                <th>
+                @*<th>
                     @Html.DisplayNameFor(model => model.Name)
                 </th>
                 <th>
@@ -30,56 +30,82 @@ else
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.SendHomeDate)
-                </th>
+                </th>*@
+                <th>Litter Name</th>
+                <th>Coat</th>
                 <th>
                     Delete
                 </th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model)
+            @*@foreach (var litter in Model)
             {
                 <tr>
                     <td>
-                        @Html.ActionLink(item.Name, "Edit", new { id = item.Id })
+                        @Html.ActionLink(litter.Name, "Edit", new { id = litter.Id })
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Coat.Name)
+                        @Html.DisplayFor(modelItem => litter.Coat.Name)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Size.Name)
+                        @Html.DisplayFor(modelItem => litter.Size.Name)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.DueDate)
+                        @Html.DisplayFor(modelItem => litter.DueDate)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.SendHomeDate)
+                        @Html.DisplayFor(modelItem => litter.SendHomeDate)
                     </td>
                     <td>
-                        <button data-litter-id="@item.Id" class="btn-link js-delete">Delete</button>
+                        <button data-litter-id="@litter.Id" class="btn-link js-delete">Delete</button>
                     </td>
                 </tr>
-             }
+             }*@
         </tbody>
     </table>
-}
+@*}*@
 
 @section scripts
 {
     <script>
         $(document).ready(function () {
-            $("#litters .js-delete").on("click", function () {
+            $("#litters").DataTable({
+                ajax: {
+                    url: "/api/litters",
+                    dataSrc: ""
+                },
+                columns: [
+                    {
+                        data: "name",
+                        render: function (data, type, litter) {
+                            return "<a href='/litters/edit" + litter.id + "'>" + litter.name + "</a>";
+                        }
+                    },
+                    {
+                        data: "name"
+                    },
+                    {
+                        data: "id",
+                        render: function (data) {
+                            return "<button class='btn-link js-delete' data-litter-id=" + data + ">Delete</button>";
+                        }
+                    }
+                ]
+            });
+
+            $("#litters").on("click", ".js-delete", function () {
                 var button = $(this);
 
-                if (confirm("Are you sure you want to delete this Litter?")) {
+                bootbox.confirm("Are you sure you want to delete this litter?", function (result) {
                     $.ajax({
                         url: "/api/litters/" + $(this).attr("data-litter-id"),
                         method: "DELETE",
                         success: function () {
                             button.parents("tr").remove();
                         }
-                    })
-                }
+                    });
+                });
             });
         });
     </script>

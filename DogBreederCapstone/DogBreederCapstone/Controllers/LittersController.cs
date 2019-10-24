@@ -19,8 +19,8 @@ namespace DogBreederCapstone.Controllers
         // GET: Litters
         public ActionResult Index()
         {
-            var litters = context.Litters.Include("Coat").Include("Size").ToList();
-            return View(litters);
+            //var litters = context.Litters.Include("Coat").Include("Size").ToList();
+            return View();
         }
 
         // GET: Litters/Details/5

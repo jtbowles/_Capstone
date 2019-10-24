@@ -1,4 +1,6 @@
-﻿using DogBreederCapstone.Models;
+﻿using AutoMapper;
+using DogBreederCapstone.Dtos;
+using DogBreederCapstone.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,43 +20,46 @@ namespace DogBreederCapstone.Controllers.Api
         }
 
         // GET api/litters
-        public IEnumerable<Litter> GetLitters()
+        public IHttpActionResult GetLitters()
         {
             //var littersFromDb = context.Litters.Include("Size").Include("Coat").ToList();
             //return littersFromDb;
-            return context.Litters.ToList();
+            return Ok(context.Litters.ToList().Select(Mapper.Map<Litter, LitterDto>));
         }
 
         // GET api/litters/5
-        public Litter GetLitter(int id)
+        public IHttpActionResult GetLitter(int id)
         {
             var litter = context.Litters.FirstOrDefault(l => l.Id == id);
 
             if (litter == null)
             {
-                throw new HttpResponseException(HttpStatusCode.NotFound);
+                return NotFound();
             }
-            return litter;
+            return Ok(Mapper.Map<Litter, LitterDto>(litter));
         }
 
         // POST api/litters
         [HttpPost]
-        public Litter CreateLitter(Litter litter)
+        public IHttpActionResult CreateLitter(LitterDto litterDto)
         {
             if (!ModelState.IsValid)
             {
-                throw new HttpResponseException(HttpStatusCode.BadRequest);
+                return BadRequest();
             }
 
+            var litter = Mapper.Map<LitterDto, Litter>(litterDto);
             context.Litters.Add(litter);
             context.SaveChanges();
 
-            return litter;
+            litterDto.Id = litter.Id;
+
+            return Created(new Uri(Request.RequestUri + "/" + litter.Id), litterDto);
         }
 
         // PUT api/litters/5
         [HttpPut]
-        public void UpdateLitter(int id, Litter litter)
+        public IHttpActionResult UpdateLitter(int id, LitterDto litterDto)
         {
             if (!ModelState.IsValid)
             {
@@ -68,19 +73,15 @@ namespace DogBreederCapstone.Controllers.Api
                 throw new HttpResponseException(HttpStatusCode.NotFound);
             }
 
-            litterFromDb.Name = litter.Name;
-            litterFromDb.CoatId = litter.CoatId;
-            litterFromDb.SizeId = litter.SizeId;
-            litterFromDb.DueDate = litter.DueDate;
-            litterFromDb.SendHomeDate = litter.SendHomeDate;
+            Mapper.Map(litterDto, litterFromDb);
 
             context.SaveChanges();
-
+            return Ok();
         }
 
         // DELETE api/litters/5
         [HttpDelete]
-        public void Delete(int id)
+        public IHttpActionResult DeleteLitter(int id)
         {
             var litterFromDb = context.Litters.FirstOrDefault(l => l.Id == id);
 
@@ -91,6 +92,7 @@ namespace DogBreederCapstone.Controllers.Api
 
             context.Litters.Remove(litterFromDb);
             context.SaveChanges();
+            return Ok();
         }
     }
 }

@@ -16,19 +16,19 @@ namespace DogBreederCapstone.Models
         public string Name { get; set; }
 
         [DataType(DataType.Date)]
-        [Display(Name = "Due")]
+        [Display(Name = "Expected Arrival")]
         public DateTime DueDate { get; set; }
 
         [DataType(DataType.Date)]
-        [Display(Name = "Send Home")]
+        [Display(Name = "Expected Availability")]
         public DateTime SendHomeDate { get; set; }
 
-        [Display(Name = "Coat")]
         public Coat Coat { get; set; }
+        [Display(Name = "Coat")]
         public int CoatId { get; set; }
 
-        [Display(Name = "Size")]
         public Size Size { get; set; }
+        [Display(Name = "Size")]
         public int SizeId { get; set; }
 
     }

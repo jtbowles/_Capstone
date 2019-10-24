@@ -1,0 +1,35 @@
+﻿@model DogBreederCapstone.ViewModels.LitterFormViewModel
+
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>New Litter</h2>
+
+@using (Html.BeginForm("Save", "Litters"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Litter.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.TextBoxFor(m => m.Litter.Name, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Litter.CoatId, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.DropDownListFor(m => m.Litter.CoatId, new SelectList(Model.Coats, "Id", "Name"), "Select Litter Coat", new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Litter.SizeId, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.DropDownListFor(m => m.Litter.SizeId, new SelectList(Model.Sizes, "Id", "Name"), "Select Litter Size", new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Litter.DueDate, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.EditorFor(m => m.Litter.DueDate, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Litter.SendHomeDate, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.EditorFor(m => m.Litter.SendHomeDate, new { @class = "form-control" })
+    </div>
+    @Html.HiddenFor(m => m.Litter.Id)
+    <button type="submit" class="btn btn-primary">Finish</button>
+
+}

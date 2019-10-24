@@ -1,0 +1,93 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Capstone",
+		"_postman_id": "43801a78-1362-f6f9-a9a9-ddc5bd3bb013",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://localhost:44369/api/litters",
+			"request": {
+				"url": "https://localhost:44369/api/litters",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Get Litters"
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44369/api/litters/2",
+			"request": {
+				"url": "https://localhost:44369/api/litters/2",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Get Litter with Id 2"
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44369/api/litters",
+			"request": {
+				"url": "https://localhost:44369/api/litters",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Name\": \"Blaze/Uno\",\n    \"DueDate\": \"2019-11-15T00:00:00\",\n    \"SendHomeDate\": \"2019-12-31T00:00:00\",\n    \"Coat\": null,\n    \"CoatId\": 6,\n    \"Size\": null,\n    \"SizeId\": 2\n}"
+				},
+				"description": "Post => create new litter"
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44369/api/litters/3",
+			"request": {
+				"url": "https://localhost:44369/api/litters/3",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Name\": \"Blaze/Uno\",\n    \"DueDate\": \"2019-11-15T00:00:00\",\n    \"SendHomeDate\": \"2020-01-03T00:00:00\",\n    \"Coat\": null,\n    \"CoatId\": 6,\n    \"Size\": null,\n    \"SizeId\": 2\n}"
+				},
+				"description": "Put => update litter"
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44369/api/litters/4",
+			"request": {
+				"url": "https://localhost:44369/api/litters/4",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Name\": \"Test\",\n    \"DueDate\": \"2019-11-15T00:00:00\",\n    \"SendHomeDate\": \"2020-01-03T00:00:00\",\n    \"Coat\": null,\n    \"CoatId\": 6,\n    \"Size\": null,\n    \"SizeId\": 2\n}"
+				},
+				"description": "Delete => delete a test litter"
+			},
+			"response": []
+		}
+	]
+}

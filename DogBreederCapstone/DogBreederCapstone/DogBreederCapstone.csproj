@@ -186,9 +186,11 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Api\LittersController.cs" />
+    <Compile Include="Controllers\BreedersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LittersController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PotentialOwnersController.cs" />
     <Compile Include="Dtos\CoatDto.cs" />
     <Compile Include="Dtos\LitterDto.cs" />
     <Compile Include="Dtos\SizeDto.cs" />
@@ -215,12 +217,47 @@
     <Compile Include="Migrations\201910251304066_seedUsers.Designer.cs">
       <DependentUpon>201910251304066_seedUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910251501590_firstTimeLoginBool.cs" />
+    <Compile Include="Migrations\201910251501590_firstTimeLoginBool.Designer.cs">
+      <DependentUpon>201910251501590_firstTimeLoginBool.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910251516306_breederstable.cs" />
+    <Compile Include="Migrations\201910251516306_breederstable.Designer.cs">
+      <DependentUpon>201910251516306_breederstable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910251700475_potentialOwners.cs" />
+    <Compile Include="Migrations\201910251700475_potentialOwners.Designer.cs">
+      <DependentUpon>201910251700475_potentialOwners.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910251755203_preferenceInOwner.cs" />
+    <Compile Include="Migrations\201910251755203_preferenceInOwner.Designer.cs">
+      <DependentUpon>201910251755203_preferenceInOwner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910251834186_prefchange.cs" />
+    <Compile Include="Migrations\201910251834186_prefchange.Designer.cs">
+      <DependentUpon>201910251834186_prefchange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910251841528_preftable.cs" />
+    <Compile Include="Migrations\201910251841528_preftable.Designer.cs">
+      <DependentUpon>201910251841528_preftable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910251918190_fkChange.cs" />
+    <Compile Include="Migrations\201910251918190_fkChange.Designer.cs">
+      <DependentUpon>201910251918190_fkChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910252001262_prefStandard.cs" />
+    <Compile Include="Migrations\201910252001262_prefStandard.Designer.cs">
+      <DependentUpon>201910252001262_prefStandard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Breeder.cs" />
     <Compile Include="Models\Coat.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Litter.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\PotentialOwner.cs" />
+    <Compile Include="Models\Preference.cs" />
     <Compile Include="Models\Size.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -463,6 +500,9 @@
     <Content Include="Views\Litters\List.cshtml" />
     <Content Include="Views\Litters\ReadOnlyList.cshtml" />
     <Content Include="Views\Litters\Details.cshtml" />
+    <Content Include="Views\Breeders\BreederForm.cshtml" />
+    <Content Include="Views\PotentialOwners\PotentialOwnersForm.cshtml" />
+    <Content Include="Views\PotentialOwners\PreferencesForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -495,6 +535,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910251304066_seedUsers.resx">
       <DependentUpon>201910251304066_seedUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910251501590_firstTimeLoginBool.resx">
+      <DependentUpon>201910251501590_firstTimeLoginBool.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910251516306_breederstable.resx">
+      <DependentUpon>201910251516306_breederstable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910251700475_potentialOwners.resx">
+      <DependentUpon>201910251700475_potentialOwners.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910251755203_preferenceInOwner.resx">
+      <DependentUpon>201910251755203_preferenceInOwner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910251834186_prefchange.resx">
+      <DependentUpon>201910251834186_prefchange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910251841528_preftable.resx">
+      <DependentUpon>201910251841528_preftable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910251918190_fkChange.resx">
+      <DependentUpon>201910251918190_fkChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910252001262_prefStandard.resx">
+      <DependentUpon>201910252001262_prefStandard.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

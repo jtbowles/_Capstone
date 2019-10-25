@@ -9,6 +9,8 @@ namespace DogBreederCapstone.Models
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
+        public bool FirstTimeLogin { get; set; }
+
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
@@ -20,6 +22,9 @@ namespace DogBreederCapstone.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<Breeder> Breeders { get; set; }
+        public DbSet<PotentialOwner> PotentialOwners { get; set; }
+        public DbSet<Preference> Preferences { get; set; }
         public DbSet<Litter> Litters { get; set; }
         public DbSet<Size> Sizes { get; set; }
         public DbSet<Coat> Coats { get; set; }

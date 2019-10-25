@@ -1,0 +1,70 @@
+﻿@model DogBreederCapstone.Models.Preference
+
+@{
+    ViewBag.Title = "PreferencesForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Preferences</h2>
+
+@using (Html.BeginForm("UpdatePreferences", "PotentialOwners"))
+{
+    <div class="checkbox">
+        <label>
+            @Html.CheckBoxFor(m => m.IsMicro) Micro
+        </label>
+    </div>
+    <div class="checkbox">
+        <label>
+            @Html.CheckBoxFor(m => m.IsMini) Mini
+        </label>
+    </div>
+    <div class="checkbox">
+        <label>
+            @Html.CheckBoxFor(m => m.IsMedium) Medium
+        </label>
+    </div>
+    <div class="checkbox">
+        <label>
+            @Html.CheckBoxFor(m => m.IsStandard) Standard
+        </label>
+    </div>
+    <div class="checkbox">
+        <label>
+            @Html.CheckBoxFor(m => m.IsCaramel) Caramel
+        </label>
+    </div>
+    <div class="checkbox">
+        <label>
+            @Html.CheckBoxFor(m => m.IsRed) Red
+        </label>
+    </div>
+    <div class="checkbox">
+        <label>
+            @Html.CheckBoxFor(m => m.IsBlue) Blue
+        </label>
+    </div>
+    <div class="checkbox">
+        <label>
+            @Html.CheckBoxFor(m => m.IsSilver) Silver
+        </label>
+    </div>
+    <div class="checkbox">
+        <label>
+            @Html.CheckBoxFor(m => m.IsCafe) Cafe
+        </label>
+    </div>
+    <div class="checkbox">
+        <label>
+            @Html.CheckBoxFor(m => m.IsChocolate) Chocolate
+        </label>
+    </div>
+    <div class="checkbox">
+        <label>
+            @Html.CheckBoxFor(m => m.IsParchment) Parchment
+        </label>
+    </div>
+
+    @Html.HiddenFor(m => m.Id);
+    <button type="submit" class="btn btn-primary">Finish</button>
+}

@@ -21,8 +21,10 @@ namespace DogBreederCapstone.Dtos
         public DateTime SendHomeDate { get; set; }
 
         public int CoatId { get; set; }
+        public CoatDto Coat { get; set; }
 
         public int SizeId { get; set; }
+        public SizeDto Size { get; set; }
 
     }
 }

@@ -12,8 +12,15 @@ namespace DogBreederCapstone.App_Start
     {
         public MappingProfile()
         {
+            //Domain to Dto
             Mapper.CreateMap<Litter, LitterDto>();
-            Mapper.CreateMap<LitterDto, Litter> ();
+            Mapper.CreateMap<Coat, CoatDto> ();
+            Mapper.CreateMap<Size, SizeDto> ();
+
+            //Dto to domain
+            Mapper.CreateMap<LitterDto, Litter>();
+                //.ForMember(l => l.Id, opt => opt.Ignore());
+
         }
     }
 }

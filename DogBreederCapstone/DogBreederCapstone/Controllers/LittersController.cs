@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using DogBreederCapstone.Utilities;
 
 namespace DogBreederCapstone.Controllers
 {
@@ -20,8 +21,7 @@ namespace DogBreederCapstone.Controllers
         [AllowAnonymous]
         public ActionResult Index()
         {
-            //var litters = context.Litters.Include("Coat").Include("Size").ToList();
-            if (User.IsInRole("Breeder"))
+            if (User.IsInRole(RoleName.Breeder))
             {
                 return View("List");
             }
@@ -88,6 +88,7 @@ namespace DogBreederCapstone.Controllers
             }
         }
 
+        [Authorize(Roles = RoleName.Breeder)]
         public ActionResult New()
         {
             var coatTypes = context.Coats.ToList();

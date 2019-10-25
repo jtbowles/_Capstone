@@ -17,16 +17,33 @@ namespace DogBreederCapstone.Controllers
             context = new ApplicationDbContext();
         }
         // GET: Litters
+        [AllowAnonymous]
         public ActionResult Index()
         {
             //var litters = context.Litters.Include("Coat").Include("Size").ToList();
-            return View();
+            if (User.IsInRole("Breeder"))
+            {
+                return View("List");
+            }
+
+            return View("ReadOnlyList");
         }
 
         // GET: Litters/Details/5
+        [AllowAnonymous]
         public ActionResult Details(int id)
         {
-            return View();
+            Litter litter = context.Litters
+                .Include("Coat")
+                .Include("Size")
+                .FirstOrDefault(l => l.Id == id);
+
+            if (litter == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(litter);
         }
 
         // GET: Litters/Edit/5

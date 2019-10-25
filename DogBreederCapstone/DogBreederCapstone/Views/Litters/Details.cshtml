@@ -1,0 +1,49 @@
+﻿@model DogBreederCapstone.Models.Litter
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Html.DisplayFor(model => model.Name)</h2>
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Coat.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Coat.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Size.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Size.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DueDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DueDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SendHomeDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SendHomeDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

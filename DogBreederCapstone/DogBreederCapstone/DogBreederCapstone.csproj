@@ -211,6 +211,10 @@
     <Compile Include="Migrations\201910241357495_litters.Designer.cs">
       <DependentUpon>201910241357495_litters.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910251304066_seedUsers.cs" />
+    <Compile Include="Migrations\201910251304066_seedUsers.Designer.cs">
+      <DependentUpon>201910251304066_seedUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Coat.cs" />
@@ -455,7 +459,9 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Litters\LitterForm.cshtml" />
-    <Content Include="Views\Litters\Index.cshtml" />
+    <Content Include="Views\Litters\List.cshtml" />
+    <Content Include="Views\Litters\ReadOnlyList.cshtml" />
+    <Content Include="Views\Litters\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -485,6 +491,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910241357495_litters.resx">
       <DependentUpon>201910241357495_litters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910251304066_seedUsers.resx">
+      <DependentUpon>201910251304066_seedUsers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

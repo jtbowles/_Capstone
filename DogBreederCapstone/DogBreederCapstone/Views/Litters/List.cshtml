@@ -1,0 +1,76 @@
+﻿@{
+    ViewBag.Title = "Litters";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Litters</h2>
+
+    <table id="litters" class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Litter Name</th>
+                <th>Coat</th>
+                <th>Size</th>
+                <th>Due</th>
+                <th>Go Home</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            var table = $("#litters").DataTable({
+                ajax: {
+                    url: "/api/litters",
+                    dataSrc: ""
+                },
+                columns: [
+                    {
+                        data: "name",
+                        render: function (data, type, litter) {
+                            return "<a href='/litters/edit/" + litter.id + "'>" + data + "</a>";
+                        }
+                    },
+                    {
+                        data: "coat.name"
+                    },
+                    {
+                        data: "size.name"
+                    },
+                    {
+                        data: "dueDate"
+                    },
+                    {
+                        data: "sendHomeDate"
+                    },
+                    {
+                        data: "id",
+                        render: function (data) {
+                            return "<button class='btn-link js-delete' data-litter-id=" + data + ">Delete</button>";
+                        }
+                    }
+                ]
+            });
+
+            $("#litters").on("click", ".js-delete", function () {
+                var button = $(this);
+
+                bootbox.confirm("Are you sure you want to delete this litter?", function () {
+                        $.ajax({
+                            url: "/api/litters/" + $(this).attr("data-litter-id"),
+                            method: "DELETE",
+                            success: function() {
+                                table.row(button.parents("tr")).remove().draw();
+                            }
+                        });
+                });
+            });
+        });
+    </script>
+}
+
+

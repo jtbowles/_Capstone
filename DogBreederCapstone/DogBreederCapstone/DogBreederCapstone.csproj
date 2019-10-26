@@ -185,6 +185,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Api\DogsController.cs" />
     <Compile Include="Controllers\Api\LittersController.cs" />
     <Compile Include="Controllers\BreedersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -249,10 +250,17 @@
     <Compile Include="Migrations\201910252001262_prefStandard.Designer.cs">
       <DependentUpon>201910252001262_prefStandard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910261948294_dogtableWFkeys.cs" />
+    <Compile Include="Migrations\201910261948294_dogtableWFkeys.Designer.cs">
+      <DependentUpon>201910261948294_dogtableWFkeys.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Breeder.cs" />
     <Compile Include="Models\Coat.cs" />
+    <Compile Include="Models\Collar.cs" />
+    <Compile Include="Models\Dog.cs" />
+    <Compile Include="Models\Gender.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Litter.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -506,6 +514,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Dogs\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -559,6 +568,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910252001262_prefStandard.resx">
       <DependentUpon>201910252001262_prefStandard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910261948294_dogtableWFkeys.resx">
+      <DependentUpon>201910261948294_dogtableWFkeys.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

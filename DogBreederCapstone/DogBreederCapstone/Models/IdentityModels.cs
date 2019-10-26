@@ -26,8 +26,11 @@ namespace DogBreederCapstone.Models
         public DbSet<PotentialOwner> PotentialOwners { get; set; }
         public DbSet<Preference> Preferences { get; set; }
         public DbSet<Litter> Litters { get; set; }
+        public DbSet<Dog> Dogs { get; set; }
         public DbSet<Size> Sizes { get; set; }
         public DbSet<Coat> Coats { get; set; }
+        public DbSet<Gender> Genders { get; set; }
+        public DbSet<Collar> Collars { get; set; }
 
 
         public ApplicationDbContext()

@@ -33,7 +33,9 @@ namespace DogBreederCapstone.Controllers
             }
             else
             {
-                PotentialOwner potentialOwnerFromDb = context.PotentialOwners.FirstOrDefault(p => p.Id == potentialOwner.Id);
+                PotentialOwner potentialOwnerFromDb = 
+                    context.PotentialOwners.FirstOrDefault(p => p.Id == potentialOwner.Id);
+
                 potentialOwnerFromDb.FirstName = potentialOwner.FirstName;
                 potentialOwnerFromDb.LastName = potentialOwner.LastName;
             }
@@ -42,10 +44,23 @@ namespace DogBreederCapstone.Controllers
             return RedirectToAction("Index", "Litters");
         }
 
+
         public ActionResult NewPreferences()
         {
-            Preference preference = new Preference();
-            return View("PreferencesForm", preference);
+            var applicationId = User.Identity.GetUserId();
+            PotentialOwner potentialOwnerFromDb = 
+                context.PotentialOwners.FirstOrDefault(p => p.ApplicationId == applicationId);
+
+            if (potentialOwnerFromDb.PreferenceId == null)
+            {
+                Preference preference = new Preference();
+                return View("PreferencesForm", preference);
+            }
+
+            Preference preferenceFromDb =
+                context.Preferences.FirstOrDefault(p => p.Id == potentialOwnerFromDb.PreferenceId);
+
+            return View("PreferencesForm", preferenceFromDb);
         }
 
         [HttpPost]
@@ -55,21 +70,34 @@ namespace DogBreederCapstone.Controllers
             if (preference.Id == 0)
             {
                 context.Preferences.Add(preference);
+                context.SaveChanges();
+                AssignPreferenceId();
             }
             else
             {
                 Preference preferenceFromDb = context.Preferences.FirstOrDefault(p => p.Id == preference.Id);
+                preferenceFromDb.IsMicro = preference.IsMicro;
+                preferenceFromDb.IsMini = preference.IsMini;
+                preferenceFromDb.IsMedium = preference.IsMedium;
+                preferenceFromDb.IsStandard = preference.IsStandard;
+                preferenceFromDb.IsCaramel = preference.IsCaramel;
+                preferenceFromDb.IsRed = preference.IsRed;
+                preferenceFromDb.IsBlue= preference.IsBlue;
+                preferenceFromDb.IsSilver = preference.IsSilver;
+                preferenceFromDb.IsCafe = preference.IsCafe;
+                preferenceFromDb.IsChocolate = preference.IsChocolate;
+                preferenceFromDb.IsParchment = preference.IsParchment;
+                context.SaveChanges();
             }
 
-            context.SaveChanges();
-            AssignPreferenceId();
             return RedirectToAction("Index", "Litters");
         }
 
         public void AssignPreferenceId()
         {
             var applicationId = User.Identity.GetUserId();
-            PotentialOwner potentialOwnerFromDb = context.PotentialOwners.FirstOrDefault(p => p.ApplicationId == applicationId);
+            PotentialOwner potentialOwnerFromDb =
+                context.PotentialOwners.FirstOrDefault(p => p.ApplicationId == applicationId);
             var mostRecentEntry = context.Preferences.Max(p => p.Id);
 
             potentialOwnerFromDb.PreferenceId = mostRecentEntry;

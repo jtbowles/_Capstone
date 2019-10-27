@@ -36,6 +36,23 @@ namespace DogBreederCapstone.Migrations
             //    new Models.Size { Name = "Medium", Weight = 35, Height = 19 },
             //    new Models.Size { Name = "Standard", Weight = 60, Height = 22 }
             //    );
+
+            //context.Genders.AddOrUpdate(
+            //    new Models.Gender { Name = "Male"},
+            //    new Models.Gender { Name = "Female"}
+            //    );
+
+            //context.Collars.AddOrUpdate(
+            //    new Models.Collar { Color = "Black"},
+            //    new Models.Collar { Color = "Blue"},
+            //    new Models.Collar { Color = "Green"},
+            //    new Models.Collar { Color = "Orange"},
+            //    new Models.Collar { Color = "Pink"},
+            //    new Models.Collar { Color = "Purple"},
+            //    new Models.Collar { Color = "White"},
+            //    new Models.Collar { Color = "Yellow"},
+            //    new Models.Collar { Color = "Red"}
+            //    );
         }
     }
 }

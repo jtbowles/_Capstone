@@ -193,6 +193,9 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PotentialOwnersController.cs" />
     <Compile Include="Dtos\CoatDto.cs" />
+    <Compile Include="Dtos\CollarDto.cs" />
+    <Compile Include="Dtos\DogDto.cs" />
+    <Compile Include="Dtos\GenderDto.cs" />
     <Compile Include="Dtos\LitterDto.cs" />
     <Compile Include="Dtos\SizeDto.cs" />
     <Compile Include="Global.asax.cs">
@@ -253,6 +256,10 @@
     <Compile Include="Migrations\201910261948294_dogtableWFkeys.cs" />
     <Compile Include="Migrations\201910261948294_dogtableWFkeys.Designer.cs">
       <DependentUpon>201910261948294_dogtableWFkeys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910271526041_seeddatawithGenderandCollar.cs" />
+    <Compile Include="Migrations\201910271526041_seeddatawithGenderandCollar.Designer.cs">
+      <DependentUpon>201910271526041_seeddatawithGenderandCollar.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -571,6 +578,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910261948294_dogtableWFkeys.resx">
       <DependentUpon>201910261948294_dogtableWFkeys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910271526041_seeddatawithGenderandCollar.resx">
+      <DependentUpon>201910271526041_seeddatawithGenderandCollar.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

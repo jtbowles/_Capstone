@@ -1,0 +1,26 @@
+﻿@model DogBreederCapstone.ViewModels.DogFormViewModel
+
+@{
+    ViewBag.Title = "DogForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Dog Form</h2>
+
+@using (Html.BeginForm("Save", "Dogs"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Dog.LitterId, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.DropDownListFor(m => m.Dog.LitterId, new SelectList(Model.Litters, "Id", "Name"), "Select Litter", new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Dog.CollarId, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.DropDownListFor(m => m.Dog.CollarId, new SelectList(Model.Collars, "Id", "Color"), "Select Collar", new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Dog.GenderId, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.DropDownListFor(m => m.Dog.GenderId, new SelectList(Model.Genders, "Id", "Name"), "Select Gender", new { @class = "form-control" })
+    </div>
+    @Html.HiddenFor(m => m.Dog.Id)
+    <button type="submit" class="btn btn-primary">Finish</button>
+}

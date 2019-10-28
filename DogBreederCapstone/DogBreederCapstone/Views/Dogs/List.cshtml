@@ -1,0 +1,40 @@
+﻿@model IEnumerable<DogBreederCapstone.Models.Dog>
+
+@{
+    ViewBag.Title = "Dogs";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Dogs</h2>
+
+<table id="dogs" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Litter Name</th>
+            <th>Collar Color</th>
+            <th>Gender</th>
+            <th>Edit</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Litter.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Collar.Color)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender.Name)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }, null)
+            </td>
+        </tr>
+    }
+
+    </tbody>
+</table>
+

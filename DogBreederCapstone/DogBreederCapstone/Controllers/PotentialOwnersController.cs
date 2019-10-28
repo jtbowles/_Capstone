@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using DogBreederCapstone.Models;
+using DogBreederCapstone.Utilities;
 using Microsoft.AspNet.Identity;
 
 namespace DogBreederCapstone.Controllers
@@ -44,7 +45,7 @@ namespace DogBreederCapstone.Controllers
             return RedirectToAction("Index", "Litters");
         }
 
-
+        [Authorize(Roles = RoleName.PotentialOwner)]
         public ActionResult NewPreferences()
         {
             var applicationId = User.Identity.GetUserId();
@@ -90,7 +91,7 @@ namespace DogBreederCapstone.Controllers
                 context.SaveChanges();
             }
 
-            return RedirectToAction("Index", "Litters");
+            return RedirectToAction("GetLittersByPreference","Litters");
         }
 
         public void AssignPreferenceId()

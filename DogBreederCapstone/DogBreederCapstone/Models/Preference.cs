@@ -18,5 +18,6 @@ namespace DogBreederCapstone.Models
         public bool IsCafe { get; set; }
         public bool IsChocolate { get; set; }
         public bool IsParchment { get; set; }
+        public bool IsLavender { get; set; }
     }
 }

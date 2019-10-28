@@ -188,6 +188,7 @@
     <Compile Include="Controllers\Api\DogsController.cs" />
     <Compile Include="Controllers\Api\LittersController.cs" />
     <Compile Include="Controllers\BreedersController.cs" />
+    <Compile Include="Controllers\DogsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LittersController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -261,6 +262,10 @@
     <Compile Include="Migrations\201910271526041_seeddatawithGenderandCollar.Designer.cs">
       <DependentUpon>201910271526041_seeddatawithGenderandCollar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910281534159_updateprefrz.cs" />
+    <Compile Include="Migrations\201910281534159_updateprefrz.Designer.cs">
+      <DependentUpon>201910281534159_updateprefrz.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Breeder.cs" />
@@ -277,6 +282,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Utilities\RoleName.cs" />
+    <Compile Include="ViewModels\DogFormViewModel.cs" />
     <Compile Include="ViewModels\LitterFormViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -518,10 +524,13 @@
     <Content Include="Views\Breeders\BreederForm.cshtml" />
     <Content Include="Views\PotentialOwners\PotentialOwnersForm.cshtml" />
     <Content Include="Views\PotentialOwners\PreferencesForm.cshtml" />
+    <Content Include="Views\Dogs\DogForm.cshtml" />
+    <Content Include="Views\Dogs\List.cshtml" />
+    <Content Include="Views\Dogs\ReadOnlyList.cshtml" />
+    <Content Include="Views\Litters\ListByPreference.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Dogs\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -581,6 +590,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910271526041_seeddatawithGenderandCollar.resx">
       <DependentUpon>201910271526041_seeddatawithGenderandCollar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910281534159_updateprefrz.resx">
+      <DependentUpon>201910281534159_updateprefrz.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

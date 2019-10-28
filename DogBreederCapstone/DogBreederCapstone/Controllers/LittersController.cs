@@ -2,10 +2,12 @@
 using DogBreederCapstone.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using DogBreederCapstone.Utilities;
+using Microsoft.AspNet.Identity;
 
 namespace DogBreederCapstone.Controllers
 {
@@ -66,28 +68,6 @@ namespace DogBreederCapstone.Controllers
         }
 
 
-        // GET: Litters/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Litters/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
         [Authorize(Roles = RoleName.Breeder)]
         public ActionResult New()
         {
@@ -129,6 +109,126 @@ namespace DogBreederCapstone.Controllers
 
             context.SaveChanges();
             return RedirectToAction("Index");
+        }
+        
+        [Authorize(Roles = RoleName.PotentialOwner)]
+        public ActionResult GetLittersByPreference()
+        {
+            var applicationId = User.Identity.GetUserId();
+            PotentialOwner potentialOwner = context.PotentialOwners.FirstOrDefault(e => e.ApplicationId == applicationId);
+            Preference preferences = context.Preferences.FirstOrDefault(p => p.Id == potentialOwner.PreferenceId);
+
+            if (preferences == null)
+            {
+                return RedirectToAction("NewPreferences", "PotentialOwners");
+            }
+
+            List<Litter> litters = FilterLitterPreferences(preferences);
+
+            return View("ListByPreference", litters);
+        }
+
+        public List<Litter> FilterLitterPreferences(Preference preferences)
+        {
+            List<Litter> littersByPreference = new List<Litter>();
+
+            if (preferences.IsMicro)
+            {
+                littersByPreference = LitterBySize(littersByPreference, 1);
+            }
+            if (preferences.IsMini)
+            {
+                littersByPreference = LitterBySize(littersByPreference, 2);
+            }
+            if (preferences.IsMedium)
+            {
+                littersByPreference = LitterBySize(littersByPreference, 3);
+            }
+            if (preferences.IsStandard)
+            {
+                littersByPreference = LitterBySize(littersByPreference, 4);
+            }
+            if (preferences.IsCaramel)
+            {
+                littersByPreference = LitterByCoat(littersByPreference, 1);
+            }
+            if (preferences.IsRed)
+            {
+                littersByPreference = LitterByCoat(littersByPreference, 2);
+            }
+            if (preferences.IsBlue)
+            {
+                littersByPreference = LitterByCoat(littersByPreference, 3);
+            }
+            if (preferences.IsSilver)
+            {
+                littersByPreference = LitterByCoat(littersByPreference, 4);
+            }
+            if (preferences.IsChocolate)
+            {
+                littersByPreference = LitterByCoat(littersByPreference, 5);
+            }
+            if (preferences.IsCafe)
+            {
+                littersByPreference = LitterByCoat(littersByPreference, 6);
+            }
+            if (preferences.IsLavender)
+            {
+                littersByPreference = LitterByCoat(littersByPreference, 7);
+            }
+            if (preferences.IsParchment)
+            {
+                littersByPreference = LitterByCoat(littersByPreference, 8);
+            }
+
+            return littersByPreference;
+        }
+
+        public List<Litter> LitterByCoat(List<Litter> litters, int id)
+        {
+            List<Litter> filteredLitters = context.Litters.Where(l => l.CoatId == id)
+                .Include(l => l.Coat)
+                .Include(l => l.Size)
+                .ToList();
+
+            try
+            {
+                foreach (var litter in filteredLitters)
+                {
+                    litters.Add(litter);
+                }
+
+                return litters;
+
+            }
+            catch
+            {
+                return litters;
+            }
+
+        }
+
+        public List<Litter> LitterBySize(List<Litter> litters, int id)
+        {
+            List<Litter> filteredLitters = context.Litters.Where(l => l.SizeId == id)
+                .Include(l => l.Coat)
+                .Include(l => l.Size)
+                .ToList();
+
+            try
+            {
+                foreach (var litter in filteredLitters)
+                {
+                    litters.Add(litter);
+                }
+
+                return litters;
+
+            }
+            catch 
+            {
+                return litters;
+            }
         }
     }
 }

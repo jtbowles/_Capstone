@@ -18,6 +18,8 @@ namespace DogBreederCapstone.Models
         [Display(Name = "Last Name")]
         public string LastName { get; set; }
 
+        public string EmailAddress { get; set; }
+
         public Preference Preferences { get; set; }
         public int? PreferenceId { get; set; }
 

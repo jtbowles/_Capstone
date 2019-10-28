@@ -18,6 +18,8 @@ namespace DogBreederCapstone.Models
         [Display(Name = "Last Name")]
         public string LastName { get; set; }
 
+        public string EmailAddress { get; set; }
+
         [ForeignKey("ApplicationUser")]
         public string ApplicationId { get; set; }
         public ApplicationUser ApplicationUser { get; set; }

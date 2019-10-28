@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using DogBreederCapstone.Models;
 using DogBreederCapstone.Utilities;
 using Microsoft.AspNet.Identity;
+using SendGrid;
+using SendGrid.Helpers.Mail;
 
 namespace DogBreederCapstone.Controllers
 {
@@ -31,6 +34,7 @@ namespace DogBreederCapstone.Controllers
             if (potentialOwner.Id == 0)
             {
                 potentialOwner.ApplicationId = User.Identity.GetUserId();
+                potentialOwner.EmailAddress = GetUserEmail();
                 context.PotentialOwners.Add(potentialOwner);
             }
             else
@@ -44,6 +48,15 @@ namespace DogBreederCapstone.Controllers
 
             context.SaveChanges();
             return RedirectToAction("Index", "Litters");
+        }
+
+        private string GetUserEmail()
+        {
+            var applicationId = User.Identity.GetUserId();
+            var applicationUser = context.Users.FirstOrDefault(u => u.Id == applicationId);
+            var email = applicationUser.Email;
+
+            return email;
         }
 
         //Preferences
@@ -128,5 +141,13 @@ namespace DogBreederCapstone.Controllers
             context.SaveChanges();
             return RedirectToAction("Index", "Home");
         }
+
+        public async Task SendApplicationEmail(PotentialOwner potentialOwner)
+        {
+            
+            var client = new SendGridClient(ApiKey.ApiKey.SendGrid);
+            var from = new EmailAddress("jbowles96@gmail.com", "Breeder");
+
+        }  
     }
 }

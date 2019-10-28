@@ -27,7 +27,8 @@ namespace DogBreederCapstone.Controllers
         {
             if (breeder.Id == 0)
             {
-                breeder.ApplicationId = User.Identity.GetUserId(); 
+                breeder.ApplicationId = User.Identity.GetUserId();
+                breeder.EmailAddress = GetUserEmail();
                 context.Breeders.Add(breeder);
             }
             else
@@ -40,5 +41,15 @@ namespace DogBreederCapstone.Controllers
             context.SaveChanges();
             return RedirectToAction("Index", "Litters");
         }
+
+        private string GetUserEmail()
+        {
+            var applicationId = User.Identity.GetUserId();
+            var applicationUser = context.Users.FirstOrDefault(u => u.Id == applicationId);
+            var email = applicationUser.Email;
+
+            return email;
+        }
+
     }
 }

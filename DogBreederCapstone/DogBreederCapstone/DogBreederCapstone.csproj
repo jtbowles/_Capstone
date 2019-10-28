@@ -266,8 +266,13 @@
     <Compile Include="Migrations\201910281534159_updateprefrz.Designer.cs">
       <DependentUpon>201910281534159_updateprefrz.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910281651200_applicationforms.cs" />
+    <Compile Include="Migrations\201910281651200_applicationforms.Designer.cs">
+      <DependentUpon>201910281651200_applicationforms.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ApplicationForm.cs" />
     <Compile Include="Models\Breeder.cs" />
     <Compile Include="Models\Coat.cs" />
     <Compile Include="Models\Collar.cs" />
@@ -528,6 +533,7 @@
     <Content Include="Views\Dogs\List.cshtml" />
     <Content Include="Views\Dogs\ReadOnlyList.cshtml" />
     <Content Include="Views\Litters\ListByPreference.cshtml" />
+    <Content Include="Views\PotentialOwners\ApplicationForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -593,6 +599,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910281534159_updateprefrz.resx">
       <DependentUpon>201910281534159_updateprefrz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910281651200_applicationforms.resx">
+      <DependentUpon>201910281651200_applicationforms.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

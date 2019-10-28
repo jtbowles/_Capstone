@@ -18,6 +18,7 @@ namespace DogBreederCapstone.Controllers
             context = new ApplicationDbContext();
         }
 
+        //PotentialOwner
         public ActionResult New()
         {
             PotentialOwner potentialOwner = new PotentialOwner();
@@ -45,6 +46,7 @@ namespace DogBreederCapstone.Controllers
             return RedirectToAction("Index", "Litters");
         }
 
+        //Preferences
         [Authorize(Roles = RoleName.PotentialOwner)]
         public ActionResult NewPreferences()
         {
@@ -103,6 +105,28 @@ namespace DogBreederCapstone.Controllers
 
             potentialOwnerFromDb.PreferenceId = mostRecentEntry;
             context.SaveChanges();
+        }
+
+        //ApplicationForm
+        [Authorize(Roles = RoleName.PotentialOwner)]
+        public ActionResult NewApplicationForm()
+        {
+            ApplicationForm applicationForm = new ApplicationForm();
+            return View("ApplicationForm", applicationForm);
+        }
+
+        [HttpPost]
+        public ActionResult SendApplication(ApplicationForm applicationForm)
+        {
+            var applicationUserId = User.Identity.GetUserId();
+            PotentialOwner potentialOwner =
+                context.PotentialOwners.FirstOrDefault(p => p.ApplicationId == applicationUserId);
+
+            applicationForm.PotentialOwnerId = potentialOwner.Id;
+
+            context.ApplicationForms.Add(applicationForm);
+            context.SaveChanges();
+            return RedirectToAction("Index", "Home");
         }
     }
 }

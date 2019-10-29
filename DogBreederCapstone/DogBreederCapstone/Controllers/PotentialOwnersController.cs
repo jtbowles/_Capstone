@@ -139,7 +139,7 @@ namespace DogBreederCapstone.Controllers
             context.ApplicationForms.Add(applicationForm);
             context.SaveChanges();
             await SendApplicationEmail(potentialOwner);
-            return RedirectToAction("Index", "Home");
+            return View("ApplicationSentConfirmation");
         }
 
         public async Task SendApplicationEmail(PotentialOwner potentialOwner)
@@ -149,8 +149,43 @@ namespace DogBreederCapstone.Controllers
             var from = new EmailAddress(potentialOwner.EmailAddress, potentialOwner.FirstName);
             var subject = "Application Submitted";
             var to = new EmailAddress(breeder.EmailAddress, breeder.FirstName);
-            var plainTextContent = "Application";//
+            var plainTextContent =  "<strong>" + potentialOwner.FirstName + Email.ApplicationMessage + "</strong>";
             var htmlContent = "<strong>" + potentialOwner.FirstName + Email.ApplicationMessage + "</strong>";
+            var msg = MailHelper.CreateSingleEmail(from, to, subject, plainTextContent, htmlContent);
+            var response = await client.SendEmailAsync(msg);
+        }
+
+        //Appointment
+        [Authorize(Roles = RoleName.PotentialOwner)]
+        public ActionResult NewAppointment()
+        {
+            Appointment appointment = new Appointment();
+            return View("AppointmentForm", appointment);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> SaveAppointment(Appointment appointment)
+        {
+            var applicationUserId = User.Identity.GetUserId();
+            PotentialOwner potentialOwner =
+                context.PotentialOwners.FirstOrDefault(p => p.ApplicationId == applicationUserId);
+
+            appointment.PotentialOwnerId = potentialOwner.Id;
+            context.Appointments.Add(appointment);
+            context.SaveChanges();
+            await SendAppointmentEmail(potentialOwner);
+            return View("AppointmentSentConfirmation");
+        }
+
+        public async Task SendAppointmentEmail(PotentialOwner potentialOwner)
+        {
+            var breeder = context.Breeders.FirstOrDefault();
+            var client = new SendGridClient(ApiKey.ApiKey.SendGrid);
+            var from = new EmailAddress(potentialOwner.EmailAddress, potentialOwner.FirstName);
+            var subject = "Appointment Request";
+            var to = new EmailAddress(breeder.EmailAddress, breeder.FirstName);
+            var plainTextContent = "<strong>" + potentialOwner.FirstName + Email.AppointmentMessage + "</strong>";
+            var htmlContent = "<strong>" + potentialOwner.FirstName + Email.AppointmentMessage + "</strong>";
             var msg = MailHelper.CreateSingleEmail(from, to, subject, plainTextContent, htmlContent);
             var response = await client.SendEmailAsync(msg);
         }

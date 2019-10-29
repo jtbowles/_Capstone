@@ -312,9 +312,22 @@
     <Compile Include="Migrations\201910291213549_emailsAdded.Designer.cs">
       <DependentUpon>201910291213549_emailsAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910291553348_appointments.cs" />
+    <Compile Include="Migrations\201910291553348_appointments.Designer.cs">
+      <DependentUpon>201910291553348_appointments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910291628109_this1.cs" />
+    <Compile Include="Migrations\201910291628109_this1.Designer.cs">
+      <DependentUpon>201910291628109_this1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910291634502_this2.cs" />
+    <Compile Include="Migrations\201910291634502_this2.Designer.cs">
+      <DependentUpon>201910291634502_this2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationForm.cs" />
+    <Compile Include="Models\Appointment.cs" />
     <Compile Include="Models\Breeder.cs" />
     <Compile Include="Models\Coat.cs" />
     <Compile Include="Models\Collar.cs" />
@@ -577,7 +590,9 @@
     <Content Include="Views\Dogs\ReadOnlyList.cshtml" />
     <Content Include="Views\Litters\ListByPreference.cshtml" />
     <Content Include="Views\PotentialOwners\ApplicationForm.cshtml" />
-    <Content Include="Views\Home\SendEmail.cshtml" />
+    <Content Include="Views\PotentialOwners\ApplicationSentConfirmation.cshtml" />
+    <Content Include="Views\PotentialOwners\AppointmentForm.cshtml" />
+    <Content Include="Views\PotentialOwners\AppointmentSentConfirmation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -649,6 +664,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910291213549_emailsAdded.resx">
       <DependentUpon>201910291213549_emailsAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910291553348_appointments.resx">
+      <DependentUpon>201910291553348_appointments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910291628109_this1.resx">
+      <DependentUpon>201910291628109_this1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910291634502_this2.resx">
+      <DependentUpon>201910291634502_this2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

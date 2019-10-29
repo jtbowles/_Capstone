@@ -8,6 +8,9 @@ namespace DogBreederCapstone.Utilities
     public static class Email
     {
         public const string ApplicationMessage =
-            " just submitted an adoption application. Please review to either admit or deny.";
+            " just submitted an adoption application. Please review to either confirm or deny.";
+
+        public const string AppointmentMessage =
+            " has requested an appointment. Please review to confirm or decline appointment time.";
     }
 }

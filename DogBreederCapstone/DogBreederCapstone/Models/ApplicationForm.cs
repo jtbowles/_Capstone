@@ -11,6 +11,9 @@ namespace DogBreederCapstone.Models
         [Key]
         public int Id { get; set; }
 
+        [Display(Name = "Confirmed")]
+        public bool Confirmed { get; set; }
+
         [Required]
         [Display(Name = "Family Name")]
         public string FamilyName { get; set; }

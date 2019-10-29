@@ -1,0 +1,11 @@
+﻿
+@{
+    ViewBag.Title = "ApplicationSentConfirmation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Your application has been submitted.</h2>
+
+<h4>You will be notified once your application has been reviewed.</h4>
+
+<input type="button" value="Continue" onclick="location.href = '@Url.Action("Index","Litters")'"/>

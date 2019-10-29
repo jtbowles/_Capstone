@@ -17,6 +17,7 @@ namespace DogBreederCapstone.Controllers
             context = new ApplicationDbContext();
         }
 
+        //Breeder
         public ActionResult New()
         {
             Breeder breeder = new Breeder();
@@ -31,12 +32,6 @@ namespace DogBreederCapstone.Controllers
                 breeder.EmailAddress = GetUserEmail();
                 context.Breeders.Add(breeder);
             }
-            //else
-            //{
-            //    Breeder breederFromDb = context.Breeders.FirstOrDefault(b => b.Id == breeder.Id);
-            //    breederFromDb.FirstName = breeder.FirstName;
-            //    breederFromDb.LastName = breeder.LastName;
-            //}
 
             context.SaveChanges();
             return RedirectToAction("Index", "Litters");
@@ -50,6 +45,12 @@ namespace DogBreederCapstone.Controllers
 
             return email;
         }
+
+        //Application
+        //public ActionResult GetAppointments()
+        //{
+
+        //}
 
     }
 }

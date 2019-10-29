@@ -32,6 +32,7 @@ namespace DogBreederCapstone.Models
         public DbSet<Gender> Genders { get; set; }
         public DbSet<Collar> Collars { get; set; }
         public DbSet<ApplicationForm> ApplicationForms { get; set; }
+        public DbSet<Appointment> Appointments { get; set; }
 
 
         public ApplicationDbContext()

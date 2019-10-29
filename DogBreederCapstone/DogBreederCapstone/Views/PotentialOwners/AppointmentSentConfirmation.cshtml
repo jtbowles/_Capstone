@@ -1,0 +1,11 @@
+﻿
+@{
+    ViewBag.Title = "AppointmentSentConfirmation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Your appointment request has been submitted.</h2>
+
+<h4>You will be notified once your appointment has been confirmed or denied.</h4>
+
+<input type="button" value="Continue" onclick="location.href = '@Url.Action("Index","Litters")'" />

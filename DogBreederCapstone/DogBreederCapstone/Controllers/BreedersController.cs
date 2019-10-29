@@ -31,12 +31,12 @@ namespace DogBreederCapstone.Controllers
                 breeder.EmailAddress = GetUserEmail();
                 context.Breeders.Add(breeder);
             }
-            else
-            {
-                Breeder breederFromDb = context.Breeders.FirstOrDefault(b => b.Id == breeder.Id);
-                breederFromDb.FirstName = breeder.FirstName;
-                breederFromDb.LastName = breeder.LastName;
-            }
+            //else
+            //{
+            //    Breeder breederFromDb = context.Breeders.FirstOrDefault(b => b.Id == breeder.Id);
+            //    breederFromDb.FirstName = breeder.FirstName;
+            //    breederFromDb.LastName = breeder.LastName;
+            //}
 
             context.SaveChanges();
             return RedirectToAction("Index", "Litters");

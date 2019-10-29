@@ -308,6 +308,10 @@
     <Compile Include="Migrations\201910281651200_applicationforms.Designer.cs">
       <DependentUpon>201910281651200_applicationforms.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910291213549_emailsAdded.cs" />
+    <Compile Include="Migrations\201910291213549_emailsAdded.Designer.cs">
+      <DependentUpon>201910291213549_emailsAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationForm.cs" />
@@ -324,6 +328,7 @@
     <Compile Include="Models\Size.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Utilities\Email.cs" />
     <Compile Include="Utilities\RoleName.cs" />
     <Compile Include="ViewModels\DogFormViewModel.cs" />
     <Compile Include="ViewModels\LitterFormViewModel.cs" />
@@ -641,6 +646,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910281651200_applicationforms.resx">
       <DependentUpon>201910281651200_applicationforms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910291213549_emailsAdded.resx">
+      <DependentUpon>201910291213549_emailsAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

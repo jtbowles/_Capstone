@@ -129,7 +129,7 @@ namespace DogBreederCapstone.Controllers
         }
 
         [HttpPost]
-        public ActionResult SendApplication(ApplicationForm applicationForm)
+        public async Task<ActionResult> SendApplication(ApplicationForm applicationForm)
         {
             var applicationUserId = User.Identity.GetUserId();
             PotentialOwner potentialOwner =
@@ -138,22 +138,21 @@ namespace DogBreederCapstone.Controllers
 
             context.ApplicationForms.Add(applicationForm);
             context.SaveChanges();
-            SendApplicationEmail(potentialOwner).Wait();
+            await SendApplicationEmail(potentialOwner);
             return RedirectToAction("Index", "Home");
         }
 
-        public async Task<ActionResult> SendApplicationEmail(PotentialOwner potentialOwner)
+        public async Task SendApplicationEmail(PotentialOwner potentialOwner)
         {
             var breeder = context.Breeders.FirstOrDefault();
             var client = new SendGridClient(ApiKey.ApiKey.SendGrid);
-            var from = new EmailAddress("dogbreedercapstone@gmail.com", "breeder");
+            var from = new EmailAddress(potentialOwner.EmailAddress, potentialOwner.FirstName);
             var subject = "Application Submitted";
-            var to = new EmailAddress("jbowles96@gmail.com", "jason");
-            var plainTextContent = "testing";//potentialOwner.FirstName + Email.ApplicationMessage;
-            var htmlContent = "<strong>Accept OR Deny</strong>";
+            var to = new EmailAddress(breeder.EmailAddress, breeder.FirstName);
+            var plainTextContent = "Application";//
+            var htmlContent = "<strong>" + potentialOwner.FirstName + Email.ApplicationMessage + "</strong>";
             var msg = MailHelper.CreateSingleEmail(from, to, subject, plainTextContent, htmlContent);
             var response = await client.SendEmailAsync(msg);
-            return RedirectToAction("Index", "Home");
         }
     }
 }

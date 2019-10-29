@@ -49,7 +49,7 @@ namespace DogBreederCapstone.Controllers
                 }
                 else
                 {
-                    return View();
+                    return RedirectToAction("Index","Litters");
                 }
 
             }

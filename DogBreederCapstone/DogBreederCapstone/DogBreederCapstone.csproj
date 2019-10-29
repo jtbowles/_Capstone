@@ -594,6 +594,11 @@
     <Content Include="Views\PotentialOwners\AppointmentForm.cshtml" />
     <Content Include="Views\PotentialOwners\AppointmentSentConfirmation.cshtml" />
     <Content Include="Views\Breeders\UnconfirmedAppointments.cshtml" />
+    <Content Include="Views\Breeders\UnconfirmedApplicationList.cshtml" />
+    <Content Include="Views\Breeders\ApplicationDetails.cshtml" />
+    <Content Include="Views\Shared\_NavBar.cshtml" />
+    <Content Include="Views\Shared\_PotentialOwnerNavBar.cshtml" />
+    <Content Include="Views\Shared\_BreederNavBar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -19,5 +19,10 @@ namespace DogBreederCapstone.Utilities
         public const string AppointmentDenied =
             "We are currently unavailable for an appointment at that time. Sorry for the inconvenience.";
 
+        public const string ApplicationConfirmed =
+            "Congratulations! your application has been approved! At this time you can go and reserve your spot in the litter of your choosing.";
+
+        public const string ApplicationDenied =
+            "After reviewing your application we have come to the decision to deny your request. We are very sorry but your application did not meet the proper requirements.";
     }
 }

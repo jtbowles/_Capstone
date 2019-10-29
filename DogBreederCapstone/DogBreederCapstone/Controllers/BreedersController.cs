@@ -51,13 +51,78 @@ namespace DogBreederCapstone.Controllers
             return email;
         }
 
-        //Application
+        //ApplicationForm
+        [Authorize(Roles = RoleName.Breeder)]
+        public ActionResult GetApplicationForms()
+        {
+            var unconfirmedApplications = context.ApplicationForms.Where(a => a.Confirmed == false)
+                .Include("PotentialOwner").ToList();
+
+            return View("UnconfirmedApplicationList", unconfirmedApplications);
+        }
+
+        [Authorize(Roles = RoleName.Breeder)]
+        public ActionResult ApplicationDetails(ApplicationForm applicationForm)
+        {
+            ApplicationForm applicationFormFromDb = context.ApplicationForms
+                .Include("PotentialOwner").FirstOrDefault(a => a.Id == applicationForm.Id);
+
+            return View(applicationFormFromDb);
+        }
+
+        [Authorize(Roles = RoleName.Breeder)]
+        public async Task<ActionResult> ConfirmApplication(ApplicationForm applicationForm)
+        {
+            ApplicationForm applicationFromDb =
+                context.ApplicationForms.FirstOrDefault(a => a.Id == applicationForm.Id);
+            applicationFromDb.Confirmed = true;
+            context.SaveChanges();
+            await ApplicationEmail(applicationForm.PotentialOwnerId, "yes");
+            return RedirectToAction("GetApplicationForms");
+        }
+
+        [Authorize(Roles = RoleName.Breeder)]
+        public async Task<ActionResult> DenyApplication(ApplicationForm applicationForm)
+        {
+            ApplicationForm applicationFromDb =
+                context.ApplicationForms.FirstOrDefault(a => a.Id == applicationForm.Id);
+            await ApplicationEmail(applicationForm.PotentialOwnerId, "no");
+
+            context.ApplicationForms.Remove(applicationFromDb);
+            context.SaveChanges();
+            return RedirectToAction("GetApplicationForms");
+        }
+
+        public async Task ApplicationEmail(int? id, string confirmation)
+        {
+            PotentialOwner potentialOwner = context.PotentialOwners.FirstOrDefault(p => p.Id == id);
+            var breeder = context.Breeders.FirstOrDefault();
+            var subjectTitle = "Application Denied";
+            var text = "<strong>" + Email.ApplicationDenied + "</strong>";
+
+            if (confirmation == "yes")
+            {
+                subjectTitle = "Application Confirmed";
+                text = "<strong>" + Email.ApplicationConfirmed + "</strong>";
+            }
+
+            var client = new SendGridClient(ApiKey.ApiKey.SendGrid);
+            var from = new EmailAddress(breeder.EmailAddress, breeder.FirstName);
+            var subject = subjectTitle;
+            var to = new EmailAddress(potentialOwner.EmailAddress, potentialOwner.FirstName);
+            var plainTextContent = text;
+            var htmlContent = text;
+            var msg = MailHelper.CreateSingleEmail(from, to, subject, plainTextContent, htmlContent);
+            var response = await client.SendEmailAsync(msg);
+        }
+
+        //Appointment
         [Authorize(Roles = RoleName.Breeder)]
         public ActionResult GetAppointments()
         {
             var unconfirmedAppointments = context.Appointments.Where(a => a.Confirmed == false)
-                .Include("PotentialOwner")
-                .ToList();
+                .Include("PotentialOwner").ToList();
+
             return View("UnconfirmedAppointments", unconfirmedAppointments);
         }
 

@@ -1,0 +1,41 @@
+﻿@model IEnumerable<DogBreederCapstone.Models.ApplicationForm>
+
+@{
+    ViewBag.Title = "UnconfirmedApplicationList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Unconfirmed Applications</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PotentialOwner.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FamilyName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.State)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PotentialOwner.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FamilyName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.State)
+        </td>
+        <td>
+            <input type="button" value="Review" onclick="location.href = '@Url.Action("ApplicationDetails","Breeders", item)'" />
+        </td>
+    </tr>
+}
+
+</table>

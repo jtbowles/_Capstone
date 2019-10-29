@@ -12,5 +12,12 @@ namespace DogBreederCapstone.Utilities
 
         public const string AppointmentMessage =
             " has requested an appointment. Please review to confirm or decline appointment time.";
+
+        public const string AppointmentConfirmed = 
+            " has confirmed your appointment. We look forward to seeing you!";
+
+        public const string AppointmentDenied =
+            "We are currently unavailable for an appointment at that time. Sorry for the inconvenience.";
+
     }
 }

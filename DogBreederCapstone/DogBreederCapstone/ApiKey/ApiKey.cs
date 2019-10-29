@@ -7,6 +7,6 @@ namespace DogBreederCapstone.ApiKey
 {
     public static class ApiKey
     {
-        public static string SendGrid = "noob";
+        public static string SendGrid = "";
     }
 }

@@ -1,0 +1,50 @@
+﻿@model IEnumerable<DogBreederCapstone.Models.Appointment>
+
+@{
+    ViewBag.Title = "UnconfirmedAppointments";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<h2>Unconfirmed Appointments</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PotentialOwner.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Reason)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Time)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PotentialOwner.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Reason)
+        </td>
+        <td> 
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Time)
+        </td>
+        <td>
+            <input type="button" value="Confirm" onclick="location.href = '@Url.Action("ConfirmAppointment","Breeders", item)'" />
+            <input type="button" value="Deny" onclick="location.href = '@Url.Action("DenyAppointment","Breeders", item)'" />
+        </td>
+    </tr>
+}
+
+</table>

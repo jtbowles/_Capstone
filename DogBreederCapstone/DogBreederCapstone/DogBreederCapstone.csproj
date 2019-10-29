@@ -593,6 +593,7 @@
     <Content Include="Views\PotentialOwners\ApplicationSentConfirmation.cshtml" />
     <Content Include="Views\PotentialOwners\AppointmentForm.cshtml" />
     <Content Include="Views\PotentialOwners\AppointmentSentConfirmation.cshtml" />
+    <Content Include="Views\Breeders\UnconfirmedAppointments.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

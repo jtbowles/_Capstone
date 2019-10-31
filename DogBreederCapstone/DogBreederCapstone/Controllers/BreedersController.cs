@@ -104,6 +104,8 @@ namespace DogBreederCapstone.Controllers
             {
                 subjectTitle = "Application Confirmed";
                 text = "<strong>" + Email.ApplicationConfirmed + "</strong>";
+                potentialOwner.IsApplicationConfirmed = true;
+                context.SaveChanges();
             }
 
             var client = new SendGridClient(ApiKey.ApiKey.SendGrid);

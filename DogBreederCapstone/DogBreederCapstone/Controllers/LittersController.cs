@@ -48,6 +48,36 @@ namespace DogBreederCapstone.Controllers
             return View(litter);
         }
 
+        // GET: Litters/DetailsViewModel
+        [Authorize(Roles = RoleName.PotentialOwner)]
+        public ActionResult GetDogsFromLitter(int? id)
+        {
+            var dogsFromDb = context.Dogs.Where(d => d.LitterId == id)
+                .Include(d => d.Collar)
+                .Include(d => d.Gender)
+                .Include(d => d.Litter)
+                .Include(d => d.Image);
+
+            var unreservedDogs = dogsFromDb.Where(d => d.isReserved == false).ToList();
+
+            Litter litter = context.Litters.Include(l => l.Coat)
+                .Include(l => l.Size)
+                .FirstOrDefault(l => l.Id == id);
+
+            var applicationId = User.Identity.GetUserId();
+            PotentialOwner potentialOwner =
+                context.PotentialOwners.FirstOrDefault(p => p.ApplicationId == applicationId);
+
+            LitterViewModel viewModel = new LitterViewModel
+            {
+                Litter = litter,
+                Dogs = unreservedDogs,
+                PotentialOwner = potentialOwner
+            };
+
+            return View("ReservationList", viewModel);
+        }
+
         // GET: Litters/Edit/5
         public ActionResult Edit(int id)
         {

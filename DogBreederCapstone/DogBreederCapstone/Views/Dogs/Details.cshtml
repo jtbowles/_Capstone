@@ -1,0 +1,47 @@
+﻿@model DogBreederCapstone.Models.Dog
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Dog</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ImageId)
+        </dt>
+
+        <dd>
+            <img src="@Url.Content(Model.Image.ImagePath)" alt="Image" style="width: 250px; height: 250px;"/>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Collar.Color)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Collar.Color)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gender.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gender.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Litter.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Litter.Name)
+        </dd>
+
+    </dl>
+</div>

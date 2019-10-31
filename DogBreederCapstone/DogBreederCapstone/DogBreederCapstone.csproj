@@ -329,6 +329,10 @@
     <Compile Include="Migrations\201910311640419_imageDogs.Designer.cs">
       <DependentUpon>201910311640419_imageDogs.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910311833368_boolsForReservation.cs" />
+    <Compile Include="Migrations\201910311833368_boolsForReservation.Designer.cs">
+      <DependentUpon>201910311833368_boolsForReservation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationForm.cs" />
@@ -351,6 +355,7 @@
     <Compile Include="Utilities\RoleName.cs" />
     <Compile Include="ViewModels\DogFormViewModel.cs" />
     <Compile Include="ViewModels\LitterFormViewModel.cs" />
+    <Compile Include="ViewModels\LitterViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-lumen.css" />
@@ -606,6 +611,10 @@
     <Content Include="Views\Shared\_PotentialOwnerNavBar.cshtml" />
     <Content Include="Views\Shared\_BreederNavBar.cshtml" />
     <Content Include="Views\Images\Add.cshtml" />
+    <Content Include="Views\Dogs\Details.cshtml" />
+    <Content Include="Views\Litters\ReservationList.cshtml" />
+    <Content Include="Views\Dogs\NotApproved.cshtml" />
+    <Content Include="Views\Dogs\SpotReserved.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -690,6 +699,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910311640419_imageDogs.resx">
       <DependentUpon>201910311640419_imageDogs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910311833368_boolsForReservation.resx">
+      <DependentUpon>201910311833368_boolsForReservation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,0 +1,44 @@
+﻿@model DogBreederCapstone.ViewModels.LitterViewModel
+
+@{
+    ViewBag.Title = "ReservationList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Html.DisplayFor(model => model.Litter.Name)</h2>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Pup</th>
+            <th>Collar Color</th>
+            <th>Gender</th>
+            <th>Go Home By</th>
+            <th>Reserve Spot</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Dogs)
+        {
+            <tr>
+                <td>
+                    <img src="@Url.Content(item.Image.ImagePath)" alt="Image" style="width: 125px; height: 100px;"/>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Collar.Color)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Gender.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Litter.SendHomeDate)
+                </td>
+                <td>
+                    <input type="button" class="btn btn-info" value="Reserve" onclick="location.href = '@Url.Action("Reserve", "Dogs", new {id = item.Id}, null)'"/>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+

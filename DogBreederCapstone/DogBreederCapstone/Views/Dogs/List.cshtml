@@ -13,7 +13,7 @@
             <th>Litter Name</th>
             <th>Collar Color</th>
             <th>Gender</th>
-            <th>Edit</th>
+            <th>Details</th>
         </tr>
     </thead>
     <tbody>
@@ -30,7 +30,7 @@
                 @Html.DisplayFor(modelItem => item.Gender.Name)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }, null)
+                @Html.ActionLink("Info", "Details", new { id = item.Id }, null)
             </td>
         </tr>
     }

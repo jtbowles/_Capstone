@@ -28,5 +28,11 @@ namespace DogBreederCapstone.Models
         public Image Image { get; set; }
         [Display(Name = "Image")]
         public int? ImageId { get; set; }
+
+        public PotentialOwner PotentialOwner { get; set; }
+        [Display(Name = "Owner")]
+        public int? PotentialOwnerId { get; set; }
+
+        public bool isReserved { get; set; }
     }
 }

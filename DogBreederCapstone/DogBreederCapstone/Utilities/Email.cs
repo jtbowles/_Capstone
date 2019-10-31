@@ -24,5 +24,7 @@ namespace DogBreederCapstone.Utilities
 
         public const string ApplicationDenied =
             "After reviewing your application we have come to the decision to deny your request. We are very sorry but your application did not meet the proper requirements.";
+
+        public const string SpotReserved = " has reserved a spot! Time to upgrade their account to 'Owner'";
     }
 }

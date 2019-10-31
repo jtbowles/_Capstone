@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -26,6 +28,7 @@ namespace DogBreederCapstone.Controllers
                 .Include(d => d.Collar)
                 .Include(d => d.Gender)
                 .Include(d => d.Litter)
+                .Include(d => d.Image)
                 .ToList();
 
             if (User.IsInRole(RoleName.Breeder))
@@ -52,12 +55,14 @@ namespace DogBreederCapstone.Controllers
             var genderTypes = context.Genders.ToList();
             var collarTypes = context.Collars.ToList();
             var litterOptions = context.Litters.ToList();
+            var imageOptions = context.Images.ToList();
 
             DogFormViewModel viewModel = new DogFormViewModel
             {
                 Litters = litterOptions,
                 Genders = genderTypes,
-                Collars = collarTypes
+                Collars = collarTypes,
+                Images = imageOptions
             };
 
             return View("DogForm", viewModel);
@@ -76,6 +81,7 @@ namespace DogBreederCapstone.Controllers
                 dogFromDb.LitterId = dog.LitterId;
                 dogFromDb.CollarId = dog.CollarId;
                 dogFromDb.GenderId = dog.GenderId;
+                dogFromDb.ImageId = dog.ImageId;
             }
 
             context.SaveChanges();

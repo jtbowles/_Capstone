@@ -12,5 +12,6 @@ namespace DogBreederCapstone.ViewModels
         public IEnumerable<Litter> Litters { get; set; }
         public IEnumerable<Gender> Genders { get; set; }
         public IEnumerable<Collar> Collars { get; set; }
+        public IEnumerable<Image> Images { get; set; }
     }
 }

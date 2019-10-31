@@ -5,6 +5,8 @@
 
 <h2>Litters</h2>
 
+<input type="button" class="btn btn-info" value="Add a Doggo" onclick="location.href='@Url.Action("New", "Dogs")'" />
+
 <table id="litters" class="table table-bordered table-hover">
     <thead>
     <tr>
@@ -18,9 +20,6 @@
     </thead>
     <tbody></tbody>
 </table>
-<div>
-    @Html.ActionLink("New Dog", "New", "Dogs")
-</div>
 
 @section scripts
 {

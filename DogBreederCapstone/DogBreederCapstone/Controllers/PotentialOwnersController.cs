@@ -189,5 +189,17 @@ namespace DogBreederCapstone.Controllers
             var msg = MailHelper.CreateSingleEmail(from, to, subject, plainTextContent, htmlContent);
             var response = await client.SendEmailAsync(msg);
         }
+
+
+        //WatchLitter
+        public ActionResult SelectWatchLitter(int? id)
+        {
+            var applicationId = User.Identity.GetUserId();
+            PotentialOwner potentialOwner =
+                context.PotentialOwners.FirstOrDefault(p => p.ApplicationId == applicationId);
+            potentialOwner.WatchedLitterId = id;
+            context.SaveChanges();
+            return RedirectToAction("GetLittersByPreference", "Litters");
+        }
     }
 }

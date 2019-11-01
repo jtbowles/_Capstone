@@ -226,5 +226,38 @@ namespace DogBreederCapstone.Controllers
             context.SaveChanges();
             return RedirectToAction("GetDogsWithOwner");
         }
+
+
+        //NotifyOwnersWatchingLitter
+        public async Task<ActionResult> NotifyWatchingOwners(int? id)
+        {
+            var potentialOwnersWatchingLitter = context.PotentialOwners.Where(p => p.WatchedLitterId == id).ToList();
+
+            if (potentialOwnersWatchingLitter.Count == 0)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+            foreach (var potentialOwner in potentialOwnersWatchingLitter)
+            {
+                await SendLitterUpdateEmail(potentialOwner);
+            }
+
+            return RedirectToAction("Index", "Home");
+        }
+
+        public async Task SendLitterUpdateEmail(PotentialOwner potentialOwner)
+        {
+            var breeder = context.Breeders.FirstOrDefault();
+            var client = new SendGridClient(ApiKey.ApiKey.SendGrid);
+            var from = new EmailAddress(breeder.EmailAddress, breeder.FirstName);
+            var subject = "Litter Update!";
+            var to = new EmailAddress(potentialOwner.EmailAddress, potentialOwner.FirstName);
+            var plainTextContent = "<strong>" + Email.LitterUpdated + "</strong>";
+            var htmlContent = "<strong>" + Email.LitterUpdated + "</strong>";
+            var msg = MailHelper.CreateSingleEmail(from, to, subject, plainTextContent, htmlContent);
+            var response = await client.SendEmailAsync(msg);
+        }
+
     }
 }

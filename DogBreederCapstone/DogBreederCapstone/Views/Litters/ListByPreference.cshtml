@@ -25,6 +25,8 @@
             <th>
                 @Html.DisplayNameFor(model => model.SendHomeDate)
             </th>
+            <th>View Dogs</th>
+            <th>Watch</th>
         </tr>
     </thead>
     <tbody>
@@ -47,7 +49,10 @@
                     @Html.DisplayFor(modelItem => item.SendHomeDate)
                 </td>
                 <td>
-                    @Html.ActionLink("Available Doggos", "GetDogsFromLitter", "Litters", new {id = item.Id}, null)
+                    <input type="button" class="btn btn-info" value="Dogs" onclick="location.href = '@Url.Action("GetDogsFromLitter", "Litters", new {id = item.Id}, null)'"/>
+                </td>
+                <td>
+                    <input type="button" class="btn btn-info" value="Watch" onclick="location.href = '@Url.Action("SelectWatchLitter", "PotentialOwners", new {id = item.Id}, null)'"/>
                 </td>
             </tr>
         }

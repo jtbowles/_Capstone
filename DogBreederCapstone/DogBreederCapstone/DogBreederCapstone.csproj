@@ -341,6 +341,10 @@
     <Compile Include="Migrations\201911011556580_isOwnerProp.Designer.cs">
       <DependentUpon>201911011556580_isOwnerProp.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911011918077_watchedLitter.cs" />
+    <Compile Include="Migrations\201911011918077_watchedLitter.Designer.cs">
+      <DependentUpon>201911011918077_watchedLitter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationForm.cs" />
@@ -717,6 +721,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911011556580_isOwnerProp.resx">
       <DependentUpon>201911011556580_isOwnerProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911011918077_watchedLitter.resx">
+      <DependentUpon>201911011918077_watchedLitter.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

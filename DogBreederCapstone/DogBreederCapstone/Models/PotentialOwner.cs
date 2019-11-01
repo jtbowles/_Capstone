@@ -28,5 +28,7 @@ namespace DogBreederCapstone.Models
         public ApplicationUser ApplicationUser { get; set; }
 
         public bool IsOwner { get; set; }
+
+        public int? WatchedLitterId { get; set; }
     }
 }

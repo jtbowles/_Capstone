@@ -74,6 +74,7 @@ namespace DogBreederCapstone.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = RoleName.Breeder)]
         public ActionResult Save(Dog dog)
         {
             if (dog.Id == 0)

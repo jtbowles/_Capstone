@@ -333,6 +333,14 @@
     <Compile Include="Migrations\201910311833368_boolsForReservation.Designer.cs">
       <DependentUpon>201910311833368_boolsForReservation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911011513300_isConfirmedRemovedFromPotentialOwnerModel.cs" />
+    <Compile Include="Migrations\201911011513300_isConfirmedRemovedFromPotentialOwnerModel.Designer.cs">
+      <DependentUpon>201911011513300_isConfirmedRemovedFromPotentialOwnerModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911011556580_isOwnerProp.cs" />
+    <Compile Include="Migrations\201911011556580_isOwnerProp.Designer.cs">
+      <DependentUpon>201911011556580_isOwnerProp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationForm.cs" />
@@ -615,6 +623,7 @@
     <Content Include="Views\Litters\ReservationList.cshtml" />
     <Content Include="Views\Dogs\NotApproved.cshtml" />
     <Content Include="Views\Dogs\SpotReserved.cshtml" />
+    <Content Include="Views\Breeders\ReservationList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -702,6 +711,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910311833368_boolsForReservation.resx">
       <DependentUpon>201910311833368_boolsForReservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911011513300_isConfirmedRemovedFromPotentialOwnerModel.resx">
+      <DependentUpon>201911011513300_isConfirmedRemovedFromPotentialOwnerModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911011556580_isOwnerProp.resx">
+      <DependentUpon>201911011556580_isOwnerProp.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

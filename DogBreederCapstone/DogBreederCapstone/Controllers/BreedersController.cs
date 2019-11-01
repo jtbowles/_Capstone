@@ -104,8 +104,6 @@ namespace DogBreederCapstone.Controllers
             {
                 subjectTitle = "Application Confirmed";
                 text = "<strong>" + Email.ApplicationConfirmed + "</strong>";
-                potentialOwner.IsApplicationConfirmed = true;
-                context.SaveChanges();
             }
 
             var client = new SendGridClient(ApiKey.ApiKey.SendGrid);
@@ -169,6 +167,64 @@ namespace DogBreederCapstone.Controllers
             var htmlContent = text;
             var msg = MailHelper.CreateSingleEmail(from, to, subject, plainTextContent, htmlContent);
             var response = await client.SendEmailAsync(msg);
+        }
+
+
+        //UpgradeOwner
+        [Authorize(Roles = RoleName.Breeder)]
+        public ActionResult GetDogsWithOwner()
+        {
+            var dogsWithOwners = context.Dogs.Where(d => d.isReserved)
+                .Include(d => d.Litter)
+                .Include(d => d.Collar)
+                .Include(d => d.Gender)
+                .Include(d => d.Image)
+                .Include(d => d.PotentialOwner)
+                .ToList();
+
+            if (dogsWithOwners.Count == 0)
+            {
+                return View("ReservationList", dogsWithOwners);
+            }
+
+            List<Dog> dogsRefinedList = new List<Dog>();
+
+            foreach (var dog in dogsWithOwners)
+            {
+                PotentialOwner owner = context.PotentialOwners.FirstOrDefault(p => p.Id == dog.PotentialOwnerId);
+                if (!owner.IsOwner)
+                {
+                    dogsRefinedList.Add(dog);
+                }
+            }
+
+            return View("ReservationList", dogsRefinedList);
+        }
+
+        [Authorize(Roles = RoleName.Breeder)]
+        public ActionResult UpgradePotentialOwner(int? id)
+        {
+            PotentialOwner potentialOwner = context.PotentialOwners.FirstOrDefault(p => p.Id == id);
+            potentialOwner.IsOwner = true;
+
+            ApplicationForm form =
+                context.ApplicationForms.FirstOrDefault(f => f.PotentialOwnerId == potentialOwner.Id);
+            context.ApplicationForms.Remove(form);
+            context.SaveChanges();
+            return RedirectToAction("GetDogsWithOwner");
+        }
+
+        [Authorize(Roles = RoleName.Breeder)]
+        public ActionResult DeclineReservation(int? id)
+        {
+            Dog dogFromDb = context.Dogs.FirstOrDefault(d => d.Id == id);
+            ApplicationForm form =
+                context.ApplicationForms.FirstOrDefault(f => f.PotentialOwnerId == dogFromDb.PotentialOwnerId);
+            context.ApplicationForms.Remove(form);
+            dogFromDb.PotentialOwnerId = null;
+            dogFromDb.isReserved = false;
+            context.SaveChanges();
+            return RedirectToAction("GetDogsWithOwner");
         }
     }
 }

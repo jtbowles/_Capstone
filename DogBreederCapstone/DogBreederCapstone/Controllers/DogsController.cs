@@ -112,7 +112,10 @@ namespace DogBreederCapstone.Controllers
             PotentialOwner potentialOwner =
                 context.PotentialOwners.FirstOrDefault(p => p.ApplicationId == applicationId);
 
-            if (potentialOwner.IsApplicationConfirmed == false)
+            ApplicationForm form =
+                context.ApplicationForms.FirstOrDefault(f => f.PotentialOwnerId == potentialOwner.Id);
+
+            if (form == null || form.Confirmed == false)
             {
                 return View("NotApproved");
             }

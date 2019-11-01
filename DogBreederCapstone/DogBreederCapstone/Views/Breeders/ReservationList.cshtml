@@ -1,0 +1,43 @@
+﻿@model IEnumerable<DogBreederCapstone.Models.Dog>
+
+@{
+    ViewBag.Title = "ReservationList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Awaiting Approval</h2>
+
+<table class="table table-bordered table-hover">
+    <thead>
+    <tr>
+        <th>Pup</th>
+        <th>Owner Name</th>
+        <th>Litter</th>
+        <th>Upgrade User</th>
+        <th>Decline</th>
+    </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            var fullName = item.PotentialOwner.FirstName + " " + item.PotentialOwner.LastName;
+            <tr>
+                <td>
+                    <img src="@Url.Content(item.Image.ImagePath)" alt="Image" style="width: 125px; height: 100px;" />
+                </td>
+                <td>
+                    @fullName
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Litter.Name)
+                </td>
+                <td>
+                    <input type="button" class="btn btn-info" value="Approve & Upgrade" onclick="location.href = '@Url.Action("UpgradePotentialOwner", "Breeders", new {id = item.PotentialOwnerId}, null)'" />
+                </td>
+                <td>
+                    <input type="button" class="btn btn-info" value="Decline" onclick="location.href = '@Url.Action("DeclineReservation", "Breeders", new {id = item.Id}, null)'"/>
+                </td>
+            </tr>
+         }
+    </tbody>
+</table>

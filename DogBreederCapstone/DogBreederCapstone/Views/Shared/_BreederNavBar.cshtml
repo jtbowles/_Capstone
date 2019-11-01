@@ -11,9 +11,10 @@
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li>@Html.ActionLink("New Litter", "New", "Litters")</li>
-                <li>@Html.ActionLink("Dogs", "Index", "Dogs")</li>
+                <li>@Html.ActionLink("New Dog", "New", "Dogs")</li>
                 <li>@Html.ActionLink("Appointments", "GetAppointments", "Breeders")</li>
                 <li>@Html.ActionLink("Applications", "GetApplicationForms", "Breeders")</li>
+                <li>@Html.ActionLink("Reservations", "GetDogsWithOwner", "Breeders")</li>
                 <li>@Html.ActionLink("Upload Images", "Add", "Images")</li>
             </ul>
             @Html.Partial("_LoginPartial")

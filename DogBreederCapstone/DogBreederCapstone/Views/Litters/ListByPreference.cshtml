@@ -7,47 +7,49 @@
 
 <h2>Litters by your Preferences</h2>
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Coat.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Size.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DueDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SendHomeDate)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Coat.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Size.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DueDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SendHomeDate)
-        </td>
-        <td>
-            @Html.ActionLink("Available Doggos", "GetDogs", "Dogs",new { id = item.Id }, null)
-        </td>
-    </tr>
-}
-
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Coat.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Size.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DueDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SendHomeDate)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Coat.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Size.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DueDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SendHomeDate)
+                </td>
+                <td>
+                    @Html.ActionLink("Available Doggos", "GetDogsFromLitter", "Litters", new {id = item.Id}, null)
+                </td>
+            </tr>
+        }
+    </tbody>
 </table>

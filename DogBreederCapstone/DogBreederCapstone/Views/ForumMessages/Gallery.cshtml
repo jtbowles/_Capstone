@@ -1,0 +1,45 @@
+﻿@model IEnumerable<DogBreederCapstone.Models.ForumMessage>
+
+@{
+    ViewBag.Title = "Gallery";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Gallery</h2>
+
+<style>
+    div.gallery {
+        margin: 5px;
+        border: 1px solid #ccc;
+        float: left;
+        width: 180px;
+    }
+
+    div.gallery:hover {
+        border: 1px solid #777;
+    }
+
+    div.gallery img {
+        width: 100%;
+        height: auto;
+    }
+
+    div.desc {
+        padding: 15px;
+        text-align: center;
+    }
+</style>
+
+<div>
+    <input type="button" class="btn btn-primary" value="Post Status" onclick="location.href = '@Url.Action("Add", "ForumMessages")'" />
+</div>
+<br/>
+
+
+@foreach (var item in Model)
+{
+    <div class="gallery">
+        <img src="@Url.Content(item.ImagePath)" alt="Image" style="width: 250px; height: 250px;"/>
+        <div class="desc">@Html.DisplayFor(modelItem => item.Status)</div>
+    </div>
+}

@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "NonOwner";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>You must become an owner to access this page.</h2>
+<br />
+<div>
+    <input type="button" class="btn btn-primary" value="Apply for Dog" onclick="location.href='@Url.Action("NewApplicationForm", "PotentialOwners")'" />
+</div>
+<div>
+    <input type="button" class="btn btn-primary" value="View Litters" onclick="location.href='@Url.Action("Index", "Home")'" />
+</div>
+
+

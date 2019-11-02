@@ -35,6 +35,8 @@ namespace DogBreederCapstone.Models
         public DbSet<Appointment> Appointments { get; set; }
         public DbSet<Image> Images { get; set; }
 
+        public DbSet<ForumMessage> ForumMessages { get; set; }
+
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

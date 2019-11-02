@@ -49,6 +49,7 @@ namespace DogBreederCapstone.Controllers
         }
 
         // GET: Litters/DetailsViewModel
+        [Authorize(Roles = RoleName.BreederOrPotentialOwner)]
         public ActionResult GetDogsFromLitter(int? id)
         {
             var dogsFromDb = context.Dogs.Where(d => d.LitterId == id)

@@ -5,18 +5,18 @@
 
 <h2>Litters</h2>
 
-<br/>
+<br />
 <table id="litters" class="table table-bordered table-hover">
     <thead>
-    <tr>
-        <th>Litter Name</th>
-        <th>Coat</th>
-        <th>Size</th>
-        <th>Due</th>
-        <th>Go Home</th>
-        <th>Available Pups</th>
-        <th>Send Notification</th>
-    </tr>
+        <tr>
+            <th>Litter Name</th>
+            <th>Coat</th>
+            <th>Size</th>
+            <th>Due</th>
+            <th>Go Home</th>
+            <th>Available Pups</th>
+            <th>Send Notification</th>
+        </tr>
     </thead>
     <tbody></tbody>
 </table>
@@ -57,7 +57,7 @@
                     },
                     {
                         data: "id",
-                        render: function(data, type, litter) {
+                        render: function (data, type, litter) {
                             return "<a href='/breeders/NotifyWatchingOwners/" + litter.id + "'>Notify</a>";
                         }
                     }

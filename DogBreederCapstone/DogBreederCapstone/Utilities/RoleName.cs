@@ -10,5 +10,6 @@ namespace DogBreederCapstone.Utilities
         public const string Breeder = "Breeder";
         public const string PotentialOwner = "Potential Owner";
         public const string Owner = "Owner";
+        public const string BreederOrPotentialOwner = Breeder + "," + PotentialOwner;
     }
 }

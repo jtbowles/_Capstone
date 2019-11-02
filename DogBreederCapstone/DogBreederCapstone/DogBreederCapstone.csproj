@@ -227,6 +227,7 @@
     <Compile Include="Controllers\Api\LittersController.cs" />
     <Compile Include="Controllers\BreedersController.cs" />
     <Compile Include="Controllers\DogsController.cs" />
+    <Compile Include="Controllers\ForumMessagesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImagesController.cs" />
     <Compile Include="Controllers\LittersController.cs" />
@@ -349,6 +350,10 @@
     <Compile Include="Migrations\201911021629537_personalitydescriptionDoggo.Designer.cs">
       <DependentUpon>201911021629537_personalitydescriptionDoggo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911021855071_forumMessages.cs" />
+    <Compile Include="Migrations\201911021855071_forumMessages.Designer.cs">
+      <DependentUpon>201911021855071_forumMessages.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationForm.cs" />
@@ -357,6 +362,7 @@
     <Compile Include="Models\Coat.cs" />
     <Compile Include="Models\Collar.cs" />
     <Compile Include="Models\Dog.cs" />
+    <Compile Include="Models\ForumMessage.cs" />
     <Compile Include="Models\Gender.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Image.cs" />
@@ -634,10 +640,14 @@
     <Content Include="Views\Dogs\SpotReserved.cshtml" />
     <Content Include="Views\Breeders\ReservationList.cshtml" />
     <Content Include="Views\Litters\PupsFromLitter.cshtml" />
+    <Content Include="Views\ForumMessages\Add.cshtml" />
+    <Content Include="Views\ForumMessages\Gallery.cshtml" />
+    <Content Include="Views\ForumMessages\NonOwner.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="DogImages\" />
+    <Folder Include="ForumImages\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -733,6 +743,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911021629537_personalitydescriptionDoggo.resx">
       <DependentUpon>201911021629537_personalitydescriptionDoggo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911021855071_forumMessages.resx">
+      <DependentUpon>201911021855071_forumMessages.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -15,7 +15,6 @@
             <th>Gender</th>
             <th>Go Home By</th>
             <th>Description</th>
-            <th>Reserve Spot</th>
         </tr>
     </thead>
     <tbody>
@@ -36,9 +35,6 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Description)
-                </td>
-                <td>
-                    <input type="button" class="btn btn-info" value="Reserve" onclick="location.href = '@Url.Action("Reserve", "Dogs", new {id = item.Id}, null)'"/>
                 </td>
             </tr>
         }

@@ -34,5 +34,8 @@ namespace DogBreederCapstone.Models
         public int? PotentialOwnerId { get; set; }
 
         public bool isReserved { get; set; }
+
+        [Display(Name = "Description")]
+        public string Description { get; set; }
     }
 }

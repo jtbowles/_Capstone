@@ -345,6 +345,10 @@
     <Compile Include="Migrations\201911011918077_watchedLitter.Designer.cs">
       <DependentUpon>201911011918077_watchedLitter.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911021629537_personalitydescriptionDoggo.cs" />
+    <Compile Include="Migrations\201911021629537_personalitydescriptionDoggo.Designer.cs">
+      <DependentUpon>201911021629537_personalitydescriptionDoggo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationForm.cs" />
@@ -370,6 +374,7 @@
     <Compile Include="ViewModels\LitterViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-flatly.css" />
     <Content Include="Content\bootstrap-lumen.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -628,6 +633,7 @@
     <Content Include="Views\Dogs\NotApproved.cshtml" />
     <Content Include="Views\Dogs\SpotReserved.cshtml" />
     <Content Include="Views\Breeders\ReservationList.cshtml" />
+    <Content Include="Views\Litters\PupsFromLitter.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -724,6 +730,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911011918077_watchedLitter.resx">
       <DependentUpon>201911011918077_watchedLitter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911021629537_personalitydescriptionDoggo.resx">
+      <DependentUpon>201911021629537_personalitydescriptionDoggo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

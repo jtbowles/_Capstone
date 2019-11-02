@@ -49,7 +49,6 @@ namespace DogBreederCapstone.Controllers
         }
 
         // GET: Litters/DetailsViewModel
-        [Authorize(Roles = RoleName.PotentialOwner)]
         public ActionResult GetDogsFromLitter(int? id)
         {
             var dogsFromDb = context.Dogs.Where(d => d.LitterId == id)
@@ -64,16 +63,21 @@ namespace DogBreederCapstone.Controllers
                 .Include(l => l.Size)
                 .FirstOrDefault(l => l.Id == id);
 
-            var applicationId = User.Identity.GetUserId();
-            PotentialOwner potentialOwner =
-                context.PotentialOwners.FirstOrDefault(p => p.ApplicationId == applicationId);
+            //var applicationId = User.Identity.GetUserId();
+            //PotentialOwner potentialOwner =
+            //    context.PotentialOwners.FirstOrDefault(p => p.ApplicationId == applicationId);
 
             LitterViewModel viewModel = new LitterViewModel
             {
                 Litter = litter,
                 Dogs = unreservedDogs,
-                PotentialOwner = potentialOwner
+                //PotentialOwner = potentialOwner
             };
+
+            if (User.IsInRole(RoleName.Breeder))
+            {
+                return View("PupsFromLitter", viewModel);
+            }
 
             return View("ReservationList", viewModel);
         }

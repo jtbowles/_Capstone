@@ -25,6 +25,10 @@
         @Html.LabelFor(m => m.Dog.ImageId, htmlAttributes: new { @class = "control-label col-md-2" })
         @Html.DropDownListFor(m => m.Dog.ImageId, new SelectList(Model.Images, "Id", "Title"), "Select Image", new { @class = "form-control" })
     </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Dog.Description, htmlAttributes: new { @class = "control-label col-md-2"})
+        @Html.TextAreaFor(m => m.Dog.Description, new {@class = "form-control", rows="3"})
+    </div>
     @Html.HiddenFor(m => m.Dog.Id)
     <button type="submit" class="btn btn-primary">Finish</button>
 }

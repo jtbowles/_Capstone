@@ -17,7 +17,7 @@
         <th>Size</th>
         <th>Due</th>
         <th>Go Home</th>
-        <th>Delete</th>
+        <th>Available Pups</th>
         <th>Send Notification</th>
     </tr>
     </thead>
@@ -54,8 +54,8 @@
                     },
                     {
                         data: "id",
-                        render: function (data) {
-                            return "<button class='btn-link js-delete' data-litter-id=" + data + ">Delete</button>";
+                        render: function (data, type, litter) {
+                            return "<a href='/litters/GetDogsFromLitter/" + litter.id + "'>Pups</a>";
                         }
                     },
                     {
@@ -67,19 +67,6 @@
                 ]
             });
 
-            $("#litters").on("click", ".js-delete", function () {
-                var button = $(this);
-
-                bootbox.confirm("Are you sure you want to delete this litter?", function () {
-                        $.ajax({
-                            url: "/api/litters/" + $(this).attr("data-litter-id"),
-                            method: "DELETE",
-                            success: function() {
-                                table.row(button.parents("tr")).remove().draw();
-                            }
-                        });
-                });
-            });
         });
     </script>
 }

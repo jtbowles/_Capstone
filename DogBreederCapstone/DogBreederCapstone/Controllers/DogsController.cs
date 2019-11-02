@@ -88,6 +88,7 @@ namespace DogBreederCapstone.Controllers
                 dogFromDb.CollarId = dog.CollarId;
                 dogFromDb.GenderId = dog.GenderId;
                 dogFromDb.ImageId = dog.ImageId;
+                dogFromDb.Description = dog.Description;
             }
 
             context.SaveChanges();

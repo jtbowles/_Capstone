@@ -73,6 +73,28 @@ namespace DogBreederCapstone.Controllers
             return View("DogForm", viewModel);
         }
 
+        [Authorize(Roles = RoleName.Breeder)]
+        public ActionResult Edit(int id)
+        {
+            Dog dog = context.Dogs.FirstOrDefault(l => l.Id == id);
+
+            if (dog == null)
+            {
+                return HttpNotFound();
+            }
+
+            DogFormViewModel viewModel = new DogFormViewModel
+            {
+                Litters = context.Litters.ToList(),
+                Collars =  context.Collars.ToList(),
+                Genders = context.Genders.ToList(),
+                Images = context.Images.ToList()
+            };
+
+            return View("DogForm", viewModel);
+        }
+
+
         [HttpPost]
         [Authorize(Roles = RoleName.Breeder)]
         public ActionResult Save(Dog dog)

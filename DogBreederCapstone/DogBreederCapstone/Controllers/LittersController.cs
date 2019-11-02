@@ -63,15 +63,10 @@ namespace DogBreederCapstone.Controllers
                 .Include(l => l.Size)
                 .FirstOrDefault(l => l.Id == id);
 
-            //var applicationId = User.Identity.GetUserId();
-            //PotentialOwner potentialOwner =
-            //    context.PotentialOwners.FirstOrDefault(p => p.ApplicationId == applicationId);
-
             LitterViewModel viewModel = new LitterViewModel
             {
                 Litter = litter,
                 Dogs = unreservedDogs,
-                //PotentialOwner = potentialOwner
             };
 
             if (User.IsInRole(RoleName.Breeder))
@@ -83,6 +78,7 @@ namespace DogBreederCapstone.Controllers
         }
 
         // GET: Litters/Edit/5
+        [Authorize(Roles = RoleName.Breeder)]
         public ActionResult Edit(int id)
         {
             Litter litter = context.Litters.FirstOrDefault(l => l.Id == id);

@@ -47,10 +47,10 @@
                     @Html.DisplayFor(modelItem => item.Litter.Name)
                 </td>
                 <td>
-                    <input type="button" class="btn btn-info" value="Approve & Upgrade" onclick="location.href = '@Url.Action("UpgradePotentialOwner", "Breeders", new {id = item.PotentialOwnerId}, null)'" />
+                    <input type="button" class="btn btn-sm" value="Approve & Upgrade" onclick="location.href = '@Url.Action("UpgradePotentialOwner", "Breeders", new {id = item.PotentialOwnerId}, null)'" />
                 </td>
                 <td>
-                    <input type="button" class="btn btn-info" value="Decline" onclick="location.href = '@Url.Action("DeclineReservation", "Breeders", new {id = item.Id}, null)'" />
+                    <input type="button" class="btn btn-sm" value="Decline" onclick="location.href = '@Url.Action("DeclineReservation", "Breeders", new {id = item.Id}, null)'" />
                 </td>
             </tr>
         }

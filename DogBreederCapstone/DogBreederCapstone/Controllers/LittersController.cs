@@ -28,6 +28,11 @@ namespace DogBreederCapstone.Controllers
                 return View("List");
             }
 
+            if (User.IsInRole(RoleName.PotentialOwner))
+            {
+                return RedirectToAction("NewPreferences", "PotentialOwners");
+            }
+
             return View("ReadOnlyList");
         }
 

@@ -3,17 +3,28 @@
     ViewBag.Title = "NotApproved";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<style>
+    .well {
+        height: 60px;
+        width: 70%;
+        background-color: #B2D7F7;
+        text-align: center;
+        padding-top: 2px;
+        color: black;
+    }
+</style>
 
-    <div>
-        <h2>OOPS! Your application has not been processed yet!</h2>
-    </div>
-    <div>
-        <h4>Please fill out an application if you haven't done so already.</h4>
-        <h4>If you have filled out an application please be patient as we review and process your request.</h4>
-    </div>
-    <div>
-        <input type="button" value="Apply" onclick="location.href = '@Url.Action("NewApplicationForm","PotentialOwners")'" />
-    </div>
-    <div>
-        <input type="button" value="Back To Litters" onclick="location.href = '@Url.Action("Index","Litters")'" />
-    </div>
+<div>
+    <h2>OOPS! Your application has not been processed yet!</h2>
+</div>
+
+<div>
+    <h4 class="well">Please fill out an application if you haven't done so already. If you have filled out an application please be patient as we review and process your request.</h4>
+</div>
+<div>
+    <input type="button" class="btn btn-sm" value="Apply" onclick="location.href = '@Url.Action("NewApplicationForm","PotentialOwners")'" />
+</div>
+<br />
+<div>
+    <input type="button" class="btn btn-sm" value="Back To Litters" onclick="location.href = '@Url.Action("Index","Litters")'" />
+</div>

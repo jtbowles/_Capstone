@@ -4,8 +4,20 @@
     ViewBag.Title = "PreferencesForm";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<style>
+    .well {
+        height: 15px;
+        width: 28%;
+        background-color: #B2D7F7;
+        text-align: center;
+        padding-top: 2px;
+        color: black;
+    }
+</style>
 
+<br />
 <h2>Preferences</h2>
+<h6 class="well">~select your litter preferences</h6>
 
 @using (Html.BeginForm("UpdatePreferences", "PotentialOwners"))
 {
@@ -71,5 +83,5 @@
     </div>
 
     @Html.HiddenFor(m => m.Id);
-    <button type="submit" class="btn btn-primary">Finish</button>
+    <button type="submit" class="btn btn-sm">Submit</button>
 }

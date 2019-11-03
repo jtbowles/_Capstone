@@ -4,7 +4,20 @@
     ViewBag.Title = "ReservationList";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<style>
+    thead {
+        border-color: slategray;
+        border-width: 2px;
+        border-style: groove;
+        border-block: slategray;
+    }
 
+    th, td {
+        text-align: center;
+    }
+</style>
+
+<br/>
 <h2>@Html.DisplayFor(model => model.Litter.Name) Litter</h2>
 
 <table class="table table-bordered table-hover">
@@ -23,7 +36,7 @@
         {
             <tr>
                 <td>
-                    <img src="@Url.Content(item.Image.ImagePath)" alt="Image" style="width: 125px; height: 100px;"/>
+                    <img src="@Url.Content(item.Image.ImagePath)" alt="Image" style="width: 125px; height: 100px;" />
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Collar.Color)
@@ -38,7 +51,7 @@
                     @Html.DisplayFor(modelItem => item.Description)
                 </td>
                 <td>
-                    <input type="button" class="btn btn-primary" value="Edit" onclick="location.href='@Url.Action("Edit", "Dogs", new{id = item.Id})'" />
+                    <input type="button" class="btn btn-sm" value="Edit" onclick="location.href='@Url.Action("Edit", "Dogs", new{id = item.Id})'" />
                 </td>
             </tr>
         }

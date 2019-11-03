@@ -5,6 +5,17 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<style>
+    thead {
+        border-color: slategray;
+        border-width: 2px;
+        border-style: groove;
+    }
+    th, td {
+        text-align: center;
+    }
+</style>
+<br/>
 <h2>@Html.DisplayFor(model => model.Litter.Name) Litter</h2>
 
 <table class="table table-bordered table-hover">
@@ -38,7 +49,7 @@
                     @Html.DisplayFor(modelItem => item.Description)
                 </td>
                 <td>
-                    <input type="button" class="btn btn-info" value="Reserve" onclick="location.href = '@Url.Action("Reserve", "Dogs", new {id = item.Id}, null)'"/>
+                    <input type="button" class="btn btn-sm" value="Reserve" onclick="location.href = '@Url.Action("Reserve", "Dogs", new {id = item.Id}, null)'"/>
                 </td>
             </tr>
         }

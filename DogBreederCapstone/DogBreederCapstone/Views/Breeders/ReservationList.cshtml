@@ -5,17 +5,32 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Awaiting Approval</h2>
+<style>
+    .well {
+        height: 15px;
+        width: 30%;
+        background-color: #B2D7F7;
+        text-align: center;
+        padding-top: 2px;
+        color: black;
+    }
+</style>
+
+<br />
+<div>
+    <h2>Reservations</h2>
+    <h6 class="well">~reservations that are awaiting your request</h6>
+</div>
 
 <table class="table table-bordered table-hover">
     <thead>
-    <tr>
-        <th>Pup</th>
-        <th>Owner Name</th>
-        <th>Litter</th>
-        <th>Upgrade User</th>
-        <th>Decline</th>
-    </tr>
+        <tr>
+            <th>Pup</th>
+            <th>Owner Name</th>
+            <th>Litter</th>
+            <th>Upgrade User</th>
+            <th>Decline</th>
+        </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
@@ -35,9 +50,9 @@
                     <input type="button" class="btn btn-info" value="Approve & Upgrade" onclick="location.href = '@Url.Action("UpgradePotentialOwner", "Breeders", new {id = item.PotentialOwnerId}, null)'" />
                 </td>
                 <td>
-                    <input type="button" class="btn btn-info" value="Decline" onclick="location.href = '@Url.Action("DeclineReservation", "Breeders", new {id = item.Id}, null)'"/>
+                    <input type="button" class="btn btn-info" value="Decline" onclick="location.href = '@Url.Action("DeclineReservation", "Breeders", new {id = item.Id}, null)'" />
                 </td>
             </tr>
-         }
+        }
     </tbody>
 </table>

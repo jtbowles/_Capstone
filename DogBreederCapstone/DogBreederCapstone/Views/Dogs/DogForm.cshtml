@@ -5,13 +5,15 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Dog Form</h2>
+<br/>
+<h2>Add a New Pup</h2>
+<br/>
 
 @using (Html.BeginForm("Save", "Dogs"))
 {
     <div class="form-group">
         @Html.LabelFor(m => m.Dog.LitterId, htmlAttributes: new { @class = "control-label col-md-2" })
-        @Html.DropDownListFor(m => m.Dog.LitterId, new SelectList(Model.Litters, "Id", "Name"), "Select Litter", new { @class = "form-control" })
+        @Html.DropDownListFor(m => m.Dog.LitterId, new SelectList(Model.Litters, "Id", "Name"), "Select Litter", new { @class = "form-control col-md-6" })
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Dog.CollarId, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -19,7 +21,7 @@
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Dog.GenderId, htmlAttributes: new { @class = "control-label col-md-2" })
-        @Html.DropDownListFor(m => m.Dog.GenderId, new SelectList(Model.Genders, "Id", "Name"), "Select Gender", new { @class = "form-control" })
+        @Html.DropDownListFor(m => m.Dog.GenderId, new SelectList(Model.Genders, "Id", "Name"), "Select Gender", new { @class = "form-control col-md-6" })
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Dog.ImageId, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -30,5 +32,5 @@
         @Html.TextAreaFor(m => m.Dog.Description, new {@class = "form-control", rows="3"})
     </div>
     @Html.HiddenFor(m => m.Dog.Id)
-    <button type="submit" class="btn btn-primary">Finish</button>
+    <button type="submit" class="btn btn-primary">Add</button>
 }

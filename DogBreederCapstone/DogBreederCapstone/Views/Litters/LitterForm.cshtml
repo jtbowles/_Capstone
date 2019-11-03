@@ -5,8 +5,9 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Litter Form</h2>
-
+<br />
+<h2>Add a New Litter</h2>
+<br />
 @using (Html.BeginForm("Save", "Litters"))
 {
     <div class="form-group">
@@ -30,6 +31,7 @@
         @Html.EditorFor(m => m.Litter.SendHomeDate, new { @class = "form-control" })
     </div>
     @Html.HiddenFor(m => m.Litter.Id)
-    <button type="submit" class="btn btn-primary">Finish</button>
+    <br />
+    <button type="submit" class="btn btn-primary">Add</button>
 
 }

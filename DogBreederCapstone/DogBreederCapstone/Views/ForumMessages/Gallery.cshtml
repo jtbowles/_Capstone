@@ -4,45 +4,10 @@
     ViewBag.Title = "Owner's Forum";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<body>
-    <header>
-        <div>
-            <h2 class="left">Owner's Forum</h2>
-            <p class="left">Share what you and your doggo have been up to!</p>
-            <p class="left">See what other doggos have been up to!</p>
-        </div>
-        <div class="left">
-            <input type="button" class="btn btn-primary" value="Post Status" onclick="location.href = '@Url.Action("Add", "ForumMessages")'"/>
-        </div>
-    </header>
-    <div class="border">
-        <div>
-            @foreach (var item in Model)
-            {
-                <div class="gallery">
-                    <img src="@Url.Content(item.ImagePath)" alt="Image" style="width: 250px; height: 250px;" />
-                    <div class="desc">@Html.DisplayFor(modelItem => item.Status)</div>
-                </div>
-            }
-        </div>
-
-    </div>
-</body>
-
-<div class="pagination">
-    <a href="#">&laquo;</a>
-    <a href="#">1</a>
-    <a href="#">2</a>
-    <a href="#">3</a>
-    <a href="#">4</a>
-    <a href="#">5</a>
-    <a href="#">6</a>
-    <a href="#">&raquo;</a>
-</div>
-
 <style>
-    div.border {
-        margin: 0 5px;
+    div.container {
+        margin-top: 10px;
+        padding: 5px;
     }
 
     div.gallery {
@@ -54,14 +19,14 @@
         box-shadow: 0 4px 8px 0 slategray, 0 6px 20px 0 slategray;
     }
 
-    div.gallery:hover {
-        border: 1px solid #777;
-    }
+        div.gallery:hover {
+            border: 1px solid #777;
+        }
 
-    div.gallery img {
-        width: 33.33%;
-        height: auto;
-    }
+        div.gallery img {
+            width: 33.33%;
+            height: auto;
+        }
 
     div.desc {
         padding: 15px;
@@ -69,39 +34,42 @@
         box-shadow: 0 4px 8px 0 slategray, 0 6px 20px 0 slategray;
     }
 
-    .center {
+    div.right {
+        text-align: right;
+        padding: 0.25px;
+    }
+
+    .well {
+        height: 40px;
+        width: 30%;
+        background-color: #B2D7F7;
         text-align: center;
-        padding: 10px;
-    }
-
-    div.left {
-        text-align: left;
-        padding: 0.25px;
-    }
-
-    p.left {
-        text-align: left;
-        padding: 0.25px;
-        font-family: sans-serif;
-        color: #777777;
-        font-size: small;
-        margin: 0 35px;
-    }
-
-    .pagination {
-        display: inline-block;
-    }
-
-    .pagination a {
+        padding-top: 2px;
         color: black;
-        float: left;
-        padding: 8px 16px;
-        text-decoration: none;
-        transition: background-color .3s;
-    }
-
-    .pagination a.active {
-        background-color:-moz-default-background-color;
-        color: white;
     }
 </style>
+
+<br />
+
+<body>
+<div>
+    <h2>Owner's Forum</h2>
+    <h6 class="well col-md-6">~Share what you and your Doggo have been up to! See what other Doggos have been up to!</h6>
+    <div class="right">
+        <input type="button" class="btn btn-primary" value="Post Status" onclick="location.href = '@Url.Action("Add", "ForumMessages")'" />
+    </div>
+</div>
+<br>
+    <div class="container">
+            @foreach (var item in Model)
+            {
+                <div class="gallery">
+                    <img src="@Url.Content(item.ImagePath)" alt="Image" style="width: 260px; height: 250px;" />
+                    <div class="desc">@Html.DisplayFor(modelItem => item.Status)</div>
+                </div>
+            }
+
+    </div>
+</body>
+
+

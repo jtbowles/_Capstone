@@ -5,9 +5,23 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<style>
+    .well {
+        height: 15px;
+        width: 30%;
+        background-color: #B2D7F7;
+        text-align: center;
+        padding-top: 2px;
+        color: black;
+    }
+</style>
 
-
-<h2>Unconfirmed Appointments</h2>
+<br/>
+<div>
+    <h2>Appointments</h2>
+    <h6 class="well">~appointments that are awaiting your request</h6>
+</div>
+<br/>
 
 <table class="table">
     <tr>
@@ -41,8 +55,8 @@
             @Html.DisplayFor(modelItem => item.Time)
         </td>
         <td>
-            <input type="button" value="Confirm" onclick="location.href = '@Url.Action("ConfirmAppointment","Breeders", item)'" />
-            <input type="button" value="Deny" onclick="location.href = '@Url.Action("DenyAppointment","Breeders", item)'" />
+            <input type="button" class="btn btn-sm" value="Confirm" onclick="location.href = '@Url.Action("ConfirmAppointment","Breeders", item)'" />
+            <input type="button" class="btn btn-sm" value="Deny" onclick="location.href = '@Url.Action("DenyAppointment","Breeders", item)'" />
         </td>
     </tr>
 }

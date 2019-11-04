@@ -5,10 +5,11 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<br/>
 <h2>Application Details</h2>
+<br/>
 
 <div>
-    <hr />
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.PotentialOwner.FirstName)
@@ -173,6 +174,6 @@
     </dl>
 </div>
 <p>
-    <input type="button" value="Accept" onclick="location.href = '@Url.Action("ConfirmApplication","Breeders", Model)'" />
-    <input type="button" value="Deny" onclick="location.href = '@Url.Action("DenyApplication","Breeders", Model)'" />
+    <input type="button" class="btn btn-sm" value="Accept" onclick="location.href = '@Url.Action("ConfirmApplication","Breeders", Model)'" />
+    <input type="button" class="btn btn-sm" value="Deny" onclick="location.href = '@Url.Action("DenyApplication","Breeders", Model)'" />
 </p>

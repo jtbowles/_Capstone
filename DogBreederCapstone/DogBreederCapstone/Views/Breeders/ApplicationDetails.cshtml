@@ -22,26 +22,22 @@
             @Html.DisplayFor(model => model.PotentialOwner.FirstName)
         </dd>
     </div>
+    <div class="col-md-4">
+        <dt>
+            @Html.DisplayNameFor(model => model.FamilyName)
+        </dt>
+    </div>
+    <div class="col-md-8">
+        <dd>
+            @Html.DisplayFor(model => model.FamilyName)
+        </dd>
+    </div>
 </div>
 
 
 <div>
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.PotentialOwner.FirstName)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.PotentialOwner.FirstName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.FamilyName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FamilyName)
-        </dd>
 
         <dt>
             @Html.DisplayNameFor(model => model.Address)

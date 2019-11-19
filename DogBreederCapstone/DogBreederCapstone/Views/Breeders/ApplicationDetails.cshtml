@@ -4,10 +4,6 @@
     ViewBag.Title = "ApplicationDetails";
     Layout = "~/Views/Shared/_Layout.cshtml";
 
-    //if (Model.Use == "")
-    //{
-    //    Model.Use = "N/A";
-    //}
 }
 
 <style>
@@ -26,7 +22,6 @@
 <h2>Application Details</h2>
 <br/>
 
-@*change divs and don't use dt or dd*@
 
 <div>
     <div class="col-md-3">
@@ -159,6 +154,16 @@
             @Html.DisplayFor(model => model.PreviousDogs)
         </dd>
     </div>
+    <div class="col-md-3">
+        <dt>
+            @Html.DisplayNameFor(model => model.PreviousDogsLive)
+        </dt>
+    </div>
+    <div class="col-md-9">
+        <dd>
+            @Html.DisplayFor(model => model.PreviousDogsLive)
+        </dd>
+    </div>
 
 </div>
 
@@ -167,14 +172,6 @@
     <dl class="dl-horizontal">
 
 
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PreviousDogsLive)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PreviousDogsLive)
-        </dd>
 
         <dt>
             @Html.DisplayNameFor(model => model.OutOfTownPlan)

@@ -3,6 +3,11 @@
 @{
     ViewBag.Title = "ApplicationDetails";
     Layout = "~/Views/Shared/_Layout.cshtml";
+
+    //if (Model.Use == "")
+    //{
+    //    Model.Use = "N/A";
+    //}
 }
 
 <style>
@@ -64,6 +69,96 @@
             @Html.DisplayFor(model => model.City)
         </dd>
     </div>
+    <div class="col-md-3">
+        <dt>
+            @Html.DisplayNameFor(model => model.State)
+        </dt>
+    </div>
+    <div class="col-md-9">
+        <dd>
+            @Html.DisplayFor(model => model.State)
+        </dd>
+    </div>
+    <div class="col-md-3">
+        <dt>
+            @Html.DisplayNameFor(model => model.Zipcode)
+        </dt>
+    </div>
+    <div class="col-md-9">
+        <dd>
+            @Html.DisplayFor(model => model.Zipcode)
+        </dd>
+    </div>
+    <div class="col-md-3">
+        <dt>
+            @Html.DisplayNameFor(model => model.EmailAddress)
+        </dt>
+    </div>
+    <div class="col-md-9">
+        <dd>
+            @Html.DisplayFor(model => model.EmailAddress)
+        </dd>
+    </div>
+    <div class="col-md-3">
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+    </div>
+    <div class="col-md-9">
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+    </div>
+    <div class="col-md-3">
+        <dt>
+            @Html.DisplayNameFor(model => model.Referral)
+        </dt>
+    </div>
+    <div class="col-md-9">
+        <dd>
+            @Html.DisplayFor(model => model.Referral)
+        </dd>
+    </div>
+    <div class="col-md-3">
+        <dt>
+            @Html.DisplayNameFor(model => model.Use)
+        </dt>
+    </div>
+    <div class="col-md-9">
+        <dd>
+            @Html.DisplayFor(model => model.Use)
+        </dd>
+    </div>
+    <div class="col-md-3">
+        <dt>
+            @Html.DisplayNameFor(model => model.Live)
+        </dt>
+    </div>
+    <div class="col-md-9">
+        <dd>
+            @Html.DisplayFor(model => model.Live)
+        </dd>
+    </div>
+    <div class="col-md-3">
+        <dt>
+            @Html.DisplayNameFor(model => model.Training)
+        </dt>
+    </div>
+    <div class="col-md-9">
+        <dd>
+            @Html.DisplayFor(model => model.Training)
+        </dd>
+    </div>
+    <div class="col-md-3">
+        <dt>
+            @Html.DisplayNameFor(model => model.PreviousDogs)
+        </dt>
+    </div>
+    <div class="col-md-9">
+        <dd>
+            @Html.DisplayFor(model => model.PreviousDogs)
+        </dd>
+    </div>
 
 </div>
 
@@ -71,77 +166,7 @@
 <div>
     <dl class="dl-horizontal">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.State)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.State)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Zipcode)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Zipcode)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.EmailAddress)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.EmailAddress)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PhoneNumber)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PhoneNumber)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Referral)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Referral)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Use)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Use)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Live)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Live)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Training)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Training)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PreviousDogs)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PreviousDogs)
-        </dd>
 
         <dt>
             @Html.DisplayNameFor(model => model.PreviousDogsLive)

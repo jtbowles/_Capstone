@@ -33,6 +33,10 @@
     div.right {
         text-align: right;
     }
+
+    div.bottom-padding {
+        padding-bottom: 25px;
+    }
 </style>
 
 <br/>
@@ -71,8 +75,17 @@
             @Html.DisplayFor(model => model.EmailAddress)
         </dd>
     </div>
+    <div class="col-md-2 right">
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+    </div>
+    <div class="col-md-10 left bottom-padding">
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+    </div>
 
-<hr/>
     <div class="col-md-2 right">
         <dt>
             @Html.DisplayNameFor(model => model.Address)
@@ -103,27 +116,17 @@
             @Html.DisplayFor(model => model.State)
         </dd>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-2 right">
         <dt>
             @Html.DisplayNameFor(model => model.Zipcode)
         </dt>
     </div>
-    <div class="col-md-9">
+    <div class="col-md-10 left">
         <dd>
             @Html.DisplayFor(model => model.Zipcode)
         </dd>
     </div>
 
-    <div class="col-md-3">
-        <dt>
-            @Html.DisplayNameFor(model => model.PhoneNumber)
-        </dt>
-    </div>
-    <div class="col-md-9">
-        <dd>
-            @Html.DisplayFor(model => model.PhoneNumber)
-        </dd>
-    </div>
     <div class="col-md-3">
         <dt>
             @Html.DisplayNameFor(model => model.Referral)

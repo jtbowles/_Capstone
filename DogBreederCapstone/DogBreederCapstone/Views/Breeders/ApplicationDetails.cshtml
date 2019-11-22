@@ -37,12 +37,17 @@
     div.bottom-padding {
         padding-bottom: 25px;
     }
+
+    hr.border {
+        border: 5px outset #B2D7F7;
+        border-radius: 2.5px;
+    }
 </style>
 
 <br/>
 <h2>Application Details</h2>
-<br/>
 
+<hr class="border"/>
 
 <div class="col-container">
     <div class="col-md-2 right">
@@ -87,7 +92,6 @@
     </div>
     
 
-
     <div class="col-md-2 right">
         <dt>
             @Html.DisplayNameFor(model => model.Address)
@@ -129,7 +133,7 @@
         </dd>
     </div>
     
-
+    <hr class="border"/>
 
     <div class="col-md-6 bottom-padding">
         <dt>
@@ -151,12 +155,12 @@
             @Html.DisplayFor(model => model.Use)
         </dd>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-6 bottom-padding">
         <dt>
             @Html.DisplayNameFor(model => model.Live)
         </dt>
     </div>
-    <div class="col-md-9">
+    <div class="col-md-6 bottom-padding">
         <dd>
             @Html.DisplayFor(model => model.Live)
         </dd>

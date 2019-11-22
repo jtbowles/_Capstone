@@ -45,7 +45,7 @@
 </style>
 
 <br/>
-<h2>Application Details</h2>
+<h2 style="text-align: center">Application Review</h2>
 
 <hr class="border"/>
 
@@ -165,99 +165,101 @@
             @Html.DisplayFor(model => model.Live)
         </dd>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-6 bottom-padding">
         <dt>
             @Html.DisplayNameFor(model => model.Training)
         </dt>
     </div>
-    <div class="col-md-9">
+    <div class="col-md-6 bottom-padding">
         <dd>
             @Html.DisplayFor(model => model.Training)
         </dd>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-6 bottom-padding">
         <dt>
             @Html.DisplayNameFor(model => model.PreviousDogs)
         </dt>
     </div>
-    <div class="col-md-9">
+    <div class="col-md-6 bottom-padding">
         <dd>
             @Html.DisplayFor(model => model.PreviousDogs)
         </dd>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-6 bottom-padding">
         <dt>
             @Html.DisplayNameFor(model => model.PreviousDogsLive)
         </dt>
     </div>
-    <div class="col-md-9">
+    <div class="col-md-6 bottom-padding">
         <dd>
             @Html.DisplayFor(model => model.PreviousDogsLive)
         </dd>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-6 bottom-padding">
         <dt>
             @Html.DisplayNameFor(model => model.OutOfTownPlan)
         </dt>
     </div>
-    <div class="col-md-9">
+    <div class="col-md-6 bottom-padding">
         <dd>
             @Html.DisplayFor(model => model.OutOfTownPlan)
         </dd>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-6 bottom-padding">
         <dt>
             @Html.DisplayNameFor(model => model.Children)
         </dt>
     </div>
-    <div class="col-md-9">
+    <div class="col-md-6 bottom-padding">
         <dd>
             @Html.DisplayFor(model => model.Children)
         </dd>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-6 bottom-padding">
         <dt>
             @Html.DisplayNameFor(model => model.Fence)
         </dt>
     </div>
-    <div class="col-md-9">
+    <div class="col-md-6 bottom-padding">
         <dd>
             @Html.DisplayFor(model => model.Fence)
         </dd>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-6 bottom-padding">
         <dt>
             @Html.DisplayNameFor(model => model.Reasoning)
         </dt>
     </div>
-    <div class="col-md-9">
+    <div class="col-md-6 bottom-padding">
         <dd>
             @Html.DisplayFor(model => model.Reasoning)
         </dd>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-6 bottom-padding">
         <dt>
             @Html.DisplayNameFor(model => model.Allergies)
         </dt>
     </div>
-    <div class="col-md-9">
+    <div class="col-md-6 bottom-padding">
         <dd>
             @Html.DisplayFor(model => model.Allergies)
         </dd>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-6 bottom-padding">
         <dt>
             @Html.DisplayNameFor(model => model.LeftAlone)
         </dt>
     </div>
-    <div class="col-md-9">
+    <div class="col-md-6 bottom-padding">
         <dd>
             @Html.DisplayFor(model => model.LeftAlone)
         </dd>
     </div>
 </div>
 
-<p>
+<hr class="border"/>
+
+<p style="text-align: center">
     <input type="button" class="btn btn-sm" value="Accept" onclick="location.href = '@Url.Action("ConfirmApplication","Breeders", Model)'" />
     <input type="button" class="btn btn-sm" value="Deny" onclick="location.href = '@Url.Action("DenyApplication","Breeders", Model)'" />
 </p>

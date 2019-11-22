@@ -14,7 +14,7 @@
 
     div.col-md-3 {
         text-align: right;
-        padding-bottom: 5px;
+        padding-bottom: 2px;
         display: table-cell;
         height: 70px;
     }
@@ -128,23 +128,25 @@
             @Html.DisplayFor(model => model.Zipcode)
         </dd>
     </div>
+    
 
-    <div class="col-md-3">
+
+    <div class="col-md-6 bottom-padding">
         <dt>
             @Html.DisplayNameFor(model => model.Referral)
         </dt>
     </div>
-    <div class="col-md-9">
+    <div class="col-md-6 bottom-padding">
         <dd>
             @Html.DisplayFor(model => model.Referral)
         </dd>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-6 bottom-padding">
         <dt>
             @Html.DisplayNameFor(model => model.Use)
         </dt>
     </div>
-    <div class="col-md-9">
+    <div class="col-md-6 bottom-padding">
         <dd>
             @Html.DisplayFor(model => model.Use)
         </dd>

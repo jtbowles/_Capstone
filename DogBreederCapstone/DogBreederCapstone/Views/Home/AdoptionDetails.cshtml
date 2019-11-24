@@ -8,18 +8,31 @@
         border: 5px outset #B2D7F7;
         border-radius: 2.5px;
     }
+
+    div.col-md-6 {
+        padding-bottom: 5px;
+    }
 </style>
 
 <br />
 <h2 style="text-align:center">Adoption Details</h2>
-<hr class="border"/>
+<hr class="border" />
 
 <div class="col-md-6">
     <h5>Step 1: Sign up and register an account as a Potential Owner</h5>
-    <h5>Step 2: Fill out an application</h5>
-    <h5>Step 3: Qualify and get approved</h5>
-    <h5>Step 4: Make a down payment and reserve the puppy from the litter you want</h5>
 </div>
 <div class="col-md-6">
+    <input type="button" class="btn btn-sm" value="Sign Up" onclick="location.href = '@Url.Action("Register","Account")'" />
+</div>
+<div class="col-md-6">
+    <h5>Step 2: Fill out an application</h5>
+</div>
+<div class="col-md-6">
+    <input type="button" class="btn btn-sm" value="View Application" onclick="location.href = '@Url.Action("Index","Home")'" />
+</div>
 
+
+<div class="col-md-6">
+    <h5>Step 3: Qualify and get approved</h5>
+    <h5>Step 4: Make a down payment and reserve the puppy from the litter you want</h5>
 </div>

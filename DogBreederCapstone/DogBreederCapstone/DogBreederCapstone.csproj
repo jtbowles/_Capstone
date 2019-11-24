@@ -643,6 +643,7 @@
     <Content Include="Views\ForumMessages\Add.cshtml" />
     <Content Include="Views\ForumMessages\Gallery.cshtml" />
     <Content Include="Views\ForumMessages\NonOwner.cshtml" />
+    <Content Include="Views\Home\AdoptionDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

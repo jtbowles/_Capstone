@@ -77,5 +77,10 @@ namespace DogBreederCapstone.Controllers
         {
             return View();
         }
+
+        public ActionResult BreedDetails()
+        {
+            return View();
+        }
     }
 }

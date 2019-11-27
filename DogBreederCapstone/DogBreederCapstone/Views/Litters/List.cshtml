@@ -3,9 +3,32 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Litters</h2>
+<style>
+    hr.border {
+        border: 5px outset #B2D7F7;
+        border-radius: 2.5px;
+    }
+
+    div.custom {
+        padding-bottom: 10px;
+        text-align: right;
+    }
+
+</style>
 
 <br />
+<h2 style="text-align: center;">Litters</h2>
+<hr class="border" />
+<div>
+    <div class="col-md-6 custom">
+        <input type="button" class="btn btn-sm" value="New Dog" onclick="location.href = '@Url.Action("New","Dogs")'" />
+    </div>
+    <div class="col-md-6" style="padding-bottom:10px;">
+        <input type="button" class="btn btn-sm" value="New Litter" onclick="location.href = '@Url.Action("New","Litters")'" />
+    </div>
+</div>
+<hr class="border" />
+
 <table id="litters" class="table table-bordered table-hover">
     <thead>
         <tr>

@@ -47,24 +47,30 @@
         padding-top: 2px;
         color: black;
     }
+
+    hr.border {
+        border: 5px outset #B2D7F7;
+        border-radius: 2.5px;
+    }
 </style>
 
 <br />
 
 <body>
-<div>
-    <h2>Owner's Forum</h2>
-    <h6 class="well col-md-6">~Share what you and your Doggo have been up to! See what other Doggos have been up to!</h6>
-    <div class="right">
-        <input type="button" class="btn btn-primary" value="Post Status" onclick="location.href = '@Url.Action("Add", "ForumMessages")'" />
+    <div>
+        <h2 style="text-align: center;">Owner's Forum</h2>
+        <hr class="border" />
+        <h6 class="well col-md-6">~Share what you and your Doggo have been up to! See what other Doggos have been up to!</h6>
+        <div class="right">
+            <input type="button" class="btn btn-primary" value="Post Status" onclick="location.href = '@Url.Action("Add", "ForumMessages")'" />
+        </div>
     </div>
-</div>
 <br>
     <div class="container">
             @foreach (var item in Model)
             {
                 <div class="gallery">
-                    <img src="@Url.Content(item.ImagePath)" alt="Image" style="width: 260px; height: 250px;" />
+                    <img src="@Url.Content(item.ImagePath)" alt="Image" style="width: 265px; height: 250px;" />
                     <div class="desc">@Html.DisplayFor(modelItem => item.Status)</div>
                 </div>
             }

@@ -4,10 +4,15 @@
     ViewBag.Title = "LitterForm";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+<style>
+    hr.border {
+        border: 5px outset #B2D7F7;
+        border-radius: 2.5px;
+    }
+</style>
 <br />
-<h2>Add a New Litter</h2>
-<br />
+<h2 style="text-align: center;">Add a New Litter</h2>
+<hr class="border" />
 @using (Html.BeginForm("Save", "Litters"))
 {
     <div class="form-group">
@@ -24,11 +29,11 @@
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Litter.DueDate, htmlAttributes: new { @class = "control-label col-md-2" })
-        @Html.EditorFor(m => m.Litter.DueDate, new { @class = "form-control" })
+        @Html.EditorFor(m => m.Litter.DueDate, new { @class = "form-control col-md-10" })
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Litter.SendHomeDate, htmlAttributes: new { @class = "control-label col-md-2" })
-        @Html.EditorFor(m => m.Litter.SendHomeDate, new { @class = "form-control" })
+        @Html.EditorFor(m => m.Litter.SendHomeDate, new { @class = "form-control col-md-10" })
     </div>
     @Html.HiddenFor(m => m.Litter.Id)
     <br />

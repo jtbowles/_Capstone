@@ -3,14 +3,26 @@
     ViewBag.Title = "Register";
 }
 
-<h2>@ViewBag.Title.</h2>
+<style>
+    hr.border {
+        border: 5px outset #B2D7F7;
+        border-radius: 2.5px;
+    }
+
+    h4.custom {
+        text-align: center;
+        padding-bottom: 15px;
+    }
+</style>
+
+<h2 style="text-align:center;">@ViewBag.Title</h2>
+<hr class="border" />
 
 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     <div class="center">
         @Html.AntiForgeryToken()
-        <h4>Create a new account.</h4>
-        <hr />
+        <h4 class="custom">Create a new account.</h4>
         @Html.ValidationSummary("", new { @class = "text-danger" })
         <div class="form-group">
             @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })

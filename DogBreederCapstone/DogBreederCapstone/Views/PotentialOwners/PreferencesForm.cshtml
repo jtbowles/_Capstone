@@ -13,10 +13,17 @@
         padding-top: 2px;
         color: black;
     }
+
+    hr.border {
+        border: 5px outset #B2D7F7;
+        border-radius: 2.5px;
+    }
+
 </style>
 
 <br />
-<h2>Preferences</h2>
+<h2 style="text-align:center;">Preferences</h2>
+<hr class="border" />
 <h6 class="well">~select your litter preferences</h6>
 
 @using (Html.BeginForm("UpdatePreferences", "PotentialOwners"))

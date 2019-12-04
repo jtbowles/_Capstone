@@ -20,8 +20,27 @@
         border-radius: 2.5px;
     }
 
-    td, th {
-        text-align: center;
+    #table {
+        font-weight: bold;
+        width: 100%;
+    }
+
+    #table td, #table th {
+      border: 0.20px inset #19334d;
+      padding: 8px;
+      text-align: center;
+    }
+
+    #table tr:nth-child(even){background-color: #ecf2f9;}
+
+    #table tr:hover {background-color: #B2D7F7;}
+
+    #table th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: center;
+      background-color: #19334d;
+      color: #B2D7F7;
     }
 </style>
 
@@ -32,7 +51,7 @@
     <h6 class="well">~reservations that are awaiting your request</h6>
 </div>
 
-<table class="table table-bordered table-hover">
+<table id="table">
     <thead>
         <tr>
             <th>Pup</th>

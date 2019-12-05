@@ -6,19 +6,38 @@
 }
 
 <style>
-    thead {
-        border-color: slategray;
-        border-width: 2px;
-        border-style: groove;
+    hr.border {
+        border: 5px outset #B2D7F7;
+        border-radius: 2.5px;
     }
-    th, td {
-        text-align: center;
+
+    #table {
+        font-weight: bold;
+        width: 100%;
+    }
+
+    #table td, #table th {
+      border: 0.20px inset #19334d;
+      padding: 8px;
+      text-align: center;
+    }
+
+    #table tr:nth-child(even){background-color: #ecf2f9;}
+
+    #table tr:hover {background-color: #B2D7F7;}
+
+    #table th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: center;
+      background-color: #19334d;
+      color: #B2D7F7;
     }
 </style>
 <br/>
-<h2>@Html.DisplayFor(model => model.Litter.Name) Litter</h2>
-
-<table class="table table-bordered table-hover">
+<h2 style="text-align:center;">@Html.DisplayFor(model => model.Litter.Name) Litter</h2>
+<hr class="border" />
+<table id="table">
     <thead>
         <tr>
             <th>Pup</th>

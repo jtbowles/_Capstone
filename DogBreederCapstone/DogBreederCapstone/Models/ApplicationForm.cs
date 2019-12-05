@@ -60,7 +60,7 @@ namespace DogBreederCapstone.Models
         [Display(Name = "Have you raised dogs before?")]
         public bool PreviousDogs { get; set; }
 
-        [Display(Name = "Where did those dogs live?")]
+        [Display(Name = "Where have your past dogs lived, if any? (inside, outside)")]
         public string PreviousDogsLive { get; set; }
 
         [Required]

@@ -7,25 +7,52 @@
 
 <style>
     .well {
-        height: 15px;
-        width: 30%;
+        height: 60px;
+        width: auto;
+        margin-left: 7.5%;
+        margin-right: 7.5%;
         background-color: #B2D7F7;
         text-align: center;
-        padding-top: 2px;
+        padding-top: 20px;
         color: black;
+        border: 1px solid #eee;
+        box-shadow: 0 2px 2px #ccc;
     }
 
     hr.border {
         border: 5px outset #B2D7F7;
         border-radius: 2.5px;
     }
+
+    hr.border-sm {
+        border: 1px solid #B2D7F7;
+        box-shadow: 0 2px 2px #19334d;
+        border-radius: 2.5px;
+    }
+
+    h2 {
+        text-align: center;
+        font-weight: bold;
+    }
+
+    h5 {
+        font-style: oblique;
+        font-weight: bold;
+        font-size: medium;
+    }
+
+    .btn-sm:hover {
+        background-color: #19334d;
+    }
+
 </style>
 
 <br />
 <div>
     <h2 style="text-align:center;">Appointment</h2>
     <hr class="border" />
-    <h6 class="well">~request a scheduled appointment</h6>
+    <h5 class="well">~ Let us know the time and reason for scheduling an appointment and we will try to fit you in</h5>
+    <hr class="border-sm" />
 </div>
 
 @using (Html.BeginForm("SaveAppointment", "PotentialOwners"))
@@ -65,4 +92,5 @@
         </div>
     </div>
 }
-
+<hr class="border-sm" />
+<p style="font-size: smaller; font-style: oblique;">*Request* - will notify us directly about your requested appointment so we can review and respond with efficiency</p>

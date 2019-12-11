@@ -14,10 +14,24 @@
         text-align: right;
     }
 
+    .btn-sm:hover {
+        background-color: #19334d;
+    }
+
+    h2 {
+        text-align: center;
+        font-weight: bold;
+    }
+
+    hr.border-sm {
+        border: 1px solid #B2D7F7;
+        box-shadow: 0 2px 2px #19334d;
+        border-radius: 2.5px;
+    }
 </style>
 
 <br />
-<h2 style="text-align: center;">Litters</h2>
+<h2>Litters</h2>
 <hr class="border" />
 <div>
     <div class="col-md-6 custom">
@@ -27,7 +41,7 @@
         <input type="button" class="btn btn-sm" value="New Litter" onclick="location.href = '@Url.Action("New","Litters")'" />
     </div>
 </div>
-<hr class="border" />
+<hr class="border-sm" />
 
 <table id="litters" class="table table-bordered table-hover">
     <thead>
@@ -90,5 +104,6 @@
         });
     </script>
 }
+<hr class="border-sm" />
 
 

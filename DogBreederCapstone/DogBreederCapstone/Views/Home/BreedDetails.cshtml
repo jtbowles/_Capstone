@@ -4,8 +4,27 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <style>
+    .well {
+        height: 60px;
+        width: auto;
+        margin-left: 7.5%;
+        margin-right: 7.5%;
+        background-color: #B2D7F7;
+        text-align: center;
+        padding-top: 20px;
+        color: black;
+        border: 1px solid #eee;
+        box-shadow: 0 2px 2px #ccc;
+    }
+
     hr.border {
         border: 5px outset #B2D7F7;
+        border-radius: 2.5px;
+    }
+
+    hr.border-sm {
+        border: 1px solid #B2D7F7;
+        box-shadow: 0 2px 2px #19334d;
         border-radius: 2.5px;
     }
 
@@ -37,9 +56,9 @@
 
     }
 
-    h4.well {
+    #well {
         color:  #e6eeff;
-        text-align: justify;
+        text-align: center;
         font-style: italic;
         font-weight: bold;
         padding:7px;
@@ -49,6 +68,12 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-attachment: fixed; 
+        border-radius: 5px;
+    }
+
+    h2 {
+        text-align: center;
+        font-weight: bold;
     }
 
     h5 {
@@ -60,36 +85,41 @@
 
     }
 
-    #coats {
-        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-        border-collapse: collapse;
-        font-style: italic;
+    #info {
+        font-style: oblique;
+        font-weight: bold;
+        font-size: medium;
+    }
+
+    #table {
         font-weight: bold;
         width: 100%;
     }
 
-    #coats td, #coats th {
-      border: 0.25px inset #19334d;
+    #table td, #table th {
+      border: 0.20px inset #eee/*#19334d*/;
+      box-shadow: 0 2px 2px #ccc;
       padding: 8px;
       text-align: center;
     }
 
-    #coats tr:nth-child(even){background-color: #ecf2f9;}
+    #table tr:nth-child(even){background-color: #ecf2f9;}
 
-    #coats tr:hover {background-color: #B2D7F7;}
+    #table tr:hover {background-color: #ccc; color: #19334d;}
 
-    #coats th {
+    #table th {
       padding-top: 12px;
       padding-bottom: 12px;
       text-align: center;
       background-color: #19334d;
-      color: #B2D7F7;
-
+      color: #eee;
     }
 </style>
 <br />
-<h2 style="text-align:center">Breed Details</h2>
+<h2>Breed Details</h2>
 <hr class="border" />
+<h5 id="info" class="well">~ Everything you'd need to know in order to see if an Australian Labradoodle is the right Doggo for you!</h5>
+<hr class="border-sm" />
 
 <div>
     <div class="bubble">
@@ -104,7 +134,7 @@
     <div class="bubble">
         <h3>Color & Coats</h3>
         <div>
-            <table id="coats">
+            <table id="table">
                 <tr>
                     <th>COAT TYPES</th>
                     <th>COAT COLORS</th>
@@ -178,18 +208,18 @@
     <div class="bubble">
         <h3>Sizes</h3>
         <div>
-            <h4 class="well">Micro:</h4>
+            <h4 id="well">Micro:</h4>
             <h5>Height: 12" - 14" at shoulder. Weight: 8 - 14 lbs.</h5>
             <br />
-            <h4 class="well">Miniature/Mini:</h4>
+            <h4 id="well">Miniature/Mini:</h4>
             <h5>Height: 14" - 16" at shoulder. Weight: 16 - 25 lbs.</h5>
             <br />
-            <h4 class="well">Medium:</h4>
+            <h4 id="well">Medium:</h4>
             <h5>Height: Female, 17" - 19" at shoulder, Male, 19" - 20". Weight: 30 - 40 lbs.</h5>
             <br />
-            <h4 class="well">Standard:</h4>
+            <h4 id="well">Standard:</h4>
             <h5>Height: Female 21" - 23" at shoulder, Male, 22" - 24". Weight: 50 - 65 lbs.</h5>
         </div>
     </div>
 </div>
-<hr class="border" />
+<hr class="border-sm" />

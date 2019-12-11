@@ -9,13 +9,28 @@
         border-radius: 2.5px;
     }
 
+    hr.border-sm {
+        border: 1px solid #B2D7F7;
+        box-shadow: 0 2px 2px #19334d;
+        border-radius: 2.5px;
+    }
+
+    h2 {
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .btn-sm:hover {
+        background-color: #19334d;
+    }
+
     h4.custom {
         text-align: center;
         padding-bottom: 15px;
     }
 </style>
 <br />
-<h2 style="text-align:center;">@ViewBag.Title</h2>
+<h2>@ViewBag.Title</h2>
 <hr class="border" />
 
 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
@@ -55,7 +70,7 @@
         </div>
     </div>
 }
-
+<hr class="border-sm" />
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

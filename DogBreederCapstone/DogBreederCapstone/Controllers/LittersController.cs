@@ -160,8 +160,16 @@ namespace DogBreederCapstone.Controllers
             }
 
             List<Litter> litters = FilterLitterPreferences(preferences);
+            List<Litter> littersWithNumberOfDogs = new List<Litter>();
 
-            return View("ListByPreference", litters);
+            foreach (Litter litter in litters)
+            {
+                Litter litterFromDb = context.Litters.FirstOrDefault(l => l.Id == litter.Id);
+                litterFromDb.NumberOfDogs = GetNumberOfDogsFromLitter(litter);
+                littersWithNumberOfDogs.Add(litterFromDb);
+            }
+
+            return View("ListByPreference", littersWithNumberOfDogs);
         }
 
         public List<Litter> FilterLitterPreferences(Preference preferences)
@@ -265,6 +273,14 @@ namespace DogBreederCapstone.Controllers
             {
                 return litters;
             }
+        }
+
+        public int GetNumberOfDogsFromLitter(Litter litter)
+        {
+            var dogsInLitter = context.Dogs.Where(d => d.LitterId == litter.Id);
+            List<Dog> numberOfDogs = dogsInLitter.Where(d => d.isReserved == false).ToList();
+
+            return numberOfDogs.Count;
         }
     }
 }

@@ -7,16 +7,37 @@
 
 <style>
     .well {
-        height: 40px;
-        width: 30%;
+        height: 60px;
+        width: auto;
+        margin-left: 7.5%;
+        margin-right: 7.5%;
         background-color: #B2D7F7;
         text-align: center;
-        padding-top: 2px;
+        padding-top: 20px;
         color: black;
+        border: 1px solid #eee;
+        box-shadow: 0 2px 2px #ccc;
+    }
+
+    h2 {
+        text-align: center;
+        font-weight: bold;
+    }
+
+    h5 {
+        font-style: oblique;
+        font-weight: bold;
+        font-size: medium;
     }
 
     hr.border {
         border: 5px outset #B2D7F7;
+        border-radius: 2.5px;
+    }
+
+    hr.border-sm {
+        border: 1px solid #B2D7F7;
+        box-shadow: 0 2px 2px #19334d;
         border-radius: 2.5px;
     }
 
@@ -31,18 +52,24 @@
 
     textarea {
         width: 100%;
-        height: 70px;
+        height: 100px;
         border: 2px solid #dce4ec;
+        margin-left: 150px;
     }
+
+    .btn-sm:hover {
+        background-color: #19334d;
+    }
+
 </style>
 
 <br />
 <div>
     <h2 style="text-align:center;">Application</h2>
     <hr class="border" />
-    <h6 class="well">~please fill out all fields to the best of your ability and submit when you're finished</h6>
+    <h5 class="well">~ Please fill out all fields to the best of your ability. DO NOT leave a field empty</h5>
 </div>
-
+<hr class="border-sm" />
 
 @using (Html.BeginForm("SendApplication", "PotentialOwners"))
 {
@@ -117,139 +144,141 @@
             </div>
         </div>
     </div>
-    <br/>
+    <hr class="border-sm" />
 
-        <div>
-            <div class="form-group">
-                @Html.LabelFor(model => model.Referral, htmlAttributes: new { @class = "control-label col-md-5 padding" })
-                <div class="col-md-7 padding">
-                    @Html.TextAreaFor(model => model.Referral, new { htmlAttributes = new { @class = "form-control", } })
-                    @Html.ValidationMessageFor(model => model.Referral, "", new { @class = "text-danger" })
+    <div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Referral, htmlAttributes: new { @class = "control-label col-md-5 padding" })
+            <div class="col-md-7 padding">
+                @Html.TextAreaFor(model => model.Referral, new { htmlAttributes = new { @class = "form-control", } })
+                @Html.ValidationMessageFor(model => model.Referral, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Use, htmlAttributes: new { @class = "control-label col-md-5 padding" })
+            <div class="col-md-7 padding">
+                @Html.TextAreaFor(model => model.Use, new { htmlAttributes = new { @class = "form-control", } })
+                @Html.ValidationMessageFor(model => model.Use, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Live, htmlAttributes: new { @class = "control-label col-md-5 padding" })
+            <div class="col-md-7 padding">
+                @Html.TextAreaFor(model => model.Live, new { htmlAttributes = new { @class = "form-control", } })
+                @Html.ValidationMessageFor(model => model.Live, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Training, htmlAttributes: new { @class = "control-label col-md-5 padding" })
+            <div class="col-md-7 padding">
+                @Html.TextAreaFor(model => model.Training, new { htmlAttributes = new { @class = "form-control", } })
+                @Html.ValidationMessageFor(model => model.Training, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.PreviousDogsLive, htmlAttributes: new { @class = "control-label col-md-5 padding" })
+            <div class="col-md-7 padding">
+                @Html.TextAreaFor(model => model.PreviousDogsLive, new { htmlAttributes = new { @class = "form-control", } })
+                @Html.ValidationMessageFor(model => model.PreviousDogsLive, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.OutOfTownPlan, htmlAttributes: new { @class = "control-label col-md-5 padding" })
+            <div class="col-md-7 padding">
+                @Html.TextAreaFor(model => model.OutOfTownPlan, new { htmlAttributes = new { @class = "form-control", } })
+                @Html.ValidationMessageFor(model => model.OutOfTownPlan, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Fence, htmlAttributes: new { @class = "control-label col-md-5 padding" })
+            <div class="col-md-7 padding">
+                @Html.TextAreaFor(model => model.Fence, new { htmlAttributes = new { @class = "form-control", } })
+                @Html.ValidationMessageFor(model => model.Fence, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Reasoning, htmlAttributes: new { @class = "control-label col-md-5 padding" })
+            <div class="col-md-7 padding">
+                @Html.TextAreaFor(model => model.Reasoning, new { htmlAttributes = new { @class = "form-control", } })
+                @Html.ValidationMessageFor(model => model.Reasoning, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Allergies, htmlAttributes: new { @class = "control-label col-md-5 padding" })
+            <div class="col-md-7 padding">
+                @Html.TextAreaFor(model => model.Allergies, new { htmlAttributes = new { @class = "form-control", } })
+                @Html.ValidationMessageFor(model => model.Allergies, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.LeftAlone, htmlAttributes: new { @class = "control-label col-md-5 padding" })
+            <div class="col-md-7 padding">
+                @Html.TextAreaFor(model => model.LeftAlone, new { htmlAttributes = new { @class = "form-control", } })
+                @Html.ValidationMessageFor(model => model.LeftAlone, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.PreviousDogs, htmlAttributes: new { @class = "control-label col-md-4 padding" })
+            <div class="col-md-8 padding">
+                <div class="padding">
+                    @Html.CheckBoxFor(model => model.PreviousDogs)
+                    @Html.ValidationMessageFor(model => model.PreviousDogs, "", new { @class = "text-danger" })
                 </div>
             </div>
         </div>
+    </div>
 
-        <div>
-            <div class="form-group">
-                @Html.LabelFor(model => model.Use, htmlAttributes: new { @class = "control-label col-md-5 padding" })
-                <div class="col-md-7 padding">
-                    @Html.TextAreaFor(model => model.Use, new { htmlAttributes = new { @class = "form-control",  } })
-                    @Html.ValidationMessageFor(model => model.Use, "", new { @class = "text-danger" })
+    <div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Children, htmlAttributes: new { @class = "control-label col-md-4 padding" })
+            <div class="col-md-8 padding">
+                <div class="padding">
+                    @Html.CheckBoxFor(model => model.Children)
+                    @Html.ValidationMessageFor(model => model.Children, "", new { @class = "text-danger" })
                 </div>
             </div>
         </div>
+    </div>
 
-        <div>
-            <div class="form-group">
-                @Html.LabelFor(model => model.Live, htmlAttributes: new { @class = "control-label col-md-5 padding" })
-                <div class="col-md-7 padding">
-                    @Html.TextAreaFor(model => model.Live, new { htmlAttributes = new { @class = "form-control",  } })
-                    @Html.ValidationMessageFor(model => model.Live, "", new { @class = "text-danger" })
-                </div>
+    <div>
+        <div class="form-group">
+            <div class="col-md-offset-4 col-md-12">
+                <input type="submit" value="Apply" class="btn btn-sm" style="margin-left: 150px; margin-top: 50px; margin-bottom: 50px;"/>
             </div>
         </div>
-
-        <div>
-            <div class="form-group">
-                @Html.LabelFor(model => model.Training, htmlAttributes: new { @class = "control-label col-md-5 padding" })
-                <div class="col-md-7 padding">
-                    @Html.TextAreaFor(model => model.Training, new { htmlAttributes = new { @class = "form-control",  } })
-                    @Html.ValidationMessageFor(model => model.Training, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-
-        <div>
-            <div class="form-group">
-                @Html.LabelFor(model => model.PreviousDogsLive, htmlAttributes: new { @class = "control-label col-md-5 padding" })
-                <div class="col-md-7 padding">
-                    @Html.TextAreaFor(model => model.PreviousDogsLive, new { htmlAttributes = new { @class = "form-control",  } })
-                    @Html.ValidationMessageFor(model => model.PreviousDogsLive, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-
-        <div>
-            <div class="form-group">
-                @Html.LabelFor(model => model.OutOfTownPlan, htmlAttributes: new { @class = "control-label col-md-5 padding" })
-                <div class="col-md-7 padding">
-                    @Html.TextAreaFor(model => model.OutOfTownPlan, new { htmlAttributes = new { @class = "form-control",  } })
-                    @Html.ValidationMessageFor(model => model.OutOfTownPlan, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-
-        <div>
-            <div class="form-group">
-                @Html.LabelFor(model => model.Fence, htmlAttributes: new { @class = "control-label col-md-5 padding" })
-                <div class="col-md-7 padding">
-                    @Html.TextAreaFor(model => model.Fence, new { htmlAttributes = new { @class = "form-control",  } })
-                    @Html.ValidationMessageFor(model => model.Fence, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-
-        <div>
-            <div class="form-group">
-                @Html.LabelFor(model => model.Reasoning, htmlAttributes: new { @class = "control-label col-md-5 padding" })
-                <div class="col-md-7 padding">
-                    @Html.TextAreaFor(model => model.Reasoning, new { htmlAttributes = new { @class = "form-control",  } })
-                    @Html.ValidationMessageFor(model => model.Reasoning, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-
-        <div>
-            <div class="form-group">
-                @Html.LabelFor(model => model.Allergies, htmlAttributes: new { @class = "control-label col-md-5 padding" })
-                <div class="col-md-7 padding">
-                    @Html.TextAreaFor(model => model.Allergies, new { htmlAttributes = new { @class = "form-control",  } })
-                    @Html.ValidationMessageFor(model => model.Allergies, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-
-        <div>
-            <div class="form-group">
-                @Html.LabelFor(model => model.LeftAlone, htmlAttributes: new { @class = "control-label col-md-5 padding" })
-                <div class="col-md-7 padding">
-                    @Html.TextAreaFor(model => model.LeftAlone, new { htmlAttributes = new { @class = "form-control",  } })
-                    @Html.ValidationMessageFor(model => model.LeftAlone, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-
-        <div>
-            <div class="form-group">
-                @Html.LabelFor(model => model.PreviousDogs, htmlAttributes: new { @class = "control-label col-md-4 padding" })
-                <div class="col-md-8 padding">
-                    <div class="padding">
-                        @Html.CheckBoxFor(model => model.PreviousDogs)
-                        @Html.ValidationMessageFor(model => model.PreviousDogs, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div>
-            <div class="form-group">
-                @Html.LabelFor(model => model.Children, htmlAttributes: new { @class = "control-label col-md-4 padding" })
-                <div class="col-md-8 padding">
-                    <div class="padding">
-                        @Html.CheckBoxFor(model => model.Children)
-                        @Html.ValidationMessageFor(model => model.Children, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div>
-            <div class="form-group">
-                <div class="col-md-offset-4 col-md-12">
-                    <input type="submit" value="Apply" class="btn btn-sm" />
-                </div>
-            </div>
-
-        </div>
+    </div>
 }
+
+<hr class="border-sm" />
+<p style="font-size: smaller; font-style: oblique;">*Apply* - you will be notified after we review your application</p>
 

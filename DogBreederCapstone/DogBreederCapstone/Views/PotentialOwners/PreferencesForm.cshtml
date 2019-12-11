@@ -6,12 +6,20 @@
 }
 <style>
     .well {
-        height: 15px;
-        width: 28%;
-        background-color: #B2D7F7;
+        height: 60px;
+        width: auto;
+        margin-left: 7.5%;
+        margin-right: 7.5%;
+        /*background-color: #B2D7F7;*/
         text-align: center;
-        padding-top: 2px;
+        padding-top: 20px;
         color: black;
+        /*border: 1px solid #eee;
+        box-shadow: 0 2px 2px #ccc;*/
+        background-color: #e0edff;
+        border: 1px solid #ccc;
+        box-shadow: 0 2px 2px #B2D7F7;
+        border-radius: 5px;
     }
 
     hr.border {
@@ -19,76 +27,226 @@
         border-radius: 2.5px;
     }
 
+    hr.border-sm {
+        border: 1px solid #B2D7F7;
+        box-shadow: 0 2px 2px #19334d;
+        border-radius: 2.5px;
+    }
+
+    h2 {
+        text-align: center;
+        font-weight: bold;
+    }
+
+    h3 {
+        font-weight: 500;
+        font-style: italic;
+        color: #19334d;
+        background-color: #e0edff;
+        margin-left: 20%;
+        margin-right: 20%;
+        height: 50px;
+        width: auto;
+        padding-top: 10px;
+        border: 1px solid #ccc;
+        box-shadow: 0 2px 2px #B2D7F7;
+        border-radius: 5px;
+    }
+
+    h5 {
+        font-style: oblique;
+        font-weight: bold;
+        font-size: medium;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 200px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        padding: 12px 16px;
+        z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    #container-bubble {
+        text-align: center;
+        background-color: #f5f7ff;
+        border: 1px solid #e0edff;
+        box-shadow: 0 2px 2px #B2D7F7;
+        border-radius: 5px;
+    }
+
+    .btn-sm:hover {
+        background-color: #19334d;
+    }
 </style>
 
 <br />
-<h2 style="text-align:center;">Preferences</h2>
+<h2>Preferences</h2>
 <hr class="border" />
-<h6 class="well">~select your litter preferences</h6>
+<h5 class="well">~ Tell us what you're looking for and we will find your perfect Doggo</h5>
+<hr class="border-sm" />
 
 @using (Html.BeginForm("UpdatePreferences", "PotentialOwners"))
 {
-    <div class="checkbox">
-        <label>
-            @Html.CheckBoxFor(m => m.IsMicro) Micro
-        </label>
+    <div class="col-md-5" id="container-bubble">
+        <h3>Sizes</h3>
+        <div class="dropdown">
+            <div class="checkbox">
+                <label>
+                    @Html.CheckBoxFor(m => m.IsMicro) Micro
+                </label>
+                <div class="dropdown-content">
+                    <p style="font-size: smaller;">Height: 12" - 14"</p>
+                    <p style="font-size: smaller;">Weight: 8 - 14 lbs.</p>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="dropdown">
+            <div class="checkbox">
+                <label>
+                    @Html.CheckBoxFor(m => m.IsMini) Mini
+                </label>
+                <div class="dropdown-content">
+                    <p style="font-size: smaller;">Height: 14" - 16"</p>
+                    <p style="font-size: smaller;">Weight: 16 - 25 lbs.</p>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="dropdown">
+            <div class="checkbox">
+                <label>
+                    @Html.CheckBoxFor(m => m.IsMedium) Medium
+                </label>
+                <div class="dropdown-content">
+                    <p style="font-size: smaller;">Height: 17" - 20"</p>
+                    <p style="font-size: smaller;">Weight: 30 - 40 lbs.</p>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="dropdown">
+            <div class="checkbox">
+                <label>
+                    @Html.CheckBoxFor(m => m.IsStandard) Standard
+                </label>
+            </div>
+            <div class="dropdown-content">
+                <p style="font-size: smaller;">Height: 21" - 24"</p>
+                <p style="font-size: smaller;">Weight: 50 - 60 lbs.</p>
+            </div>
+        </div>
     </div>
-    <div class="checkbox">
-        <label>
-            @Html.CheckBoxFor(m => m.IsMini) Mini
-        </label>
+
+    <div class="col-md-2">
     </div>
-    <div class="checkbox">
-        <label>
-            @Html.CheckBoxFor(m => m.IsMedium) Medium
-        </label>
-    </div>
-    <div class="checkbox">
-        <label>
-            @Html.CheckBoxFor(m => m.IsStandard) Standard
-        </label>
-    </div>
-    <div class="checkbox">
-        <label>
-            @Html.CheckBoxFor(m => m.IsCaramel) Caramel
-        </label>
-    </div>
-    <div class="checkbox">
-        <label>
-            @Html.CheckBoxFor(m => m.IsRed) Red
-        </label>
-    </div>
-    <div class="checkbox">
-        <label>
-            @Html.CheckBoxFor(m => m.IsBlue) Blue
-        </label>
-    </div>
-    <div class="checkbox">
-        <label>
-            @Html.CheckBoxFor(m => m.IsSilver) Silver
-        </label>
-    </div>
-    <div class="checkbox">
-        <label>
-            @Html.CheckBoxFor(m => m.IsCafe) Cafe
-        </label>
-    </div>
-    <div class="checkbox">
-        <label>
-            @Html.CheckBoxFor(m => m.IsChocolate) Chocolate
-        </label>
-    </div>
-    <div class="checkbox">
-        <label>
-            @Html.CheckBoxFor(m => m.IsLavender) Lavender
-        </label>
-    </div>
-    <div class="checkbox">
-        <label>
-            @Html.CheckBoxFor(m => m.IsParchment) Parchment
-        </label>
+
+    <div class="col-md-5" id="container-bubble">
+        <h3>Coat Colors</h3>
+        <div class="dropdown">
+            <div class="checkbox">
+                <label>
+                    @Html.CheckBoxFor(m => m.IsCaramel) Caramel
+                </label>
+            </div>
+            <div class="dropdown-content">
+                <p style="font-size: smaller;">A rich Gold/Apricot.</p>
+            </div>
+        </div>
+        <br />
+        <div class="dropdown">
+            <div class="checkbox">
+                <label>
+                    @Html.CheckBoxFor(m => m.IsRed) Red
+                </label>
+            </div>
+            <div class="dropdown-content">
+                <p style="font-size: smaller;">A solid, even, rich red color. A rare color and fairly hard to find.</p>
+            </div>
+        </div>
+        <br />
+        <div class="dropdown">
+            <div class="checkbox">
+                <label>
+                    @Html.CheckBoxFor(m => m.IsBlue) Blue
+                </label>
+            </div>
+            <div class="dropdown-content">
+                <p style="font-size: smaller;">A dark to medium smoky Blue.</p>
+            </div>
+        </div>
+        <br />
+        <div class="dropdown">
+            <div class="checkbox">
+                <label>
+                    @Html.CheckBoxFor(m => m.IsSilver) Silver
+                </label>
+            </div>
+            <div class="dropdown-content">
+                <p style="font-size: smaller;">Born black but will have more of a grey skin and develop silver fibers.</p>
+            </div>
+        </div>
+        <br />
+        <div class="dropdown">
+            <div class="checkbox">
+                <label>
+                    @Html.CheckBoxFor(m => m.IsCafe) Cafe
+                </label>
+            </div>
+            <div class="dropdown-content">
+                <p style="font-size: smaller;">Born milk chocolate of varying shades, silvery chocolate with multi shades and highlights.</p>
+            </div>
+        </div>
+        <br />
+        <div class="dropdown">
+            <div class="checkbox">
+                <label>
+                    @Html.CheckBoxFor(m => m.IsChocolate) Chocolate
+                </label>
+            </div>
+            <div class="dropdown-content">
+                <p style="font-size: smaller;">Dark and rich, born almost black, they maintain a dark chocolate throughout their lifetime.</p>
+            </div>
+        </div>
+        <br />
+        <div class="dropdown">
+            <div class="checkbox">
+                <label>
+                    @Html.CheckBoxFor(m => m.IsLavender) Lavender
+                </label>
+            </div>
+            <div class="dropdown-content">
+                <p style="font-size: smaller;">A definite, even smoky lavender chocolate, giving a pink/lilac appearance.</p>
+            </div>
+        </div>
+        <br />
+        <div class="dropdown">
+            <div class="checkbox">
+                <label>
+                    @Html.CheckBoxFor(m => m.IsParchment) Parchment
+                </label>
+            </div>
+            <div class="dropdown-content">
+                <p style="font-size: smaller;">Born milk chocolate, will pale to a smoky creamy beige.</p>
+            </div>
+        </div>
     </div>
 
     @Html.HiddenFor(m => m.Id);
-    <button type="submit" class="btn btn-sm">Submit</button>
+    <button type="submit" class="btn btn-sm" style="margin-left: 45%; margin-top:50px;">Submit</button>
 }
+<br />
+<hr class="border-sm" />
+<p style="font-size: smaller; font-style: oblique;">*Submit* - will redirect you to a list of litters based on your input</p>

@@ -29,14 +29,22 @@
     }
 
     div.bubble {
-        border-radius: 20px;
+        border-radius: 7.5px;
         background-image: url(https://img.freepik.com/free-photo/close-up-blank-old-concrete-wall_23-2147856094.jpg?size=626&ext=jpg);
         background-repeat: no-repeat;
         background-size: cover;
-        background-attachment: fixed; 
-        padding:20px;
+        background-attachment: fixed;
+        padding: 20px;
         width: 100%;
         height: auto;
+    }
+
+    div.container-bubble {
+        text-align: center;
+        background-color: #f5f7ff;
+        border: 1px solid #e0edff;
+        box-shadow: 0 2px 2px #B2D7F7;
+        border-radius: 50%;
     }
 
     h3 {
@@ -44,7 +52,7 @@
         text-align: center;
         font-weight: bolder;
         padding-bottom: 20px;
-        border-bottom: 2px solid  #ccddff;
+        border-bottom: 2px solid #ccddff;
     }
 
     h4 {
@@ -52,22 +60,21 @@
         text-align: justify;
         font-style: italic;
         font-weight: bold;
-        padding:5px;
-
+        padding: 5px;
     }
 
     #well {
-        color:  #e6eeff;
+        color: #e6eeff;
         text-align: center;
         font-style: italic;
         font-weight: bold;
-        padding:7px;
+        padding: 7px;
         height: 40px;
         width: 15%;
         background-image: url(https://cdn.hipwallpaper.com/i/21/80/7kKAgd.jpg);
         background-repeat: no-repeat;
         background-size: cover;
-        background-attachment: fixed; 
+        background-attachment: fixed;
         border-radius: 5px;
     }
 
@@ -81,8 +88,7 @@
         text-align: justify;
         font-style: italic;
         font-weight: bolder;
-        padding:5px;
-
+        padding: 5px;
     }
 
     #info {
@@ -96,32 +102,80 @@
         width: 100%;
     }
 
-    #table td, #table th {
-      border: 0.20px inset #eee/*#19334d*/;
-      box-shadow: 0 2px 2px #ccc;
-      padding: 8px;
-      text-align: center;
-    }
+        #table td, #table th {
+            border: 0.20px inset #eee /*#19334d*/;
+            box-shadow: 0 2px 2px #ccc;
+            padding: 8px;
+            text-align: center;
+        }
 
-    #table tr:nth-child(even){background-color: #ecf2f9;}
+        #table tr:nth-child(even) {
+            background-color: #ecf2f9;
+        }
 
-    #table tr:hover {background-color: #ccc; color: #19334d;}
+        #table tr:hover {
+            background-color: #ccc;
+            color: #19334d;
+        }
 
-    #table th {
-      padding-top: 12px;
-      padding-bottom: 12px;
-      text-align: center;
-      background-color: #19334d;
-      color: #eee;
-    }
+        #table th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: center;
+            background-color: #19334d;
+            color: #eee;
+        }
 </style>
 <br />
-<h2>Breed Details</h2>
-<hr class="border" />
-<h5 id="info" class="well">~ Everything you'd need to know in order to see if an Australian Labradoodle is the right Doggo for you!</h5>
-<hr class="border-sm" />
+<div class="row">
+    <h2>Breed Details</h2>
+    <hr class="border" />
+    <h5 id="info" class="well">~ Everything you'd need to know in order to see if an Australian Labradoodle is the right Doggo for you!</h5>
+    <hr class="border-sm" />
+</div>
+<div class="row bubble">
+    <div class="col-md-4">
+        <div class="container-bubble">
+            <h3>Allergies</h3>
 
-<div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="container-bubble">
+            <h3>Energy & Exercise</h3>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="container-bubble">
+            <h3>Life Expectancy</h3>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-4">
+        <h3>Colors</h3>
+    </div>
+    <div class="col-md-4">
+        <h3>Coats</h3>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-4">
+        <h3>Names</h3>
+    </div>
+    <div class="col-md-2"></div>
+    <div class="col-md-4">
+        <h3>Sizes</h3>
+    </div>
+    <div class="col-md-1"></div>
+</div>
+
+@*<div>
     <div class="bubble">
         <h3>Allergies</h3>
         <div>
@@ -221,5 +275,5 @@
             <h5>Height: Female 21" - 23" at shoulder, Male, 22" - 24". Weight: 50 - 65 lbs.</h5>
         </div>
     </div>
-</div>
+</div>*@
 <hr class="border-sm" />

@@ -29,32 +29,39 @@
     }
 
     section.row {
-      background: #fff;
-      min-width: 960px;
-      padding: 66px 0 44px 0;
+        background: #fff;
+        min-width: 960px;
+        padding: 66px 0 44px 0;
     }
 
     div.container-bubble {
         text-align: center;
         background-color: #f5f7ff;
         border: 1px solid #e0edff;
-        box-shadow: 0 2px 2px #B2D7F7;
-        border-radius: 50%;
+        box-shadow: 0 2px 1px #9db6cf;
+        border-radius: 37.5%;
+        padding: 0px 45px 60px 45px;
+        height: 350px;
+        width: auto;
+    }
+
+    #energy-padding {
+        padding-top: 60px;
     }
 
     h3 {
         color: #19334d;
         text-align: center;
         font-weight: bolder;
-        padding-bottom: 20px;
-        border-bottom: 2px solid #ccddff;
+        padding-bottom: 10px;
     }
 
     h4 {
         color: #19334d;
         text-align: justify;
         font-style: italic;
-        font-weight: bold;
+        font-size: 16px;
+        font-weight: 200;
         padding: 5px;
     }
 
@@ -97,30 +104,35 @@
         width: 100%;
     }
 
-        #table td, #table th {
-            border: 0.20px inset #eee /*#19334d*/;
-            box-shadow: 0 2px 2px #ccc;
-            padding: 8px;
-            text-align: center;
-        }
+    #table td, #table th {
+        border: 0.20px inset #eee /*#19334d*/;
+        box-shadow: 0 2px 2px #ccc;
+        padding: 8px;
+        text-align: center;
+    }
 
-        #table tr:nth-child(even) {
-            background-color: #ecf2f9;
-        }
+    #table tr:nth-child(even) {
+        background-color: #ecf2f9;
+    }
 
-        #table tr:hover {
-            background-color: #ccc;
-            color: #19334d;
-        }
+    #table tr:hover {
+        background-color: #ccc;
+        color: #19334d;
+    }
 
-        #table th {
-            padding-top: 12px;
-            padding-bottom: 12px;
-            text-align: center;
-            background-color: #19334d;
-            color: #eee;
-        }
+    #table th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: center;
+        background-color: #19334d;
+        color: #eee;
+    }
+
+    div.col-md-6 {
+        padding-bottom: 25px;
+    }
 </style>
+
 <br />
 <div class="row">
     <h2>Breed Details</h2>
@@ -129,23 +141,26 @@
     <hr class="border-sm" />
 </div>
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6">
         <div class="container-bubble">
             <h3>Allergies</h3>
-
+            <div style="padding: 0px 15px 15px 15px;">
+                <h4>Most Australian Labradoodles are non-shedding; this is not the case for American Labradoodles.</h4>
+                <h4>Most Australian Labradoodles shed less than humans. Coats continue to grow in length and requires combing and occasional grooming. A multi-generational Australian Labradoodle will have a thicker coat than a first gneration American Labradoodle and can have a curly, fleece or wavy coat type.</h4>
+                <h4>Multi-generational Labradoodles are recommended for families with moderate to severe allergies.</h4>
+            </div>
         </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-6">
         <div class="container-bubble">
             <h3>Energy & Exercise</h3>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="container-bubble">
-            <h3>Life Expectancy</h3>
+            <div id="energy-padding">
+                <h4>Australian Labradoodles are reasonably energetic dogs who do require some exercise. A daily half hour walk around the neighborhood will keep them happy.</h4>
+            </div>
         </div>
     </div>
 </div>
+<br />
 
 <section class="row">
     <div class="row">
@@ -161,116 +176,108 @@
 </section>
 
 <div class="row">
-    <div class="col-md-1"></div>
     <div class="col-md-4">
         <h3>Names</h3>
     </div>
-    <div class="col-md-2"></div>
     <div class="col-md-4">
         <h3>Sizes</h3>
     </div>
-    <div class="col-md-1"></div>
+    <div class="col-md-4">
+        <h3>Life Expectancy</h3>
+    </div>
 </div>
 
 @*<div>
-    <div class="bubble">
-        <h3>Allergies</h3>
-        <div>
-            <h4>Most Australian Labradoodles are non-shedding; this is not the case for American Labradoodles.</h4>
-            <h4>Most Australian Labradoodles shed less than humans. Coats continue to grow in length and requires combing and occasional grooming. A multi-generational Australian Labradoodle will have a thicker coat than a first gneration American Labradoodle and can have a curly, fleece or wavy coat type.</h4>
-            <h4>Multi-generational Labradoodles are recommended for familis with moderate to sever allergies.</h4>
+        <br />
+        <div class="bubble">
+            <h3>Color & Coats</h3>
+            <div>
+                <table id="table">
+                    <tr>
+                        <th>COAT TYPES</th>
+                        <th>COAT COLORS</th>
+                    </tr>
+                    <tr>
+                        <td>Inconsistent Coat</td>
+                        <td>Caramal Coat</td>
+                    </tr>
+                    <tr>
+                        <td>Hair Coat</td>
+                        <td>Red Coat</td>
+                    </tr>
+                    <tr>
+                        <td>Fleece Coat</td>
+                        <td>Apricot Coat</td>
+                    </tr>
+                    <tr>
+                        <td>Wool Coat</td>
+                        <td>Blue Coat</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Silver Coat</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Chocolate Coat</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Cafe Coat</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Lavender Coat</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Parchment Coat</td>
+                    </tr>
+                </table>
+            </div>
         </div>
-    </div>
-    <br />
-    <div class="bubble">
-        <h3>Color & Coats</h3>
-        <div>
-            <table id="table">
-                <tr>
-                    <th>COAT TYPES</th>
-                    <th>COAT COLORS</th>
-                </tr>
-                <tr>
-                    <td>Inconsistent Coat</td>
-                    <td>Caramal Coat</td>
-                </tr>
-                <tr>
-                    <td>Hair Coat</td>
-                    <td>Red Coat</td>
-                </tr>
-                <tr>
-                    <td>Fleece Coat</td>
-                    <td>Apricot Coat</td>
-                </tr>
-                <tr>
-                    <td>Wool Coat</td>
-                    <td>Blue Coat</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>Silver Coat</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>Chocolate Coat</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>Cafe Coat</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>Lavender Coat</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>Parchment Coat</td>
-                </tr>
-            </table>
+        <br />
+        <div class="bubble">
+            <h3>Energy & Exercise</h3>
+            <div>
+                <h4>Australian Labradoodles are reasonably energetic dogs who do require some exercise. A daily half hour walk around the neighborhood will kep them happy.</h4>
+            </div>
         </div>
-    </div>
-    <br />
-    <div class="bubble">
-        <h3>Energy & Exercise</h3>
-        <div>
-            <h4>Australian Labradoodles are reasonably energetic dogs who do require some exercise. A daily half hour walk around the neighborhood will kep them happy.</h4>
+        <br />
+        <div class="bubble">
+            <h3>Life Expectancy</h3>
+            <div>
+                <h4>Generally 14 to 16 years. It's all in the diet. Low quality food, less. High quality, fresh food adds years to your puppy's life.</h4>
+            </div>
         </div>
-    </div>
-    <br />
-    <div class="bubble">
-        <h3>Life Expectancy</h3>
-        <div>
-            <h4>Generally 14 to 16 years. It's all in the diet. Low quality food, less. High quality, fresh food adds years to your puppy's life.</h4>
+        <br />
+        <div class="bubble">
+            <h3>Names</h3>
+            <div>
+                <h4>There are a number of different naming resources online for finding possible names for your new dog. We tend not to prename the dogs; your puppy will be identified by a collar color.</h4>
+                <h4>Here are some popular online resources for naming your Australian Labradoodle:</h4>
+                <p style="padding: 2.5px;"><a href="https://www.mydogsname.com/" class="btn btn-primary btn-sm">My Dogs Name &raquo;</a></p>
+                <p style="padding: 2.5px;"><a href="https://www.rover.com/blog/dog-names/" class="btn btn-primary btn-sm">Top 100 Male & Female Dog Names &raquo;</a></p>
+                <p style="padding: 2.5px;"><a href="https://www.petmd.com/dog/male-puppy-names" class="btn btn-primary btn-sm">Male Puppy Names &raquo;</a></p>
+                <p style="padding: 2.5px;"><a href="https://www.petmd.com/dog/female-puppy-names" class="btn btn-primary btn-sm">Female Puppy Names &raquo;</a></p>
+            </div>
         </div>
-    </div>
-    <br />
-    <div class="bubble">
-        <h3>Names</h3>
-        <div>
-            <h4>There are a number of different naming resources online for finding possible names for your new dog. We tend not to prename the dogs; your puppy will be identified by a collar color.</h4>
-            <h4>Here are some popular online resources for naming your Australian Labradoodle:</h4>
-            <p style="padding: 2.5px;"><a href="https://www.mydogsname.com/" class="btn btn-primary btn-sm">My Dogs Name &raquo;</a></p>
-            <p style="padding: 2.5px;"><a href="https://www.rover.com/blog/dog-names/" class="btn btn-primary btn-sm">Top 100 Male & Female Dog Names &raquo;</a></p>
-            <p style="padding: 2.5px;"><a href="https://www.petmd.com/dog/male-puppy-names" class="btn btn-primary btn-sm">Male Puppy Names &raquo;</a></p>
-            <p style="padding: 2.5px;"><a href="https://www.petmd.com/dog/female-puppy-names" class="btn btn-primary btn-sm">Female Puppy Names &raquo;</a></p>
+        <br />
+        <div class="bubble">
+            <h3>Sizes</h3>
+            <div>
+                <h4 id="well">Micro:</h4>
+                <h5>Height: 12" - 14" at shoulder. Weight: 8 - 14 lbs.</h5>
+                <br />
+                <h4 id="well">Miniature/Mini:</h4>
+                <h5>Height: 14" - 16" at shoulder. Weight: 16 - 25 lbs.</h5>
+                <br />
+                <h4 id="well">Medium:</h4>
+                <h5>Height: Female, 17" - 19" at shoulder, Male, 19" - 20". Weight: 30 - 40 lbs.</h5>
+                <br />
+                <h4 id="well">Standard:</h4>
+                <h5>Height: Female 21" - 23" at shoulder, Male, 22" - 24". Weight: 50 - 65 lbs.</h5>
+            </div>
         </div>
-    </div>
-    <br />
-    <div class="bubble">
-        <h3>Sizes</h3>
-        <div>
-            <h4 id="well">Micro:</h4>
-            <h5>Height: 12" - 14" at shoulder. Weight: 8 - 14 lbs.</h5>
-            <br />
-            <h4 id="well">Miniature/Mini:</h4>
-            <h5>Height: 14" - 16" at shoulder. Weight: 16 - 25 lbs.</h5>
-            <br />
-            <h4 id="well">Medium:</h4>
-            <h5>Height: Female, 17" - 19" at shoulder, Male, 19" - 20". Weight: 30 - 40 lbs.</h5>
-            <br />
-            <h4 id="well">Standard:</h4>
-            <h5>Height: Female 21" - 23" at shoulder, Male, 22" - 24". Weight: 50 - 65 lbs.</h5>
-        </div>
-    </div>
-</div>*@
+    </div>*@
 <hr class="border-sm" />

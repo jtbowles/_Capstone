@@ -41,8 +41,15 @@
         width: auto;
     }
 
-    #energy-padding {
-        padding-top: 60px;
+    div.container-bubble-sm {
+        text-align: center;
+        background-color: #f5f7ff;
+        border: 1px solid #e0edff;
+        box-shadow: 0.5px 2px 1px #9db6cf;
+        border-radius: 37.5%;
+        padding: 0px 45px 60px 45px;
+        height: 180px;
+        width: auto;
     }
 
     h3 {
@@ -74,35 +81,6 @@
         font-style: italic;
         font-weight: bolder;
         padding: 5px;
-    }
-
-    #table {
-        font-weight: bold;
-        width: 100%;
-    }
-
-    #table td, #table th {
-        border: 0.20px inset #eee /*#19334d*/;
-        box-shadow: 0 2px 2px #ccc;
-        padding: 8px;
-        text-align: center;
-    }
-
-    #table tr:nth-child(even) {
-        background-color: #ecf2f9;
-    }
-
-    #table tr:hover {
-        background-color: #ccc;
-        color: #19334d;
-    }
-
-    #table th {
-        padding-top: 12px;
-        padding-bottom: 12px;
-        text-align: center;
-        background-color: #19334d;
-        color: #eee;
     }
 
     div.col-md-6 {
@@ -149,9 +127,9 @@
     }
 
     .btn-sm {
-    color: black;
-    background-color: #DDDDDD;
-    border: 1px solid transparent;
+        color: black;
+        background-color: #DDDDDD;
+        border: 1px solid transparent;
     }
 </style>
 
@@ -175,9 +153,16 @@
     </div>
     <div class="col-md-6">
         <div class="container-bubble">
-            <h3>Energy & Exercise</h3>
-            <div id="energy-padding">
-                <h4>Australian Labradoodles are reasonably energetic dogs who do require some exercise. A daily half hour walk around the neighborhood will keep them happy.</h4>
+            <h3>Names</h3>
+            <div>
+                <h4>We tend not to prename the dogs; your puppy will be identified by a collar color.</h4>
+                <h4>Here are some popular online resources for naming your Australian Labradoodle:</h4>
+                <ul class="name-list">
+                    <li class="padding-small"><a href="https://www.mydogsname.com/" class="btn btn-sm">My Dogs Name &raquo;</a></li>
+                    <li class="padding-small"><a href="https://www.rover.com/blog/dog-names/" class="btn btn-primary btn-sm">Top 100 Male & Female Dog Names &raquo;</a></li>
+                    <li class="padding-small"><a href="https://www.petmd.com/dog/male-puppy-names" class="btn btn-primary btn-sm">Male Puppy Names &raquo;</a></li>
+                    <li class="padding-small"><a href="https://www.petmd.com/dog/female-puppy-names" class="btn btn-primary btn-sm">Female Puppy Names &raquo;</a></li>
+                </ul>
             </div>
         </div>
     </div>
@@ -230,24 +215,19 @@
 
 <div class="row">
     <div class="col-md-6">
-        <div class="container-bubble">
-            <h3>Names</h3>
+        <div class="container-bubble-sm">
+            <h3>Energy & Exercise</h3>
             <div>
-                <h4>We tend not to prename the dogs; your puppy will be identified by a collar color.</h4>
-                <h4>Here are some popular online resources for naming your Australian Labradoodle:</h4>
-                <ul class="name-list">
-                    <li class="padding-small"><a href="https://www.mydogsname.com/" class="btn btn-sm">My Dogs Name &raquo;</a></li>
-                    <li class="padding-small"><a href="https://www.rover.com/blog/dog-names/" class="btn btn-primary btn-sm">Top 100 Male & Female Dog Names &raquo;</a></li>
-                    <li class="padding-small"><a href="https://www.petmd.com/dog/male-puppy-names" class="btn btn-primary btn-sm">Male Puppy Names &raquo;</a></li>
-                    <li class="padding-small"><a href="https://www.petmd.com/dog/female-puppy-names" class="btn btn-primary btn-sm">Female Puppy Names &raquo;</a></li>
-                </ul>
-                <br />
+                <h4>Australian Labradoodles are reasonably energetic dogs who do require some exercise. A daily half hour walk around the neighborhood will keep them happy.</h4>
             </div>
         </div>
     </div>
     <div class="col-md-6">
-        <div class="container-bubble">
+        <div class="container-bubble-sm">
             <h3>Life Expectancy</h3>
+            <div>
+                <h4>Generally 14 to 16 years. It's all in the diet. Low quality food, less. High quality, fresh food adds years to your puppy's life.</h4>
+            </div>
         </div>
     </div>
 </div>

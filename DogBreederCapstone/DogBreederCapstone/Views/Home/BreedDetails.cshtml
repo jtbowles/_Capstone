@@ -126,6 +126,12 @@
         padding: 10px 20px 10px 20px;
     }
 
+    ul.name-list {
+        list-style-type: none;
+        font-family: Trebuchet MS, Helvetica, sans-serif;
+        padding: 10px 20px 15px 20px;
+    }
+
     span.bolder {
         font-weight: bolder;
     }
@@ -136,6 +142,16 @@
 
     li.padding-big {
         padding-bottom: 20px;
+    }
+
+    .btn-sm:hover {
+        background-color: #19334d;
+    }
+
+    .btn-sm {
+    color: black;
+    background-color: #DDDDDD;
+    border: 1px solid transparent;
     }
 </style>
 
@@ -213,14 +229,26 @@
 </div>
 
 <div class="row">
-    <div class="col-md-4">
-        <h3>Names</h3>
+    <div class="col-md-6">
+        <div class="container-bubble">
+            <h3>Names</h3>
+            <div>
+                <h4>We tend not to prename the dogs; your puppy will be identified by a collar color.</h4>
+                <h4>Here are some popular online resources for naming your Australian Labradoodle:</h4>
+                <ul class="name-list">
+                    <li class="padding-small"><a href="https://www.mydogsname.com/" class="btn btn-sm">My Dogs Name &raquo;</a></li>
+                    <li class="padding-small"><a href="https://www.rover.com/blog/dog-names/" class="btn btn-primary btn-sm">Top 100 Male & Female Dog Names &raquo;</a></li>
+                    <li class="padding-small"><a href="https://www.petmd.com/dog/male-puppy-names" class="btn btn-primary btn-sm">Male Puppy Names &raquo;</a></li>
+                    <li class="padding-small"><a href="https://www.petmd.com/dog/female-puppy-names" class="btn btn-primary btn-sm">Female Puppy Names &raquo;</a></li>
+                </ul>
+                <br />
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h3>Sizes</h3>
-    </div>
-    <div class="col-md-4">
-        <h3>Life Expectancy</h3>
+    <div class="col-md-6">
+        <div class="container-bubble">
+            <h3>Life Expectancy</h3>
+        </div>
     </div>
 </div>
 

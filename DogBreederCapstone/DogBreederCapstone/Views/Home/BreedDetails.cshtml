@@ -7,38 +7,34 @@
     .well {
         height: 60px;
         width: auto;
-        margin-left: 7.5%;
-        margin-right: 7.5%;
-        background-color: #B2D7F7;
+        margin-left: 5.5%;
+        margin-right: 5.5%;
+        background-color: #c9edff;
         text-align: center;
         padding-top: 20px;
         color: black;
         border: 1px solid #eee;
         box-shadow: 0 2px 2px #ccc;
+        font-family: Trebuchet MS, Helvetica, sans-serif;
+
     }
 
     hr.border {
-        border: 5px outset #B2D7F7;
+        border: 4px outset #c9edff;
         border-radius: 2.5px;
     }
 
     hr.border-sm {
-        border: 1px solid #B2D7F7;
+        border: 1px solid #c9edff;
         box-shadow: 0 2px 2px #19334d;
         border-radius: 2.5px;
-    }
-
-    section.row {
-        background: #fff;
-        min-width: 960px;
-        padding: 66px 0 44px 0;
     }
 
     div.container-bubble {
         text-align: center;
         background-color: #f5f7ff;
         border: 1px solid #e0edff;
-        box-shadow: 0 2px 1px #9db6cf;
+        box-shadow: 0.5px 2px 1px #9db6cf;
         border-radius: 37.5%;
         padding: 0px 45px 60px 45px;
         height: 350px;
@@ -54,35 +50,22 @@
         text-align: center;
         font-weight: bolder;
         padding-bottom: 10px;
+        font-family: Trebuchet MS, Helvetica, sans-serif;
     }
 
     h4 {
         color: #19334d;
         text-align: justify;
-        font-style: italic;
+        font-family: Trebuchet MS, Helvetica, sans-serif;
         font-size: 16px;
         font-weight: 200;
         padding: 5px;
     }
 
-    #well {
-        color: #e6eeff;
-        text-align: center;
-        font-style: italic;
-        font-weight: bold;
-        padding: 7px;
-        height: 40px;
-        width: 15%;
-        background-image: url(https://cdn.hipwallpaper.com/i/21/80/7kKAgd.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-attachment: fixed;
-        border-radius: 5px;
-    }
-
     h2 {
         text-align: center;
         font-weight: bold;
+        font-family: Trebuchet MS, Helvetica, sans-serif;
     }
 
     h5 {
@@ -91,12 +74,6 @@
         font-style: italic;
         font-weight: bolder;
         padding: 5px;
-    }
-
-    #info {
-        font-style: oblique;
-        font-weight: bold;
-        font-size: medium;
     }
 
     #table {
@@ -131,13 +108,42 @@
     div.col-md-6 {
         padding-bottom: 25px;
     }
+
+    div.col-md-4 {
+        padding-bottom: 25px;
+    }
+
+    ul.colorcoat-list {
+        list-style-type: circle;
+        list-style-position: outside;
+        padding: 10px 50px 10px 70px;
+        font-family: Trebuchet MS, Helvetica, sans-serif;
+    }
+
+    ul.size-list {
+        list-style-type: none;
+        font-family: Trebuchet MS, Helvetica, sans-serif;
+        padding: 10px 20px 10px 20px;
+    }
+
+    span.bolder {
+        font-weight: bolder;
+    }
+
+    li.padding-small {
+        padding-bottom: 6px;
+    }
+
+    li.padding-big {
+        padding-bottom: 20px;
+    }
 </style>
 
 <br />
 <div class="row">
     <h2>Breed Details</h2>
     <hr class="border" />
-    <h5 id="info" class="well">~ Everything you'd need to know in order to see if an Australian Labradoodle is the right Doggo for you!</h5>
+    <h5 class="well">~ Everything you'd need to know in order to see if an Australian Labradoodle is the right Doggo for you!</h5>
     <hr class="border-sm" />
 </div>
 <div class="row">
@@ -160,20 +166,51 @@
         </div>
     </div>
 </div>
-<br />
 
-<section class="row">
+<div class="row">
     <div class="row">
-        <div class="col-md-2"></div>
         <div class="col-md-4">
-            <h3>Colors</h3>
+            <div class="container-bubble">
+                <h3>Coats</h3>
+                <ul class="colorcoat-list">
+                    <li class="padding-big">Inconsistent Coat (IC)</li>
+                    <li class="padding-big">Hair</li>
+                    <li class="padding-big">Fleece</li>
+                    <li class="padding-big">Wool</li>
+                </ul>
+            </div>
         </div>
         <div class="col-md-4">
-            <h3>Coats</h3>
+            <div class="container-bubble">
+                <h3>Colors</h3>
+                <div>
+                    <ul class="colorcoat-list">
+                        <li class="padding-small">Caramel</li>
+                        <li class="padding-small">Red</li>
+                        <li class="padding-small">Apricot/Gold</li>
+                        <li class="padding-small">Blue</li>
+                        <li class="padding-small">Silver</li>
+                        <li class="padding-small">Chocolate</li>
+                        <li class="padding-small">Cafe</li>
+                        <li class="padding-small">Lavender</li>
+                        <li class="padding-small">Parchment</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="col-md-2"></div>
+        <div class="col-md-4">
+            <div class="container-bubble">
+                <h3>Sizes</h3>
+                <ul class="size-list">
+                    <li class="padding-big">MICRO: <span class="bolder"> 12" - 14" </span>|<span class="bolder">8 - 14 lbs</span></li>
+                    <li class="padding-big">MINI: <span class="bolder"> 14" - 16" </span>|<span class="bolder">12 - 25 lbs</span></li>
+                    <li class="padding-big">MEDIUM: <span class="bolder"> 17" - 20" </span>|<span class="bolder">20 - 40 lbs</span></li>
+                    <li class="padding-big">STANDARD: <span class="bolder"> 21" - 24" </span>|<span class="bolder">50 - 65 lbs</span></li>
+                </ul>
+            </div>
+        </div>
     </div>
-</section>
+</div>
 
 <div class="row">
     <div class="col-md-4">
@@ -188,54 +225,6 @@
 </div>
 
 @*<div>
-        <br />
-        <div class="bubble">
-            <h3>Color & Coats</h3>
-            <div>
-                <table id="table">
-                    <tr>
-                        <th>COAT TYPES</th>
-                        <th>COAT COLORS</th>
-                    </tr>
-                    <tr>
-                        <td>Inconsistent Coat</td>
-                        <td>Caramal Coat</td>
-                    </tr>
-                    <tr>
-                        <td>Hair Coat</td>
-                        <td>Red Coat</td>
-                    </tr>
-                    <tr>
-                        <td>Fleece Coat</td>
-                        <td>Apricot Coat</td>
-                    </tr>
-                    <tr>
-                        <td>Wool Coat</td>
-                        <td>Blue Coat</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Silver Coat</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Chocolate Coat</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Cafe Coat</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Lavender Coat</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Parchment Coat</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
         <br />
         <div class="bubble">
             <h3>Energy & Exercise</h3>

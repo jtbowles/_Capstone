@@ -18,7 +18,6 @@
         border: 1px solid #eee;
         box-shadow: 0 2px 2px #ccc;
         font-family: Trebuchet MS, Helvetica, sans-serif;
-
     }
 
     h5 {
@@ -33,7 +32,13 @@
 
 
     hr.border {
-        border: 5px outset #B2D7F7;
+        border: 4px outset #c9edff;
+        border-radius: 2.5px;
+    }
+
+    hr.border-sm {
+        border: 1px solid #c9edff;
+        box-shadow: 0 2px 2px #19334d;
         border-radius: 2.5px;
     }
 
@@ -43,22 +48,24 @@
     }
 
     #table td, #table th {
-      border: 0.20px inset #19334d;
+      border: 0.20px inset #eee/*#19334d*/;
+      box-shadow: 0 2px 2px #ccc;
       padding: 8px;
       text-align: center;
     }
 
     #table tr:nth-child(even){background-color: #ecf2f9;}
 
-    #table tr:hover {background-color: #B2D7F7;}
+    #table tr:hover {background-color: #ccc; color: #19334d;}
 
     #table th {
       padding-top: 12px;
       padding-bottom: 12px;
       text-align: center;
       background-color: #19334d;
-      color: #B2D7F7;
+      color: #eee;
     }
+
 </style>
 
 <br />
@@ -66,6 +73,7 @@
     <h2 style="text-align: center;">Reservations</h2>
     <hr class="border" />
     <h5 class="well">~reservations that are awaiting your request</h5>
+    <hr class="border-sm" />
 </div>
 
 <table id="table">
@@ -102,3 +110,4 @@
         }
     </tbody>
 </table>
+<hr class="border-sm" />

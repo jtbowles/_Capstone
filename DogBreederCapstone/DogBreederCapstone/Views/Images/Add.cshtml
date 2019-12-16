@@ -18,7 +18,6 @@
         border: 1px solid #eee;
         box-shadow: 0 2px 2px #ccc;
         font-family: Trebuchet MS, Helvetica, sans-serif;
-
     }
 
     h5 {
@@ -33,10 +32,15 @@
 
 
     hr.border {
-        border: 5px outset #B2D7F7;
+        border: 4px outset #c9edff;
         border-radius: 2.5px;
     }
 
+    hr.border-sm {
+        border: 1px solid #c9edff;
+        box-shadow: 0 2px 2px #19334d;
+        border-radius: 2.5px;
+    }
 </style>
 
 <br />
@@ -44,6 +48,7 @@
     <h2 style="text-align: center;">Image Uploader</h2>
     <hr class="border" />
     <h5 class="well">~upload your Doggo images here</h5>
+    <hr class="border-sm" />
 </div>
 
 @using (Html.BeginForm("Add", "Images", FormMethod.Post, new { enctype = "multipart/form-data" }))
@@ -74,4 +79,5 @@
         </div>
     </div>
 }
+<hr class="border-sm" />
 

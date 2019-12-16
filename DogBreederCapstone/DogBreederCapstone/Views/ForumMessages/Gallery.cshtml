@@ -18,7 +18,6 @@
         border: 1px solid #eee;
         box-shadow: 0 2px 2px #ccc;
         font-family: Trebuchet MS, Helvetica, sans-serif;
-
     }
 
     h5 {
@@ -75,7 +74,13 @@
     }
 
     hr.border {
-        border: 5px outset #B2D7F7;
+        border: 4px outset #c9edff;
+        border-radius: 2.5px;
+    }
+
+    hr.border-sm {
+        border: 1px solid #c9edff;
+        box-shadow: 0 2px 2px #19334d;
         border-radius: 2.5px;
     }
 </style>
@@ -83,25 +88,29 @@
 <br />
 
 <body>
-    <div>
+    <div class="row">
         <h2 style="text-align: center;">Owner's Forum</h2>
         <hr class="border" />
-        <h5 class="well col-md-6">~Share what you and your Doggo have been up to! See what other Doggos have been up to!</h5>
+        <h5 class="well col-md-6">~Share what you and your Doggo have been up to!</h5>
         <div class="right">
             <input type="button" class="btn btn-primary" value="Post Status" onclick="location.href = '@Url.Action("Add", "ForumMessages")'" />
         </div>
     </div>
-<br>
-    <div class="container">
+    <hr class="border-sm" />
+    <br>
+    <div class="row">
+        <div class="container">
             @foreach (var item in Model)
             {
                 <div class="gallery">
-                    <img src="@Url.Content(item.ImagePath)" alt="Image" style="width: 265px; height: 250px;" />
+                    <img src="@Url.Content(item.ImagePath)" alt="Image" style="width: 275px; height: 250px;" />
                     <div class="desc">@Html.DisplayFor(modelItem => item.Status)</div>
                 </div>
             }
 
+        </div>
     </div>
 </body>
 
+<hr class="border-sm" />
 

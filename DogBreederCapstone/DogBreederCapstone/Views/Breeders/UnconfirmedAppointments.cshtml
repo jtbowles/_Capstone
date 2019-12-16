@@ -7,13 +7,18 @@
 
 <style>
     .well {
-        height: 15px;
-        width: 30%;
-        background-color: #B2D7F7;
+        height: 60px;
+        width: auto;
+        margin-left: 5.5%;
+        margin-right: 5.5%;
+        background-color: #c9edff;
         text-align: center;
-        padding-top: 2px;
+        padding-top: 20px;
         color: black;
-        
+        border: 1px solid #eee;
+        box-shadow: 0 2px 2px #ccc;
+        font-family: Trebuchet MS, Helvetica, sans-serif;
+
     }
 
     hr.border {
@@ -43,13 +48,24 @@
       background-color: #19334d;
       color: #B2D7F7;
     }
+
+    h5 {
+        font-style: oblique;
+        font-weight: bold;
+        font-size: medium;
+    }
+
+    .btn-sm:hover {
+        background-color: #19334d;
+    }
+
 </style>
 
 <br/>
 <div>
     <h2 style="text-align: center;">Appointments</h2>
     <hr class="border" />
-    <h6 class="well">~appointments that are awaiting your request</h6>
+    <h5 class="well">~appointments that are awaiting your request</h5>
 </div>
 
 <table id="table">

@@ -5,6 +5,32 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <style>
+
+    .well {
+        height: 60px;
+        width: 500px;
+        margin-left: 5.5%;
+        margin-right: 5.5%;
+        background-color: #c9edff;
+        text-align: center;
+        padding-top: 20px;
+        color: black;
+        border: 1px solid #eee;
+        box-shadow: 0 2px 2px #ccc;
+        font-family: Trebuchet MS, Helvetica, sans-serif;
+
+    }
+
+    h5 {
+        font-style: oblique;
+        font-weight: bold;
+        font-size: medium;
+    }
+
+    .btn-sm:hover {
+        background-color: #19334d;
+    }
+
     div.container {
         margin-top: 10px;
         padding: 5px;
@@ -60,7 +86,7 @@
     <div>
         <h2 style="text-align: center;">Owner's Forum</h2>
         <hr class="border" />
-        <h6 class="well col-md-6">~Share what you and your Doggo have been up to! See what other Doggos have been up to!</h6>
+        <h5 class="well col-md-6">~Share what you and your Doggo have been up to! See what other Doggos have been up to!</h5>
         <div class="right">
             <input type="button" class="btn btn-primary" value="Post Status" onclick="location.href = '@Url.Action("Add", "ForumMessages")'" />
         </div>

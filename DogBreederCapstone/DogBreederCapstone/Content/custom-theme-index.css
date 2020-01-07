@@ -10,3 +10,10 @@ hr.border-sm {
     box-shadow: 0 2px 2px #19334d;
     border-radius: 2.5px;
 }
+
+img {
+    height: 200px;
+    width: 350px;
+    border: 10px groove #19334d;
+    border-radius: 5px;
+}

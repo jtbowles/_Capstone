@@ -13,8 +13,8 @@ hr.border-sm {
 
 img {
     height: 80%;
-    width: 80%;
-    border: 10px groove #19334d;
+    width: 75%;
+    border: 2.5px groove #19334d;
     border-radius: 50%;
 }
 

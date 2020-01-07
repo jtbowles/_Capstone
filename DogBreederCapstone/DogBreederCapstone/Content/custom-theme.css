@@ -31,3 +31,7 @@ h4.custom {
     text-align: center;
     padding-bottom: 15px;
 }
+
+div.offset {
+    margin-left: 10px;
+}

@@ -1,0 +1,12 @@
+﻿.jumbotron {
+    background-image: url(https://img.freepik.com/free-photo/close-up-blank-old-concrete-wall_23-2147856094.jpg?size=626&ext=jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+hr.border-sm {
+    border: 1px solid #B2D7F7;
+    box-shadow: 0 2px 2px #19334d;
+    border-radius: 2.5px;
+}

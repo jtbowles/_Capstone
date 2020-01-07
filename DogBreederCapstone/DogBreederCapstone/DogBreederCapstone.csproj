@@ -380,6 +380,7 @@
     <Compile Include="ViewModels\LitterViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\adoption-details-theme.css" />
     <Content Include="Content\bootstrap-flatly.css" />
     <Content Include="Content\bootstrap-lumen.css" />
     <Content Include="Content\bootstrap-theme.css" />

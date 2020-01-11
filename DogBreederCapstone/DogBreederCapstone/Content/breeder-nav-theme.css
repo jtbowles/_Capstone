@@ -7,8 +7,9 @@
 
 li:hover {
     background-color: lightslategrey;
-    font-weight: bolder;
-    opacity: 2;
-    transform: scale(1.05);
+    color: aliceblue;
+    font-weight: bold;
+    transform: scale(1.10);
     border-radius: 4px;
+    transition: all 0.5s ease;
 }

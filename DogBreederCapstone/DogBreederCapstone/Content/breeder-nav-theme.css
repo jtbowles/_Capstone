@@ -2,6 +2,7 @@
     border-radius: 4px;
     margin: 1rem;
     position: absolute;
+    margin-bottom: 10px;
 }
 
     li:hover, navbar-brand:hover {

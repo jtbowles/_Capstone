@@ -6,7 +6,9 @@
 }
 
 li:hover {
-    background-color: aliceblue;
+    background-color: lightslategrey;
+    font-weight: bolder;
     opacity: 2;
-    transform: scale(1.10);
+    transform: scale(1.05);
+    border-radius: 4px;
 }

@@ -82,5 +82,10 @@ namespace DogBreederCapstone.Controllers
         {
             return View();
         }
+
+        public ActionResult Playground()
+        {
+            return View();
+        }
     }
 }

@@ -35,8 +35,8 @@ h1 {
     --time: 0.7s;
     position: relative;
     display: inline-block;
-    height: 1em;
-    padding: 1em;
+    height: 2em;
+    padding:2em;
     color: white;
     background: #222;
     overflow: hidden;

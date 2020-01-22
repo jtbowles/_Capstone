@@ -52,6 +52,7 @@ h1 {
 
     .HOVER:hover text {
         color: #222;
+        text-decoration: none;
     }
 
     .HOVER span {

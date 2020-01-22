@@ -47,6 +47,7 @@ h1 {
         position: relative;
         z-index: 5;
         transition: color var(--time);
+        text-decoration: none;
     }
 
     .HOVER:hover text {

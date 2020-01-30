@@ -27,7 +27,6 @@ h1 {
 
 .display {
     display: inline;
-    grid-template-columns: auto;
     grid-gap: 0.2em;
 }
 
@@ -36,12 +35,14 @@ h1 {
     --time: 0.7s;
     position: relative;
     display: inline-block;
-    height: 2em;
-    padding:2em;
+    height: 4em;
+    width: 20%;
+    padding: 2em;
     color: white;
     background: #222;
     overflow: hidden;
     text-decoration: none;
+    border-radius: 1.5px;
 }
 
     .HOVER text {

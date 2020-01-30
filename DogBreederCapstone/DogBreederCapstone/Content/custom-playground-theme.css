@@ -73,6 +73,7 @@ h1 {
     .HOVER:hover span {
         width: calc(var(--width)*2.25);
         padding-top: calc(var(--width)* 2.25);
+        text-decoration: none;
     }
 
     .HOVER.FLASH:hover text {
